@@ -1,0 +1,425 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F18854 ]
+[d frameptr 6 ]
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"49 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"115
+[v _Get_Voltage Get_Voltage `(ui  1 e 2 0 ]
+"124
+[v _Get_Current Get_Current `(ui  1 e 2 0 ]
+"83 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"140
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+"162
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"182
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+"206
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+"218
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"220
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"228
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+"232
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+"236
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"240
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+"245
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+"56 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"50 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"59
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"73
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+"55 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"60 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"92
+[v _TMR0_ReadTimer TMR0_ReadTimer `(uc  1 e 1 0 ]
+[s S370 . 1 `uc 1 INTEDG 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"364 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h
+[u S375 . 1 `S370 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES375  1 e 1 @11 ]
+"591
+[v _TRISA TRISA `VEuc  1 e 1 @17 ]
+"653
+[v _TRISB TRISB `VEuc  1 e 1 @18 ]
+"715
+[v _TRISC TRISC `VEuc  1 e 1 @19 ]
+"777
+[v _LATA LATA `VEuc  1 e 1 @22 ]
+[s S405 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"794
+[u S414 . 1 `S405 1 . 1 0 ]
+[v _LATAbits LATAbits `VES414  1 e 1 @22 ]
+"839
+[v _LATB LATB `VEuc  1 e 1 @23 ]
+"901
+[v _LATC LATC `VEuc  1 e 1 @24 ]
+"963
+[v _TMR0L TMR0L `VEuc  1 e 1 @28 ]
+"1101
+[v _TMR0H TMR0H `VEuc  1 e 1 @29 ]
+"1355
+[v _T0CON0 T0CON0 `VEuc  1 e 1 @30 ]
+[s S325 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+`uc 1 T016BIT 1 0 :1:4 
+`uc 1 T0OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 T0EN 1 0 :1:7 
+]
+"1375
+[s S331 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+`uc 1 T0OUTPS1 1 0 :1:1 
+`uc 1 T0OUTPS2 1 0 :1:2 
+`uc 1 T0OUTPS3 1 0 :1:3 
+]
+[u S336 . 1 `S325 1 . 1 0 `S331 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES336  1 e 1 @30 ]
+"1420
+[v _T0CON1 T0CON1 `VEuc  1 e 1 @31 ]
+"3503
+[v _RC1REG RC1REG `VEuc  1 e 1 @281 ]
+"3557
+[v _TX1REG TX1REG `VEuc  1 e 1 @282 ]
+"3618
+[v _SP1BRGL SP1BRGL `VEuc  1 e 1 @283 ]
+"3688
+[v _SP1BRGH SP1BRGH `VEuc  1 e 1 @284 ]
+"3742
+[v _RC1STA RC1STA `VEuc  1 e 1 @285 ]
+[s S135 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3768
+[u S144 . 1 `S135 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES144  1 e 1 @285 ]
+"3922
+[v _TX1STA TX1STA `VEuc  1 e 1 @286 ]
+[s S113 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"3948
+[u S122 . 1 `S113 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES122  1 e 1 @286 ]
+"4102
+[v _BAUD1CON BAUD1CON `VEuc  1 e 1 @287 ]
+[s S311 . 1 `uc 1 INTF 1 0 :1:0 
+`uc 1 . 1 0 :3:1 
+`uc 1 IOCIF 1 0 :1:4 
+`uc 1 TMR0IF 1 0 :1:5 
+]
+"21058
+[u S316 . 1 `S311 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES316  1 e 1 @1804 ]
+[s S96 . 1 `uc 1 SSP1IF 1 0 :1:0 
+`uc 1 BCL1IF 1 0 :1:1 
+`uc 1 SSP2IF 1 0 :1:2 
+`uc 1 BCL2IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+]
+"21165
+[u S103 . 1 `S96 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES103  1 e 1 @1807 ]
+[s S34 . 1 `uc 1 SSP1IE 1 0 :1:0 
+`uc 1 BCL1IE 1 0 :1:1 
+`uc 1 SSP2IE 1 0 :1:2 
+`uc 1 BCL2IE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+]
+"21587
+[u S41 . 1 `S34 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES41  1 e 1 @1817 ]
+"21889
+[v _PMD0 PMD0 `VEuc  1 e 1 @1942 ]
+"21946
+[v _PMD1 PMD1 `VEuc  1 e 1 @1943 ]
+"22017
+[v _PMD2 PMD2 `VEuc  1 e 1 @1944 ]
+"22062
+[v _PMD3 PMD3 `VEuc  1 e 1 @1945 ]
+"22118
+[v _PMD4 PMD4 `VEuc  1 e 1 @1946 ]
+"22169
+[v _PMD5 PMD5 `VEuc  1 e 1 @1947 ]
+"23240
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
+"23380
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @2191 ]
+"23477
+[v _OSCEN OSCEN `VEuc  1 e 1 @2193 ]
+"23528
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @2194 ]
+"23586
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
+"24036
+[v _DAC1CON0 DAC1CON0 `VEuc  1 e 1 @2318 ]
+"24137
+[v _DAC1CON1 DAC1CON1 `VEuc  1 e 1 @2319 ]
+"31423
+[v _RXPPS RXPPS `VEuc  1 e 1 @3787 ]
+"32627
+[v _RC6PPS RC6PPS `VEuc  1 e 1 @3878 ]
+"32727
+[v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
+"32789
+[v _WPUA WPUA `VEuc  1 e 1 @3897 ]
+"32851
+[v _ODCONA ODCONA `VEuc  1 e 1 @3898 ]
+"32913
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @3899 ]
+"32975
+[v _INLVLA INLVLA `VEuc  1 e 1 @3900 ]
+"33347
+[v _ANSELB ANSELB `VEuc  1 e 1 @3907 ]
+"33409
+[v _WPUB WPUB `VEuc  1 e 1 @3908 ]
+"33471
+[v _ODCONB ODCONB `VEuc  1 e 1 @3909 ]
+"33533
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @3910 ]
+"33595
+[v _INLVLB INLVLB `VEuc  1 e 1 @3911 ]
+"33967
+[v _ANSELC ANSELC `VEuc  1 e 1 @3918 ]
+"34029
+[v _WPUC WPUC `VEuc  1 e 1 @3919 ]
+"34091
+[v _ODCONC ODCONC `VEuc  1 e 1 @3920 ]
+"34153
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @3921 ]
+"34215
+[v _INLVLC INLVLC `VEuc  1 e 1 @3922 ]
+"34587
+[v _WPUE WPUE `VEuc  1 e 1 @3941 ]
+"34608
+[v _INLVLE INLVLE `VEuc  1 e 1 @3944 ]
+[s S446 . 1 `uc 1 Voltage_Point 1 0 :4:0 
+`uc 1 Voltage_statue 1 0 :4:4 
+]
+"45 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\main.c
+[u S449 . 2 `ui 1 _Voltage 2 0 `S446 1 . 1 0 ]
+[s S452 . 1 `uc 1 Current_Point 1 0 :4:0 
+`uc 1 Current_statue 1 0 :4:4 
+]
+[u S455 . 2 `ui 1 _Current 2 0 `S452 1 . 1 0 ]
+[s S458 tagCoulomb_Data_struct 26 `ui 1 ID 2 0 `ui 1 Features 2 2 `ui 1 Quantity 2 4 `S449 1 . 2 6 `S455 1 . 2 8 `ui 1 Voltage_H 2 10 `ui 1 Voltage_L 2 12 `ui 1 Current_H 2 14 `ui 1 Current_L 2 16 `ui 1 CRC_H 2 18 `ui 1 CRC_L 2 20 `ui 1 Voltage 2 22 `ui 1 Current 2 24 ]
+[v _Coulomb_Data Coulomb_Data `S458  1 e 26 0 ]
+"63 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/eusart.c
+[v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
+"64
+[v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
+"65
+[v _eusartRxBuffer eusartRxBuffer `VE[11]uc  1 e 11 0 ]
+[s S22 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"66
+[u S27 . 1 `S22 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[11]S27  1 e 11 0 ]
+"67
+[v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
+"68
+[v _eusartRxLastError eusartRxLastError `VES27  1 e 1 0 ]
+"73
+[v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"75
+[v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"76
+[v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"77
+[v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
+"52 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/interrupt_manager.c
+[v _i i `VEi  1 e 2 0 ]
+"54
+[v _ch ch `VEuc  1 e 1 0 ]
+"49 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"75
+[v main@index index `*.4ui  1 a 1 15 ]
+"63
+[v main@out out `[8]uc  1 a 8 7 ]
+"64
+[v main@i i `i  1 a 2 18 ]
+[v main@a a `i  1 a 2 16 ]
+"60
+[v main@F12067 F12067 `[8]uc  1 s 8 F12067 ]
+"103
+} 0
+"92 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/tmr0.c
+[v _TMR0_ReadTimer TMR0_ReadTimer `(uc  1 e 1 0 ]
+{
+"94
+[v TMR0_ReadTimer@readVal readVal `uc  1 a 1 4 ]
+"100
+} 0
+"50 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"57
+} 0
+"60 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+{
+"78
+} 0
+"73 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/mcc.c
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+{
+"87
+} 0
+"55 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"113
+} 0
+"59 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"71
+} 0
+"83 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"119
+} 0
+"245
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
+"247
+} 0
+"236
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
+"238
+} 0
+"232
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
+"234
+} 0
+"240
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
+"242
+} 0
+"115 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\main.c
+[v _Get_Voltage Get_Voltage `(ui  1 e 2 0 ]
+{
+"122
+} 0
+"124
+[v _Get_Current Get_Current `(ui  1 e 2 0 ]
+{
+"131
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 1 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 0 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 3 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 5 ]
+"30
+} 0
+"162 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/eusart.c
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 3 ]
+"169
+} 0
+"140
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+{
+"142
+[v EUSART_Read@readValue readValue `uc  1 a 1 4 ]
+"160
+} 0
+"56 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"87
+} 0
+"182 C:\Users\linda\Desktop\PRACTICE\code\ups\Converter_DAC.X\mcc_generated_files/eusart.c
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+{
+"204
+} 0
+"220
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+{
+"226
+} 0
+"218
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+{
+} 0
+"228
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+{
+"230
+} 0
+"206
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+{
+"216
+} 0
