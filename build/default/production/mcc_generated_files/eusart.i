@@ -7,7 +7,6 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "mcc_generated_files/eusart.c" 2
-# 50 "mcc_generated_files/eusart.c"
 # 1 "mcc_generated_files/eusart.h" 1
 # 54 "mcc_generated_files/eusart.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\xc.h" 1 3
@@ -19943,12 +19942,19 @@ void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 # 466 "mcc_generated_files/eusart.h"
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 50 "mcc_generated_files/eusart.c" 2
-# 63 "mcc_generated_files/eusart.c"
+# 1 "mcc_generated_files/eusart.c" 2
+
+
+
+
+
+
+
+
 volatile uint8_t eusartRxHead = 0;
 volatile uint8_t eusartRxTail = 0;
-volatile uint8_t eusartRxBuffer[69];
-volatile eusart_status_t eusartRxStatusBuffer[69];
+volatile uint8_t eusartRxBuffer[39];
+volatile eusart_status_t eusartRxStatusBuffer[39];
 volatile uint8_t eusartRxCount;
 volatile eusart_status_t eusartRxLastError;
 

@@ -57,7 +57,6 @@
 #include "eusart.h"
 
 
-
 /**
  * @Param
     none

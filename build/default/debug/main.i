@@ -20016,15 +20016,13 @@ void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 # 466 "./mcc_generated_files/eusart.h"
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 # 57 "./mcc_generated_files/mcc.h" 2
-# 72 "./mcc_generated_files/mcc.h"
+# 71 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 85 "./mcc_generated_files/mcc.h"
+# 84 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 98 "./mcc_generated_files/mcc.h"
+# 97 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 9 "main.c" 2
-
-
 
 
 
@@ -20034,10 +20032,8 @@ typedef struct tagCoulomb_Data_struct {
     unsigned int ID ;
     unsigned int Features ;
     unsigned int Quantity ;
-    unsigned int Voltage_H[32] ;
- unsigned int Voltage_L[32] ;
-
-
+    unsigned int Voltage_H[17] ;
+ unsigned int Voltage_L[17] ;
     unsigned int CRC_H;
     unsigned int CRC_L;
     union {
@@ -20054,32 +20050,28 @@ typedef struct tagCoulomb_Data_struct {
    unsigned Current_statue :4;
   };
  };
-    unsigned int Voltage[32];
+    unsigned int Voltage[17];
 
 } Coulomb_Data_struct_define;
 
 Coulomb_Data_struct_define Coulomb_Data ;
-unsigned int Get_Voltage();
-
-
+void Get_Voltage(int);
+void BadBetteryFilter();
+void quickSort(int left,int right);
+unsigned int Voltage_sort[17]={0};
+unsigned int badBettery[17]={0};
+unsigned int mid=0;
 void main(void)
 {
-
     SYSTEM_Initialize();
-
-
-
-
     (INTCONbits.GIE = 1);
-
-
     (INTCONbits.PEIE = 1);
 
-
-    unsigned char out[8]={0x01,0x03,0x00,0x03,0x00,0x20,0xB4,0x12};
+    unsigned char out[8]={0x01,0x03,0x00,0x03,0x00,0x11,0x9F,0x9C};
     int i,j,a=0;
 
     int H_L_counter=0;
+
 
     while (1){
         if(TMR0_ReadTimer()==0){
@@ -20088,35 +20080,64 @@ void main(void)
                 __nop();
             }
         }
-        if(eusartRxCount == 69){
+        if(eusartRxCount == 39){
             unsigned int *index;
             index=&Coulomb_Data.ID;
             while(eusartRxCount != 0){
                 *index = EUSART_Read();
                 H_L_counter++;
-                if((H_L_counter<=3)||(H_L_counter>=0x43)){
-                    index++;
-                }
+                if((H_L_counter<=3)||(H_L_counter>=0x27)) index++;
                 else{
-                    if((H_L_counter%2)==0) index+=0x20;
-                    else index-=0x1F;
+                    if((H_L_counter%2)==0) index+=0x11;
+                    else index-=0x10;
                 }
-
             }
-            for(j=0;j<=31;j++){
+            for(j=0;j<=17;j++) {
                 Get_Voltage(j);
+                Voltage_sort[j] = Coulomb_Data.Voltage[j];
             }
-            int v=Coulomb_Data.Voltage[0];
-# 115 "main.c"
+            for(j=0;j<=17;j++){
+                if(Coulomb_Data.Voltage[j]>=3500) PORTAbits.RA0=1;
+                if(Coulomb_Data.Voltage[j]<=2500) PORTAbits.RA1=1;
+            }
+            BadBetteryFilter();
+
+
         }
     }
 }
-# 129 "main.c"
-unsigned int Get_Voltage(int k) {
+void Get_Voltage(int k) {
     Coulomb_Data.Voltage[k] = (Coulomb_Data.Voltage_H[k] << 8) + Coulomb_Data.Voltage_L[k];
-    if(Coulomb_Data.Voltage_Point==4) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/10000;
- else if(Coulomb_Data.Voltage_Point==3) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/1000;
- else if(Coulomb_Data.Voltage_Point==2) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/100;
-    else if(Coulomb_Data.Voltage_Point==1) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/10;
- else if(Coulomb_Data.Voltage_Point==0) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/1 ;
+
+
+
+
+
+}
+void quickSort(int left,int right){
+    int i = left;
+    int j = right;
+    int temp = 0;
+    int key = Voltage_sort[left] ;
+    while(i != j){
+        while((Voltage_sort[j] > key) && (i < j)) j -= 1;
+        while((Voltage_sort[i] <= key) && (i < j)) i += 1;
+        if(i < j) {
+            temp = Voltage_sort[i];
+            Voltage_sort[i] = Voltage_sort[j];
+            Voltage_sort[j] = temp;
+        }
+    }
+
+    Voltage_sort[left] = Voltage_sort[i];
+    Voltage_sort[i] = key;
+    mid=i;
+}
+void BadBetteryFilter(){
+    quickSort(0,17);
+    quickSort(0, mid-1);
+    quickSort(mid+1, 17);
+    for(int k=0;k<=17;k++){
+        if((Voltage_sort[16]-Coulomb_Data.Voltage[k])>=150) badBettery[k]=1;
+    }
 }

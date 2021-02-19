@@ -3,8 +3,6 @@
 [d edition pro ]
 [d chip 16F18854 ]
 [d frameptr 6 ]
-"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\Umul8_16.c
@@ -13,33 +11,37 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"48 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+"47 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"129
-[v _Get_Voltage Get_Voltage `(ui  1 e 2 0 ]
-"83 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
+"92
+[v _Get_Voltage Get_Voltage `(v  1 e 1 0 ]
+"100
+[v _quickSort quickSort `(v  1 e 1 0 ]
+"119
+[v _BadBetteryFilter BadBetteryFilter `(v  1 e 1 0 ]
+"29 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
-"140
+"86
 [v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
-"162
+"108
 [v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
-"182
+"128
 [v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
-"206
+"152
 [v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
-"218
+"164
 [v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
-"220
+"166
 [v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
-"228
+"174
 [v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
-"232
+"178
 [v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
-"236
+"182
 [v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
-"240
+"186
 [v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
-"245
+"191
 [v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
 "56 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
@@ -49,20 +51,34 @@
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "73
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
-"55 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/pin_manager.c
+"2 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "60 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "92
 [v _TMR0_ReadTimer TMR0_ReadTimer `(uc  1 e 1 0 ]
-[s S370 . 1 `uc 1 INTEDG 1 0 :1:0 
+[s S371 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "364 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h
-[u S375 . 1 `S370 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES375  1 e 1 @11 ]
+[u S376 . 1 `S371 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES376  1 e 1 @11 ]
+"384
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+[s S492 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"401
+[u S501 . 1 `S492 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES501  1 e 1 @12 ]
 "591
 [v _TRISA TRISA `VEuc  1 e 1 @17 ]
 "653
@@ -71,7 +87,7 @@
 [v _TRISC TRISC `VEuc  1 e 1 @19 ]
 "777
 [v _LATA LATA `VEuc  1 e 1 @22 ]
-[s S405 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S406 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -81,8 +97,8 @@
 `uc 1 LATA7 1 0 :1:7 
 ]
 "794
-[u S414 . 1 `S405 1 . 1 0 ]
-[v _LATAbits LATAbits `VES414  1 e 1 @22 ]
+[u S415 . 1 `S406 1 . 1 0 ]
+[v _LATAbits LATAbits `VES415  1 e 1 @22 ]
 "839
 [v _LATB LATB `VEuc  1 e 1 @23 ]
 "901
@@ -93,20 +109,20 @@
 [v _TMR0H TMR0H `VEuc  1 e 1 @29 ]
 "1355
 [v _T0CON0 T0CON0 `VEuc  1 e 1 @30 ]
-[s S325 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S326 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T016BIT 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
 "1375
-[s S331 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+[s S332 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
 `uc 1 T0OUTPS1 1 0 :1:1 
 `uc 1 T0OUTPS2 1 0 :1:2 
 `uc 1 T0OUTPS3 1 0 :1:3 
 ]
-[u S336 . 1 `S325 1 . 1 0 `S331 1 . 1 0 ]
-[v _T0CON0bits T0CON0bits `VES336  1 e 1 @30 ]
+[u S337 . 1 `S326 1 . 1 0 `S332 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES337  1 e 1 @30 ]
 "1420
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @31 ]
 "3503
@@ -147,14 +163,14 @@
 [v _TX1STAbits TX1STAbits `VES122  1 e 1 @286 ]
 "4102
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @287 ]
-[s S311 . 1 `uc 1 INTF 1 0 :1:0 
+[s S312 . 1 `uc 1 INTF 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIF 1 0 :1:4 
 `uc 1 TMR0IF 1 0 :1:5 
 ]
 "21058
-[u S316 . 1 `S311 1 . 1 0 ]
-[v _PIR0bits PIR0bits `VES316  1 e 1 @1804 ]
+[u S317 . 1 `S312 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES317  1 e 1 @1804 ]
 [s S96 . 1 `uc 1 SSP1IF 1 0 :1:0 
 `uc 1 BCL1IF 1 0 :1:1 
 `uc 1 SSP2IF 1 0 :1:2 
@@ -235,62 +251,69 @@
 [v _WPUE WPUE `VEuc  1 e 1 @3941 ]
 "34608
 [v _INLVLE INLVLE `VEuc  1 e 1 @3944 ]
-[s S446 . 1 `uc 1 Voltage_Point 1 0 :4:0 
+[s S447 . 1 `uc 1 Voltage_Point 1 0 :4:0 
 `uc 1 Voltage_statue 1 0 :4:4 
 ]
-"44 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
-[u S449 . 2 `ui 1 _Voltage 2 0 `S446 1 . 1 0 ]
-[s S452 . 1 `uc 1 Current_Point 1 0 :4:0 
+"40 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+[u S450 . 2 `ui 1 _Voltage 2 0 `S447 1 . 1 0 ]
+[s S453 . 1 `uc 1 Current_Point 1 0 :4:0 
 `uc 1 Current_statue 1 0 :4:4 
 ]
-[u S455 . 2 `ui 1 _Current 2 0 `S452 1 . 1 0 ]
-[s S458 tagCoulomb_Data_struct 206 `ui 1 ID 2 0 `ui 1 Features 2 2 `ui 1 Quantity 2 4 `[32]ui 1 Voltage_H 64 6 `[32]ui 1 Voltage_L 64 70 `ui 1 CRC_H 2 134 `ui 1 CRC_L 2 136 `S449 1 . 2 138 `S455 1 . 2 140 `[32]ui 1 Voltage 64 142 ]
-[v _Coulomb_Data Coulomb_Data `S458  1 e 206 @8482 ]
-"63 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
+[u S456 . 2 `ui 1 _Current 2 0 `S453 1 . 1 0 ]
+[s S459 tagCoulomb_Data_struct 116 `ui 1 ID 2 0 `ui 1 Features 2 2 `ui 1 Quantity 2 4 `[17]ui 1 Voltage_H 34 6 `[17]ui 1 Voltage_L 34 40 `ui 1 CRC_H 2 74 `ui 1 CRC_L 2 76 `S450 1 . 2 78 `S456 1 . 2 80 `[17]ui 1 Voltage 34 82 ]
+[v _Coulomb_Data Coulomb_Data `S459  1 e 116 @8572 ]
+"44
+[v _Voltage_sort Voltage_sort `[17]ui  1 e 34 0 ]
+"45
+[v _badBettery badBettery `[17]ui  1 e 34 0 ]
+"46
+[v _mid mid `ui  1 e 2 0 ]
+"9 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
 [v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
-"64
+"10
 [v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
-"65
-[v _eusartRxBuffer eusartRxBuffer `VE[69]uc  1 e 69 0 ]
+"11
+[v _eusartRxBuffer eusartRxBuffer `VE[39]uc  1 e 39 0 ]
 [s S22 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
-"66
+"12
 [u S27 . 1 `S22 1 . 1 0 `uc 1 status 1 0 ]
-[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[69]S27  1 e 69 0 ]
-"67
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[39]S27  1 e 39 0 ]
+"13
 [v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
-"68
+"14
 [v _eusartRxLastError eusartRxLastError `VES27  1 e 1 0 ]
-"73
+"19
 [v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
-"75
+"21
 [v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
-"76
+"22
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
-"77
+"23
 [v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
 "52 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/interrupt_manager.c
 [v _i i `VEi  1 e 2 0 ]
 "54
 [v _ch ch `VEuc  1 e 1 0 ]
-"48 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+"47 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"75
-[v main@index index `*.39ui  1 a 2 36 ]
-"62
+"67
+[v main@index index `*.39ui  1 a 2 34 ]
+"53
 [v main@out out `[8]uc  1 a 8 24 ]
-"65
-[v main@H_L_counter H_L_counter `i  1 a 2 42 ]
-"63
+"54
 [v main@j j `i  1 a 2 40 ]
-[v main@i i `i  1 a 2 38 ]
-"59
-[v main@F12063 F12063 `[8]uc  1 s 8 F12063 ]
-"117
+"56
+[v main@H_L_counter H_L_counter `i  1 a 2 38 ]
+"54
+[v main@i i `i  1 a 2 36 ]
+"51
+[v main@F12071 F12071 `[8]uc  1 s 8 F12071 ]
+"91
 } 0
 "92 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/tmr0.c
 [v _TMR0_ReadTimer TMR0_ReadTimer `(uc  1 e 1 0 ]
@@ -314,104 +337,115 @@
 {
 "87
 } 0
-"55 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/pin_manager.c
+"2 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
-"113
+"58
 } 0
 "59 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "71
 } 0
-"83 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
+"29 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 {
-"119
+"65
 } 0
-"245
+"191
 [v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
 {
 [v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
-"247
+"193
 } 0
-"236
+"182
 [v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
 {
 [v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
-"238
+"184
 } 0
-"232
+"178
 [v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
 {
 [v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
-"234
+"180
 } 0
-"240
+"186
 [v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
 {
 [v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
-"242
+"188
 } 0
-"129 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
-[v _Get_Voltage Get_Voltage `(ui  1 e 2 0 ]
+"92 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+[v _Get_Voltage Get_Voltage `(v  1 e 1 0 ]
 {
 [v Get_Voltage@k k `i  1 p 2 3 ]
-"136
+"99
 } 0
-"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-{
-"10
-[v ___lwdiv@quotient quotient `ui  1 a 2 1 ]
-"11
-[v ___lwdiv@counter counter `uc  1 a 1 0 ]
-"5
-[v ___lwdiv@divisor divisor `ui  1 p 2 3 ]
-[v ___lwdiv@dividend dividend `ui  1 p 2 5 ]
-"30
-} 0
-"162 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
+"108 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
 [v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
 {
 [v EUSART_Write@txData txData `uc  1 a 1 wreg ]
 [v EUSART_Write@txData txData `uc  1 a 1 wreg ]
 [v EUSART_Write@txData txData `uc  1 a 1 3 ]
-"169
+"115
 } 0
-"140
+"86
 [v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
 {
-"142
+"88
 [v EUSART_Read@readValue readValue `uc  1 a 1 4 ]
-"160
+"106
+} 0
+"119 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+[v _BadBetteryFilter BadBetteryFilter `(v  1 e 1 0 ]
+{
+"123
+[v BadBetteryFilter@k k `i  1 a 2 16 ]
+"126
+} 0
+"100
+[v _quickSort quickSort `(v  1 e 1 0 ]
+{
+"101
+[v quickSort@i i `i  1 a 2 8 ]
+"102
+[v quickSort@j j `i  1 a 2 6 ]
+"104
+[v quickSort@key key `i  1 a 2 4 ]
+"103
+[v quickSort@temp temp `i  1 a 2 2 ]
+"100
+[v quickSort@left left `i  1 p 2 3 ]
+[v quickSort@right right `i  1 p 2 5 ]
+"118
 } 0
 "56 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "87
 } 0
-"182 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
+"128 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
 [v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
 {
-"204
+"150
 } 0
-"220
+"166
 [v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
 {
-"226
+"172
 } 0
-"218
+"164
 [v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
 {
 } 0
-"228
+"174
 [v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
 {
-"230
+"176
 } 0
-"206
+"152
 [v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
 {
-"216
+"162
 } 0
