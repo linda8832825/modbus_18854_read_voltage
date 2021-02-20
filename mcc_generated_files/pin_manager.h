@@ -133,6 +133,8 @@ void PIN_MANAGER_Initialize (void);
  */
 void PIN_MANAGER_IOC(void);
 
+void master_init(void);
+
 
 
 #endif // PIN_MANAGER_H

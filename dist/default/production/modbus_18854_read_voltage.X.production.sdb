@@ -11,13 +11,37 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"46 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+"6 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\I2C_LCD.c
+[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
+"10
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+"20
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+"37
+[v _I2C_Master_Write I2C_Master_Write `(uc  1 e 1 0 ]
+"57
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+"79
+[v _IO_Expander_Write IO_Expander_Write `(v  1 e 1 0 ]
+"86
+[v _LCD_Write_4Bit LCD_Write_4Bit `(v  1 e 1 0 ]
+"94
+[v _LCD_CMD LCD_CMD `(v  1 e 1 0 ]
+"100
+[v _LCD_Write_Char LCD_Write_Char `(v  1 e 1 0 ]
+"106
+[v _LCD_Write_String LCD_Write_String `(v  1 e 1 0 ]
+"111
+[v _LCD_Set_Cursor LCD_Set_Cursor `(v  1 e 1 0 ]
+"154
+[v _Delay Delay `(v  1 e 1 0 ]
+"49 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"91
+"96
 [v _Get_Voltage Get_Voltage `(v  1 e 1 0 ]
-"99
+"104
 [v _Sort Sort `(v  1 e 1 0 ]
-"112
+"117
 [v _BadBetteryFilter BadBetteryFilter `(v  1 e 1 0 ]
 "29 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -45,29 +69,31 @@
 [v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
 "56 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"50 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/mcc.c
+"5 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"59
+"15
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"73
+"29
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+"44
+[v _master_init master_init `(v  1 e 1 0 ]
 "2 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "60 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "92
 [v _TMR0_ReadTimer TMR0_ReadTimer `(uc  1 e 1 0 ]
-[s S371 . 1 `uc 1 INTEDG 1 0 :1:0 
+[s S583 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "364 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h
-[u S376 . 1 `S371 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES376  1 e 1 @11 ]
+[u S588 . 1 `S583 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES588  1 e 1 @11 ]
 "384
 [v _PORTA PORTA `VEuc  1 e 1 @12 ]
-[s S492 . 1 `uc 1 RA0 1 0 :1:0 
+[s S704 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -77,8 +103,8 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "401
-[u S501 . 1 `S492 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES501  1 e 1 @12 ]
+[u S713 . 1 `S704 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES713  1 e 1 @12 ]
 "591
 [v _TRISA TRISA `VEuc  1 e 1 @17 ]
 "653
@@ -87,7 +113,7 @@
 [v _TRISC TRISC `VEuc  1 e 1 @19 ]
 "777
 [v _LATA LATA `VEuc  1 e 1 @22 ]
-[s S406 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S618 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -97,8 +123,8 @@
 `uc 1 LATA7 1 0 :1:7 
 ]
 "794
-[u S415 . 1 `S406 1 . 1 0 ]
-[v _LATAbits LATAbits `VES415  1 e 1 @22 ]
+[u S627 . 1 `S618 1 . 1 0 ]
+[v _LATAbits LATAbits `VES627  1 e 1 @22 ]
 "839
 [v _LATB LATB `VEuc  1 e 1 @23 ]
 "901
@@ -109,20 +135,20 @@
 [v _TMR0H TMR0H `VEuc  1 e 1 @29 ]
 "1355
 [v _T0CON0 T0CON0 `VEuc  1 e 1 @30 ]
-[s S326 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S538 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T016BIT 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
 "1375
-[s S332 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+[s S544 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
 `uc 1 T0OUTPS1 1 0 :1:1 
 `uc 1 T0OUTPS2 1 0 :1:2 
 `uc 1 T0OUTPS3 1 0 :1:3 
 ]
-[u S337 . 1 `S326 1 . 1 0 `S332 1 . 1 0 ]
-[v _T0CON0bits T0CON0bits `VES337  1 e 1 @30 ]
+[u S549 . 1 `S538 1 . 1 0 `S544 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES549  1 e 1 @30 ]
 "1420
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @31 ]
 "3503
@@ -163,14 +189,154 @@
 [v _TX1STAbits TX1STAbits `VES122  1 e 1 @286 ]
 "4102
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @287 ]
-[s S312 . 1 `uc 1 INTF 1 0 :1:0 
+"4348
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @396 ]
+"4368
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @397 ]
+"4488
+[v _SSP1MSK SSP1MSK `VEuc  1 e 1 @398 ]
+"4558
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @399 ]
+[s S283 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"4667
+[s S292 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S297 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S302 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S307 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[s S312 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DAT 1 0 :1:5 
+]
+[s S318 . 1 `uc 1 BF1 1 0 :1:0 
+`uc 1 UA1 1 0 :1:1 
+`uc 1 R 1 0 :1:2 
+`uc 1 START 1 0 :1:3 
+`uc 1 STOP 1 0 :1:4 
+`uc 1 D 1 0 :1:5 
+`uc 1 CKE1 1 0 :1:6 
+`uc 1 SMP1 1 0 :1:7 
+]
+[s S327 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+`uc 1 START1 1 0 :1:3 
+`uc 1 STOP1 1 0 :1:4 
+`uc 1 DA 1 0 :1:5 
+]
+[s S333 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW1 1 0 :1:2 
+`uc 1 I2C_START1 1 0 :1:3 
+`uc 1 I2C_STOP2 1 0 :1:4 
+`uc 1 DA1 1 0 :1:5 
+]
+[s S339 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ1 1 0 :1:2 
+`uc 1 S2 1 0 :1:3 
+`uc 1 P2 1 0 :1:4 
+`uc 1 DATA_ADDRESS1 1 0 :1:5 
+]
+[s S345 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A1 1 0 :1:5 
+]
+[s S350 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_nA1 1 0 :1:5 
+]
+[s S355 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_nW1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 I2C_DAT1 1 0 :1:5 
+]
+[s S360 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW2 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA2 1 0 :1:5 
+]
+[s S365 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS1 1 0 :1:5 
+]
+[u S370 . 1 `S283 1 . 1 0 `S292 1 . 1 0 `S297 1 . 1 0 `S302 1 . 1 0 `S307 1 . 1 0 `S312 1 . 1 0 `S318 1 . 1 0 `S327 1 . 1 0 `S333 1 . 1 0 `S339 1 . 1 0 `S345 1 . 1 0 `S350 1 . 1 0 `S355 1 . 1 0 `S360 1 . 1 0 `S365 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES370  1 e 1 @399 ]
+"4922
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @400 ]
+"5042
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @401 ]
+[s S801 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"5089
+[s S810 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK 1 0 :5:1 
+]
+[s S813 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK1 1 0 :1:1 
+`uc 1 ADMSK2 1 0 :1:2 
+`uc 1 ADMSK3 1 0 :1:3 
+`uc 1 ADMSK4 1 0 :1:4 
+`uc 1 ADMSK5 1 0 :1:5 
+]
+[s S820 . 1 `uc 1 SEN1 1 0 :1:0 
+`uc 1 ADMSK11 1 0 :1:1 
+`uc 1 ADMSK21 1 0 :1:2 
+`uc 1 ADMSK31 1 0 :1:3 
+`uc 1 ACKEN1 1 0 :1:4 
+`uc 1 ACKDT1 1 0 :1:5 
+`uc 1 ACKSTAT1 1 0 :1:6 
+`uc 1 GCEN1 1 0 :1:7 
+]
+[s S829 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RSEN1 1 0 :1:1 
+`uc 1 PEN1 1 0 :1:2 
+`uc 1 RCEN1 1 0 :1:3 
+`uc 1 ADMSK41 1 0 :1:4 
+`uc 1 ADMSK51 1 0 :1:5 
+]
+[u S836 . 1 `S801 1 . 1 0 `S810 1 . 1 0 `S813 1 . 1 0 `S820 1 . 1 0 `S829 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES836  1 e 1 @401 ]
+[s S524 . 1 `uc 1 INTF 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIF 1 0 :1:4 
 `uc 1 TMR0IF 1 0 :1:5 
 ]
 "21058
-[u S317 . 1 `S312 1 . 1 0 ]
-[v _PIR0bits PIR0bits `VES317  1 e 1 @1804 ]
+[u S529 . 1 `S524 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES529  1 e 1 @1804 ]
 [s S96 . 1 `uc 1 SSP1IF 1 0 :1:0 
 `uc 1 BCL1IF 1 0 :1:1 
 `uc 1 SSP2IF 1 0 :1:2 
@@ -213,8 +379,16 @@
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @2194 ]
 "23586
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
+"31111
+[v _SSP1CLKPPS SSP1CLKPPS `VEuc  1 e 1 @3781 ]
+"31163
+[v _SSP1DATPPS SSP1DATPPS `VEuc  1 e 1 @3782 ]
 "31423
 [v _RXPPS RXPPS `VEuc  1 e 1 @3787 ]
+"32477
+[v _RC3PPS RC3PPS `VEuc  1 e 1 @3875 ]
+"32527
+[v _RC4PPS RC4PPS `VEuc  1 e 1 @3876 ]
 "32627
 [v _RC6PPS RC6PPS `VEuc  1 e 1 @3878 ]
 "32727
@@ -251,20 +425,24 @@
 [v _WPUE WPUE `VEuc  1 e 1 @3941 ]
 "34608
 [v _INLVLE INLVLE `VEuc  1 e 1 @3944 ]
-[s S447 . 1 `uc 1 Voltage_Point 1 0 :4:0 
+"3 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\I2C_LCD.c
+[v _RS RS `uc  1 e 1 0 ]
+[v _i2c_add i2c_add `uc  1 e 1 0 ]
+[v _BackLight_State BackLight_State `uc  1 e 1 0 ]
+[s S659 . 1 `uc 1 Voltage_Point 1 0 :4:0 
 `uc 1 Voltage_statue 1 0 :4:4 
 ]
-"40 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
-[u S450 . 2 `ui 1 _Voltage 2 0 `S447 1 . 1 0 ]
-[s S453 . 1 `uc 1 Current_Point 1 0 :4:0 
+"43 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+[u S662 . 2 `ui 1 _Voltage 2 0 `S659 1 . 1 0 ]
+[s S665 . 1 `uc 1 Current_Point 1 0 :4:0 
 `uc 1 Current_statue 1 0 :4:4 
 ]
-[u S456 . 2 `ui 1 _Current 2 0 `S453 1 . 1 0 ]
-[s S459 tagCoulomb_Data_struct 116 `ui 1 ID 2 0 `ui 1 Features 2 2 `ui 1 Quantity 2 4 `[17]ui 1 Voltage_H 34 6 `[17]ui 1 Voltage_L 34 40 `ui 1 CRC_H 2 74 `ui 1 CRC_L 2 76 `S450 1 . 2 78 `S456 1 . 2 80 `[17]ui 1 Voltage 34 82 ]
-[v _Coulomb_Data Coulomb_Data `S459  1 e 116 @8572 ]
-"44
+[u S668 . 2 `ui 1 _Current 2 0 `S665 1 . 1 0 ]
+[s S671 tagCoulomb_Data_struct 116 `ui 1 ID 2 0 `ui 1 Features 2 2 `ui 1 Quantity 2 4 `[17]ui 1 Voltage_H 34 6 `[17]ui 1 Voltage_L 34 40 `ui 1 CRC_H 2 74 `ui 1 CRC_L 2 76 `S662 1 . 2 78 `S668 1 . 2 80 `[17]ui 1 Voltage 34 82 ]
+[v _Coulomb_Data Coulomb_Data `S671  1 e 116 @8572 ]
+"47
 [v _Voltage_sort Voltage_sort `[17]ui  1 e 34 0 ]
-"45
+"48
 [v _badBettery badBettery `[17]ui  1 e 34 0 ]
 "9 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
 [v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
@@ -296,22 +474,22 @@
 [v _i i `VEi  1 e 2 0 ]
 "54
 [v _ch ch `VEuc  1 e 1 0 ]
-"46 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+"49 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"66
-[v main@index index `*.39ui  1 a 2 34 ]
-"52
-[v main@out out `[8]uc  1 a 8 24 ]
-"53
-[v main@j j `i  1 a 2 40 ]
+"69
+[v main@index index `*.39ui  1 a 2 33 ]
 "55
-[v main@H_L_counter H_L_counter `i  1 a 2 38 ]
+[v main@out out `[8]uc  1 a 8 23 ]
+"56
+[v main@j j `i  1 a 2 39 ]
+"58
+[v main@H_L_counter H_L_counter `i  1 a 2 37 ]
+"56
+[v main@i i `i  1 a 2 35 ]
 "53
-[v main@i i `i  1 a 2 36 ]
-"50
-[v main@F12068 F12068 `[8]uc  1 s 8 F12068 ]
-"90
+[v main@F12101 F12101 `[8]uc  1 s 8 F12101 ]
+"95
 } 0
 "92 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/tmr0.c
 [v _TMR0_ReadTimer TMR0_ReadTimer `(uc  1 e 1 0 ]
@@ -320,30 +498,35 @@
 [v TMR0_ReadTimer@readVal readVal `uc  1 a 1 4 ]
 "100
 } 0
-"50 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/mcc.c
+"5 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"57
+"13
+} 0
+"44
+[v _master_init master_init `(v  1 e 1 0 ]
+{
+"51
 } 0
 "60 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
 "78
 } 0
-"73 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/mcc.c
+"29 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/mcc.c
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
 {
-"87
+"43
 } 0
 "2 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
-"58
+"62
 } 0
-"59 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/mcc.c
+"15 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"71
+"27
 } 0
 "29 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -374,11 +557,103 @@
 [v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
 "188
 } 0
-"91 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+"106 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\I2C_LCD.c
+[v _LCD_Write_String LCD_Write_String `(v  1 e 1 0 ]
+{
+"108
+[v LCD_Write_String@i i `i  1 a 2 3 ]
+"106
+[v LCD_Write_String@Str Str `*.39uc  1 p 2 1 ]
+"110
+} 0
+"100
+[v _LCD_Write_Char LCD_Write_Char `(v  1 e 1 0 ]
+{
+[v LCD_Write_Char@Data Data `uc  1 a 1 wreg ]
+[v LCD_Write_Char@Data Data `uc  1 a 1 wreg ]
+"102
+[v LCD_Write_Char@Data Data `uc  1 a 1 0 ]
+"105
+} 0
+"111
+[v _LCD_Set_Cursor LCD_Set_Cursor `(v  1 e 1 0 ]
+{
+[v LCD_Set_Cursor@ROW ROW `uc  1 a 1 wreg ]
+[v LCD_Set_Cursor@ROW ROW `uc  1 a 1 wreg ]
+[v LCD_Set_Cursor@COL COL `uc  1 p 1 1 ]
+[v LCD_Set_Cursor@ROW ROW `uc  1 a 1 4 ]
+"128
+} 0
+"57
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+{
+[v LCD_Init@I2C_Add I2C_Add `uc  1 a 1 wreg ]
+[v LCD_Init@I2C_Add I2C_Add `uc  1 a 1 wreg ]
+"59
+[v LCD_Init@I2C_Add I2C_Add `uc  1 a 1 2 ]
+"78
+} 0
+"94
+[v _LCD_CMD LCD_CMD `(v  1 e 1 0 ]
+{
+[v LCD_CMD@CMD CMD `uc  1 a 1 wreg ]
+[v LCD_CMD@CMD CMD `uc  1 a 1 wreg ]
+"96
+[v LCD_CMD@CMD CMD `uc  1 a 1 0 ]
+"99
+} 0
+"86
+[v _LCD_Write_4Bit LCD_Write_4Bit `(v  1 e 1 0 ]
+{
+[v LCD_Write_4Bit@Nibble Nibble `uc  1 a 1 wreg ]
+[v LCD_Write_4Bit@Nibble Nibble `uc  1 a 1 wreg ]
+"89
+[v LCD_Write_4Bit@Nibble Nibble `uc  1 a 1 6 ]
+"93
+} 0
+"79
+[v _IO_Expander_Write IO_Expander_Write `(v  1 e 1 0 ]
+{
+[v IO_Expander_Write@Data Data `uc  1 a 1 wreg ]
+[v IO_Expander_Write@Data Data `uc  1 a 1 wreg ]
+"81
+[v IO_Expander_Write@Data Data `uc  1 a 1 4 ]
+"85
+} 0
+"37
+[v _I2C_Master_Write I2C_Master_Write `(uc  1 e 1 0 ]
+{
+[v I2C_Master_Write@data data `uc  1 a 1 wreg ]
+[v I2C_Master_Write@data data `uc  1 a 1 wreg ]
+[v I2C_Master_Write@data data `uc  1 a 1 3 ]
+"43
+} 0
+"20
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+{
+"24
+} 0
+"10
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+{
+"14
+} 0
+"6
+[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
+{
+"9
+} 0
+"154
+[v _Delay Delay `(v  1 e 1 0 ]
+{
+[v Delay@counter counter `ui  1 p 2 3 ]
+"156
+} 0
+"96 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
 [v _Get_Voltage Get_Voltage `(v  1 e 1 0 ]
 {
 [v Get_Voltage@k k `i  1 p 2 3 ]
-"98
+"103
 } 0
 "108 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
 [v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
@@ -395,21 +670,21 @@
 [v EUSART_Read@readValue readValue `uc  1 a 1 4 ]
 "106
 } 0
-"112 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+"117 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
 [v _BadBetteryFilter BadBetteryFilter `(v  1 e 1 0 ]
 {
-"114
-[v BadBetteryFilter@k k `i  1 a 2 3 ]
-"117
+"119
+[v BadBetteryFilter@k k `i  1 a 2 14 ]
+"122
 } 0
-"99
+"104
 [v _Sort Sort `(v  1 e 1 0 ]
 {
-"100
-[v Sort@j j `i  1 a 2 10 ]
-[v Sort@i i `i  1 a 2 8 ]
-[v Sort@tmp tmp `i  1 a 2 4 ]
-"111
+"105
+[v Sort@j j `i  1 a 2 6 ]
+[v Sort@i i `i  1 a 2 4 ]
+[v Sort@tmp tmp `i  1 a 2 0 ]
+"116
 } 0
 "56 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]

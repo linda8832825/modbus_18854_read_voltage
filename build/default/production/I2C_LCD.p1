@@ -1,71 +1,41 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"77 mcc_generated_files/eusart.h
-[; ;mcc_generated_files/eusart.h: 77:     struct {
-[s S1565 :1 `uc 1 :1 `uc 1 :1 `uc 1 :5 `uc 1 ]
-[n S1565 . perr ferr oerr reserved ]
-"76
-[; ;mcc_generated_files/eusart.h: 76: typedef union {
-[u S1564 `S1565 1 `uc 1 ]
-[n S1564 . . status ]
-[v F12016 `(v ~T0 @X0 0 tf ]
-[v F12018 `(v ~T0 @X0 0 tf ]
-[v F12020 `(v ~T0 @X0 0 tf ]
-[v F12022 `(v ~T0 @X0 0 tf ]
-"21578 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 21578:     struct {
-[s S986 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S986 . SSP1IE BCL1IE SSP2IE BCL2IE TXIE RCIE ]
-"21577
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 21577: typedef union {
-[u S985 `S986 1 ]
-[n S985 . . ]
-"21587
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 21587: extern volatile PIE3bits_t PIE3bits __attribute__((address(0x719)));
-[v _PIE3bits `VS985 ~T0 @X0 0 e@1817 ]
-[v F12006 `(v ~T0 @X0 0 tf ]
-"466 mcc_generated_files/eusart.h
-[; ;mcc_generated_files/eusart.h: 466: void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-[v _EUSART_SetRxInterruptHandler `(v ~T0 @X0 0 ef1`*F12006 ]
-"370
-[; ;mcc_generated_files/eusart.h: 370: void EUSART_Receive_ISR(void);
-[v _EUSART_Receive_ISR `(v ~T0 @X0 0 ef ]
-"4102 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 4102: extern volatile unsigned char BAUD1CON __attribute__((address(0x11F)));
-[v _BAUD1CON `Vuc ~T0 @X0 0 e@287 ]
-"3742
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 3742: extern volatile unsigned char RC1STA __attribute__((address(0x11D)));
-[v _RC1STA `Vuc ~T0 @X0 0 e@285 ]
-"3922
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 3922: extern volatile unsigned char TX1STA __attribute__((address(0x11E)));
-[v _TX1STA `Vuc ~T0 @X0 0 e@286 ]
-"3618
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 3618: extern volatile unsigned char SP1BRGL __attribute__((address(0x11B)));
-[v _SP1BRGL `Vuc ~T0 @X0 0 e@283 ]
-"3688
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 3688: extern volatile unsigned char SP1BRGH __attribute__((address(0x11C)));
-[v _SP1BRGH `Vuc ~T0 @X0 0 e@284 ]
-[v F11994 `(v ~T0 @X0 0 tf ]
-"409 mcc_generated_files/eusart.h
-[; ;mcc_generated_files/eusart.h: 409: void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-[v _EUSART_SetFramingErrorHandler `(v ~T0 @X0 0 ef1`*F11994 ]
-"25 mcc_generated_files/eusart.c
-[; ;mcc_generated_files/eusart.c: 25: void EUSART_DefaultFramingErrorHandler(void);
-[v _EUSART_DefaultFramingErrorHandler `(v ~T0 @X0 0 ef ]
-[v F11998 `(v ~T0 @X0 0 tf ]
-"427 mcc_generated_files/eusart.h
-[; ;mcc_generated_files/eusart.h: 427: void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-[v _EUSART_SetOverrunErrorHandler `(v ~T0 @X0 0 ef1`*F11998 ]
-"26 mcc_generated_files/eusart.c
-[; ;mcc_generated_files/eusart.c: 26: void EUSART_DefaultOverrunErrorHandler(void);
-[v _EUSART_DefaultOverrunErrorHandler `(v ~T0 @X0 0 ef ]
-[v F12002 `(v ~T0 @X0 0 tf ]
-"445 mcc_generated_files/eusart.h
-[; ;mcc_generated_files/eusart.h: 445: void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-[v _EUSART_SetErrorHandler `(v ~T0 @X0 0 ef1`*F12002 ]
-"27 mcc_generated_files/eusart.c
-[; ;mcc_generated_files/eusart.c: 27: void EUSART_DefaultErrorHandler(void);
-[v _EUSART_DefaultErrorHandler `(v ~T0 @X0 0 ef ]
-"21156 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h
+"4558 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 4558: extern volatile unsigned char SSP1STAT __attribute__((address(0x18F)));
+[v _SSP1STAT `Vuc ~T0 @X0 0 e@399 ]
+"5042
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 5042: extern volatile unsigned char SSP1CON2 __attribute__((address(0x191)));
+[v _SSP1CON2 `Vuc ~T0 @X0 0 e@401 ]
+"5048
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 5048:     struct {
+[s S242 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S242 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
+"5058
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 5058:     struct {
+[s S243 :1 `uc 1 :5 `uc 1 ]
+[n S243 . . ADMSK ]
+"5062
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 5062:     struct {
+[s S244 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S244 . . ADMSK1 ADMSK2 ADMSK3 ADMSK4 ADMSK5 ]
+"5070
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 5070:     struct {
+[s S245 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S245 . SEN1 ADMSK11 ADMSK21 ADMSK31 ACKEN1 ACKDT1 ACKSTAT1 GCEN1 ]
+"5080
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 5080:     struct {
+[s S246 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S246 . . RSEN1 PEN1 RCEN1 ADMSK41 ADMSK51 ]
+"5047
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 5047: typedef union {
+[u S241 `S242 1 `S243 1 `S244 1 `S245 1 `S246 1 ]
+[n S241 . . . . . . ]
+"5089
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 5089: extern volatile SSP1CON2bits_t SSP1CON2bits __attribute__((address(0x191)));
+[v _SSP1CON2bits `VS241 ~T0 @X0 0 e@401 ]
+"4348
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 4348: extern volatile unsigned char SSP1BUF __attribute__((address(0x18C)));
+[v _SSP1BUF `Vuc ~T0 @X0 0 e@396 ]
+"21156
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 21156:     struct {
 [s S967 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S967 . SSP1IF BCL1IF SSP2IF BCL2IF TXIF RCIF ]
@@ -76,45 +46,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21165
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 21165: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x70F)));
 [v _PIR3bits `VS966 ~T0 @X0 0 e@1807 ]
-"3937
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 3937:     struct {
-[s S197 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S197 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
-"3936
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 3936: typedef union {
-[u S196 `S197 1 ]
-[n S196 . . ]
-"3948
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 3948: extern volatile TX1STAbits_t TX1STAbits __attribute__((address(0x11E)));
-[v _TX1STAbits `VS196 ~T0 @X0 0 e@286 ]
-"3557
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 3557: extern volatile unsigned char TX1REG __attribute__((address(0x11A)));
-[v _TX1REG `Vuc ~T0 @X0 0 e@282 ]
-"3757
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 3757:     struct {
-[s S191 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S191 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
-"3756
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 3756: typedef union {
-[u S190 `S191 1 ]
-[n S190 . . ]
-"3768
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 3768: extern volatile RC1STAbits_t RC1STAbits __attribute__((address(0x11D)));
-[v _RC1STAbits `VS190 ~T0 @X0 0 e@285 ]
-"391 mcc_generated_files/eusart.h
-[; ;mcc_generated_files/eusart.h: 391: void EUSART_RxDataHandler(void);
-[v _EUSART_RxDataHandler `(v ~T0 @X0 0 ef ]
-"3503 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 3503: extern volatile unsigned char RC1REG __attribute__((address(0x119)));
-[v _RC1REG `Vuc ~T0 @X0 0 e@281 ]
-[v F12049 `(v ~T0 @X0 0 tf ]
-[v F12051 `(v ~T0 @X0 0 tf ]
-[v F12054 `(v ~T0 @X0 0 tf ]
-[v F12056 `(v ~T0 @X0 0 tf ]
-[v F12059 `(v ~T0 @X0 0 tf ]
-[v F12061 `(v ~T0 @X0 0 tf ]
-[v F12064 `(v ~T0 @X0 0 tf ]
-[v F12066 `(v ~T0 @X0 0 tf ]
+"35 ./I2C_LCD.h
+[; ;./I2C_LCD.h: 35: void IO_Expander_Write(unsigned char Data);
+[v _IO_Expander_Write `(v ~T0 @X0 0 ef1`uc ]
+"46
+[; ;./I2C_LCD.h: 46: void Delay(unsigned int counter);
+[v _Delay `(v ~T0 @X0 0 ef1`ui ]
+"37
+[; ;./I2C_LCD.h: 37: void LCD_CMD(unsigned char CMD);
+[v _LCD_CMD `(v ~T0 @X0 0 ef1`uc ]
 "54 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1666,481 +1606,584 @@ Version 4.0 HI-TECH Software Intermediate Code
 "34906
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 34906: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"9 mcc_generated_files/eusart.c
-[; ;mcc_generated_files/eusart.c: 9: volatile uint8_t eusartRxHead = 0;
-[v _eusartRxHead `Vuc ~T0 @X0 1 e ]
-[i _eusartRxHead
--> -> 0 `i `uc
+"3 I2C_LCD.c
+[; ;I2C_LCD.c: 3: unsigned char RS, i2c_add, BackLight_State = 0x08;
+[v _RS `uc ~T0 @X0 1 e ]
+[v _i2c_add `uc ~T0 @X0 1 e ]
+[v _BackLight_State `uc ~T0 @X0 1 e ]
+[i _BackLight_State
+-> -> 8 `i `uc
 ]
-"10
-[; ;mcc_generated_files/eusart.c: 10: volatile uint8_t eusartRxTail = 0;
-[v _eusartRxTail `Vuc ~T0 @X0 1 e ]
-[i _eusartRxTail
--> -> 0 `i `uc
-]
-"11
-[; ;mcc_generated_files/eusart.c: 11: volatile uint8_t eusartRxBuffer[39];
-[v _eusartRxBuffer `Vuc ~T0 @X0 -> 39 `i e ]
-"12
-[; ;mcc_generated_files/eusart.c: 12: volatile eusart_status_t eusartRxStatusBuffer[39];
-[v _eusartRxStatusBuffer `VS1564 ~T0 @X0 -> 39 `i e ]
-"13
-[; ;mcc_generated_files/eusart.c: 13: volatile uint8_t eusartRxCount;
-[v _eusartRxCount `Vuc ~T0 @X0 1 e ]
-"14
-[; ;mcc_generated_files/eusart.c: 14: volatile eusart_status_t eusartRxLastError;
-[v _eusartRxLastError `VS1564 ~T0 @X0 1 e ]
-"19
-[; ;mcc_generated_files/eusart.c: 19: void (*EUSART_RxDefaultInterruptHandler)(void);
-[v _EUSART_RxDefaultInterruptHandler `*F12016 ~T0 @X0 1 e ]
-"21
-[; ;mcc_generated_files/eusart.c: 21: void (*EUSART_FramingErrorHandler)(void);
-[v _EUSART_FramingErrorHandler `*F12018 ~T0 @X0 1 e ]
-"22
-[; ;mcc_generated_files/eusart.c: 22: void (*EUSART_OverrunErrorHandler)(void);
-[v _EUSART_OverrunErrorHandler `*F12020 ~T0 @X0 1 e ]
-"23
-[; ;mcc_generated_files/eusart.c: 23: void (*EUSART_ErrorHandler)(void);
-[v _EUSART_ErrorHandler `*F12022 ~T0 @X0 1 e ]
-"29
-[; ;mcc_generated_files/eusart.c: 29: void EUSART_Initialize(void)
-[v _EUSART_Initialize `(v ~T0 @X0 1 ef ]
-"30
-[; ;mcc_generated_files/eusart.c: 30: {
+"6
+[; ;I2C_LCD.c: 6: void I2C_Master_Wait()
+[v _I2C_Master_Wait `(v ~T0 @X0 1 ef ]
+"7
+[; ;I2C_LCD.c: 7: {
 {
-[e :U _EUSART_Initialize ]
+[e :U _I2C_Master_Wait ]
 [f ]
-"32
-[; ;mcc_generated_files/eusart.c: 32:     PIE3bits.RCIE = 0;
-[e = . . _PIE3bits 0 5 -> -> 0 `i `uc ]
-"33
-[; ;mcc_generated_files/eusart.c: 33:     EUSART_SetRxInterruptHandler(EUSART_Receive_ISR);
-[e ( _EUSART_SetRxInterruptHandler (1 &U _EUSART_Receive_ISR ]
-"37
-[; ;mcc_generated_files/eusart.c: 37:     BAUD1CON = 0x08;
-[e = _BAUD1CON -> -> 8 `i `uc ]
-"40
-[; ;mcc_generated_files/eusart.c: 40:     RC1STA = 0x90;
-[e = _RC1STA -> -> 144 `i `uc ]
-"43
-[; ;mcc_generated_files/eusart.c: 43:     TX1STA = 0x24;
-[e = _TX1STA -> -> 36 `i `uc ]
-"46
-[; ;mcc_generated_files/eusart.c: 46:     SP1BRGL = 0x19;
-[e = _SP1BRGL -> -> 25 `i `uc ]
-"49
-[; ;mcc_generated_files/eusart.c: 49:     SP1BRGH = 0x00;
-[e = _SP1BRGH -> -> 0 `i `uc ]
-"52
-[; ;mcc_generated_files/eusart.c: 52:     EUSART_SetFramingErrorHandler(EUSART_DefaultFramingErrorHandler);
-[e ( _EUSART_SetFramingErrorHandler (1 &U _EUSART_DefaultFramingErrorHandler ]
-"53
-[; ;mcc_generated_files/eusart.c: 53:     EUSART_SetOverrunErrorHandler(EUSART_DefaultOverrunErrorHandler);
-[e ( _EUSART_SetOverrunErrorHandler (1 &U _EUSART_DefaultOverrunErrorHandler ]
-"54
-[; ;mcc_generated_files/eusart.c: 54:     EUSART_SetErrorHandler(EUSART_DefaultErrorHandler);
-[e ( _EUSART_SetErrorHandler (1 &U _EUSART_DefaultErrorHandler ]
-"56
-[; ;mcc_generated_files/eusart.c: 56:     eusartRxLastError.status = 0;
-[e = . _eusartRxLastError 1 -> -> 0 `i `uc ]
-"59
-[; ;mcc_generated_files/eusart.c: 59:     eusartRxHead = 0;
-[e = _eusartRxHead -> -> 0 `i `uc ]
-"60
-[; ;mcc_generated_files/eusart.c: 60:     eusartRxTail = 0;
-[e = _eusartRxTail -> -> 0 `i `uc ]
-"61
-[; ;mcc_generated_files/eusart.c: 61:     eusartRxCount = 0;
-[e = _eusartRxCount -> -> 0 `i `uc ]
-"64
-[; ;mcc_generated_files/eusart.c: 64:     PIE3bits.RCIE = 1;
-[e = . . _PIE3bits 0 5 -> -> 1 `i `uc ]
-"65
-[; ;mcc_generated_files/eusart.c: 65: }
+"8
+[; ;I2C_LCD.c: 8:   while ((SSP1STAT & 0x04) || (SSP1CON2 & 0x1F));
+[e $U 1563  ]
+[e :U 1564 ]
+[e :U 1563 ]
+[e $ || != & -> _SSP1STAT `i -> 4 `i -> 0 `i != & -> _SSP1CON2 `i -> 31 `i -> 0 `i 1564  ]
+[e :U 1565 ]
+"9
+[; ;I2C_LCD.c: 9: }
+[e :UE 1562 ]
+}
+"10
+[; ;I2C_LCD.c: 10: void I2C_Master_Start()
+[v _I2C_Master_Start `(v ~T0 @X0 1 ef ]
+"11
+[; ;I2C_LCD.c: 11: {
+{
+[e :U _I2C_Master_Start ]
+[f ]
+"12
+[; ;I2C_LCD.c: 12:   I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"13
+[; ;I2C_LCD.c: 13:   SSP1CON2bits.SEN = 1;
+[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
+"14
+[; ;I2C_LCD.c: 14: }
 [e :UE 1566 ]
 }
-"67
-[; ;mcc_generated_files/eusart.c: 67: _Bool EUSART_is_tx_ready(void)
-[v _EUSART_is_tx_ready `(a ~T0 @X0 1 ef ]
-"68
-[; ;mcc_generated_files/eusart.c: 68: {
+"15
+[; ;I2C_LCD.c: 15: void I2C_Master_RepeatedStart()
+[v _I2C_Master_RepeatedStart `(v ~T0 @X0 1 ef ]
+"16
+[; ;I2C_LCD.c: 16: {
 {
-[e :U _EUSART_is_tx_ready ]
+[e :U _I2C_Master_RepeatedStart ]
 [f ]
-"69
-[; ;mcc_generated_files/eusart.c: 69:     return (_Bool)(PIR3bits.TXIF && TX1STAbits.TXEN);
-[e ) -> -> && != -> . . _PIR3bits 0 4 `i -> 0 `i != -> . . _TX1STAbits 0 5 `i -> 0 `i `i `a ]
-[e $UE 1567  ]
-"70
-[; ;mcc_generated_files/eusart.c: 70: }
+"17
+[; ;I2C_LCD.c: 17:   I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"18
+[; ;I2C_LCD.c: 18:   SSP1CON2bits.RSEN = 1;
+[e = . . _SSP1CON2bits 0 1 -> -> 1 `i `uc ]
+"19
+[; ;I2C_LCD.c: 19: }
 [e :UE 1567 ]
 }
-"72
-[; ;mcc_generated_files/eusart.c: 72: _Bool EUSART_is_rx_ready(void)
-[v _EUSART_is_rx_ready `(a ~T0 @X0 1 ef ]
-"73
-[; ;mcc_generated_files/eusart.c: 73: {
+"20
+[; ;I2C_LCD.c: 20: void I2C_Master_Stop()
+[v _I2C_Master_Stop `(v ~T0 @X0 1 ef ]
+"21
+[; ;I2C_LCD.c: 21: {
 {
-[e :U _EUSART_is_rx_ready ]
+[e :U _I2C_Master_Stop ]
 [f ]
-"74
-[; ;mcc_generated_files/eusart.c: 74:     return (eusartRxCount ? 1 : 0);
-[e ) -> ? != -> _eusartRxCount `i -> 0 `i : -> 1 `i -> 0 `i `a ]
-[e $UE 1568  ]
-"75
-[; ;mcc_generated_files/eusart.c: 75: }
+"22
+[; ;I2C_LCD.c: 22:   I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"23
+[; ;I2C_LCD.c: 23:   SSP1CON2bits.PEN = 1;
+[e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
+"24
+[; ;I2C_LCD.c: 24: }
 [e :UE 1568 ]
 }
-"77
-[; ;mcc_generated_files/eusart.c: 77: _Bool EUSART_is_tx_done(void)
-[v _EUSART_is_tx_done `(a ~T0 @X0 1 ef ]
-"78
-[; ;mcc_generated_files/eusart.c: 78: {
+"25
+[; ;I2C_LCD.c: 25: void I2C_ACK(void)
+[v _I2C_ACK `(v ~T0 @X0 1 ef ]
+"26
+[; ;I2C_LCD.c: 26: {
 {
-[e :U _EUSART_is_tx_done ]
+[e :U _I2C_ACK ]
 [f ]
-"79
-[; ;mcc_generated_files/eusart.c: 79:     return TX1STAbits.TRMT;
-[e ) -> . . _TX1STAbits 0 1 `a ]
-[e $UE 1569  ]
-"80
-[; ;mcc_generated_files/eusart.c: 80: }
+"27
+[; ;I2C_LCD.c: 27:   SSP1CON2bits.ACKDT = 0;
+[e = . . _SSP1CON2bits 0 5 -> -> 0 `i `uc ]
+"28
+[; ;I2C_LCD.c: 28:   I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"29
+[; ;I2C_LCD.c: 29:   SSP1CON2bits.ACKEN = 1;
+[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
+"30
+[; ;I2C_LCD.c: 30: }
 [e :UE 1569 ]
 }
-"82
-[; ;mcc_generated_files/eusart.c: 82: eusart_status_t EUSART_get_last_status(void){
-[v _EUSART_get_last_status `(S1564 ~T0 @X0 1 ef ]
+"31
+[; ;I2C_LCD.c: 31: void I2C_NACK(void)
+[v _I2C_NACK `(v ~T0 @X0 1 ef ]
+"32
+[; ;I2C_LCD.c: 32: {
 {
-[e :U _EUSART_get_last_status ]
+[e :U _I2C_NACK ]
 [f ]
-"83
-[; ;mcc_generated_files/eusart.c: 83:     return eusartRxLastError;
-[e ) _eusartRxLastError ]
-[e $UE 1570  ]
-"84
-[; ;mcc_generated_files/eusart.c: 84: }
+"33
+[; ;I2C_LCD.c: 33:   SSP1CON2bits.ACKDT = 1;
+[e = . . _SSP1CON2bits 0 5 -> -> 1 `i `uc ]
+"34
+[; ;I2C_LCD.c: 34:   I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"35
+[; ;I2C_LCD.c: 35:   SSP1CON2bits.ACKEN = 1;
+[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
+"36
+[; ;I2C_LCD.c: 36: }
 [e :UE 1570 ]
 }
-"86
-[; ;mcc_generated_files/eusart.c: 86: uint8_t EUSART_Read(void)
-[v _EUSART_Read `(uc ~T0 @X0 1 ef ]
-"87
-[; ;mcc_generated_files/eusart.c: 87: {
+"37
+[; ;I2C_LCD.c: 37: unsigned char I2C_Master_Write(unsigned char data){
+[v _I2C_Master_Write `(uc ~T0 @X0 1 ef1`uc ]
 {
-[e :U _EUSART_Read ]
+[e :U _I2C_Master_Write ]
+[v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"88
-[; ;mcc_generated_files/eusart.c: 88:     uint8_t readValue = 0;
-[v _readValue `uc ~T0 @X0 1 a ]
-[e = _readValue -> -> 0 `i `uc ]
-"90
-[; ;mcc_generated_files/eusart.c: 90:     while(0 == eusartRxCount)
+"38
+[; ;I2C_LCD.c: 38:   I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"39
+[; ;I2C_LCD.c: 39:   SSP1BUF = data;
+[e = _SSP1BUF _data ]
+"40
+[; ;I2C_LCD.c: 40:   while(!PIR3bits.SSP1IF);
 [e $U 1572  ]
 [e :U 1573 ]
-"91
-[; ;mcc_generated_files/eusart.c: 91:     {
-{
-"92
-[; ;mcc_generated_files/eusart.c: 92:     }
-}
 [e :U 1572 ]
-"90
-[; ;mcc_generated_files/eusart.c: 90:     while(0 == eusartRxCount)
-[e $ == -> 0 `i -> _eusartRxCount `i 1573  ]
+[e $ ! != -> . . _PIR3bits 0 0 `i -> 0 `i 1573  ]
 [e :U 1574 ]
-"94
-[; ;mcc_generated_files/eusart.c: 94:     eusartRxLastError = eusartRxStatusBuffer[eusartRxTail];
-[e = _eusartRxLastError *U + &U _eusartRxStatusBuffer * -> _eusartRxTail `ux -> -> # *U &U _eusartRxStatusBuffer `ui `ux ]
-"96
-[; ;mcc_generated_files/eusart.c: 96:     readValue = eusartRxBuffer[eusartRxTail++];
-[e = _readValue *U + &U _eusartRxBuffer * -> ++ _eusartRxTail -> -> 1 `i `Vuc `ux -> -> # *U &U _eusartRxBuffer `ui `ux ]
-"97
-[; ;mcc_generated_files/eusart.c: 97:     if(sizeof(eusartRxBuffer) <= eusartRxTail)
-[e $ ! <= -> # _eusartRxBuffer `ui -> _eusartRxTail `ui 1575  ]
-"98
-[; ;mcc_generated_files/eusart.c: 98:     {
-{
-"99
-[; ;mcc_generated_files/eusart.c: 99:         eusartRxTail = 0;
-[e = _eusartRxTail -> -> 0 `i `uc ]
-"100
-[; ;mcc_generated_files/eusart.c: 100:     }
-}
-[e :U 1575 ]
-"101
-[; ;mcc_generated_files/eusart.c: 101:     PIE3bits.RCIE = 0;
-[e = . . _PIE3bits 0 5 -> -> 0 `i `uc ]
-"102
-[; ;mcc_generated_files/eusart.c: 102:     eusartRxCount--;
-[e -- _eusartRxCount -> -> 1 `i `Vuc ]
-"103
-[; ;mcc_generated_files/eusart.c: 103:     PIE3bits.RCIE = 1;
-[e = . . _PIE3bits 0 5 -> -> 1 `i `uc ]
-"105
-[; ;mcc_generated_files/eusart.c: 105:     return readValue;
-[e ) _readValue ]
+"41
+[; ;I2C_LCD.c: 41:   PIR3bits.SSP1IF = 0;
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+"42
+[; ;I2C_LCD.c: 42:   return SSP1CON2bits.ACKSTAT;
+[e ) . . _SSP1CON2bits 0 6 ]
 [e $UE 1571  ]
-"106
-[; ;mcc_generated_files/eusart.c: 106: }
+"43
+[; ;I2C_LCD.c: 43: }
 [e :UE 1571 ]
 }
-"108
-[; ;mcc_generated_files/eusart.c: 108: void EUSART_Write(uint8_t txData)
-[v _EUSART_Write `(v ~T0 @X0 1 ef1`uc ]
-"109
-[; ;mcc_generated_files/eusart.c: 109: {
+"44
+[; ;I2C_LCD.c: 44: unsigned char I2C_Read_Byte(void)
+[v _I2C_Read_Byte `(uc ~T0 @X0 1 ef ]
+"45
+[; ;I2C_LCD.c: 45: {
 {
-[e :U _EUSART_Write ]
-"108
-[; ;mcc_generated_files/eusart.c: 108: void EUSART_Write(uint8_t txData)
-[v _txData `uc ~T0 @X0 1 r1 ]
-"109
-[; ;mcc_generated_files/eusart.c: 109: {
+[e :U _I2C_Read_Byte ]
 [f ]
-"110
-[; ;mcc_generated_files/eusart.c: 110:     while(0 == PIR3bits.TXIF)
-[e $U 1577  ]
-[e :U 1578 ]
-"111
-[; ;mcc_generated_files/eusart.c: 111:     {
-{
-"112
-[; ;mcc_generated_files/eusart.c: 112:     }
-}
+"47
+[; ;I2C_LCD.c: 47:   I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"48
+[; ;I2C_LCD.c: 48:   SSP1CON2bits.RCEN = 1;
+[e = . . _SSP1CON2bits 0 3 -> -> 1 `i `uc ]
+"49
+[; ;I2C_LCD.c: 49:   while(!PIR3bits.SSP1IF);
+[e $U 1576  ]
 [e :U 1577 ]
-"110
-[; ;mcc_generated_files/eusart.c: 110:     while(0 == PIR3bits.TXIF)
-[e $ == -> 0 `i -> . . _PIR3bits 0 4 `i 1578  ]
-[e :U 1579 ]
-"114
-[; ;mcc_generated_files/eusart.c: 114:     TX1REG = txData;
-[e = _TX1REG _txData ]
-"115
-[; ;mcc_generated_files/eusart.c: 115: }
-[e :UE 1576 ]
+[e :U 1576 ]
+[e $ ! != -> . . _PIR3bits 0 0 `i -> 0 `i 1577  ]
+[e :U 1578 ]
+"50
+[; ;I2C_LCD.c: 50:   PIR3bits.SSP1IF = 0;
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+"51
+[; ;I2C_LCD.c: 51:   I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"52
+[; ;I2C_LCD.c: 52:   return SSP1BUF;
+[e ) _SSP1BUF ]
+[e $UE 1575  ]
+"53
+[; ;I2C_LCD.c: 53: }
+[e :UE 1575 ]
 }
-"117
-[; ;mcc_generated_files/eusart.c: 117: char getch(void)
-[v _getch `(uc ~T0 @X0 1 ef ]
-"118
-[; ;mcc_generated_files/eusart.c: 118: {
+"57
+[; ;I2C_LCD.c: 57: void LCD_Init(unsigned char I2C_Add)
+[v _LCD_Init `(v ~T0 @X0 1 ef1`uc ]
+"58
+[; ;I2C_LCD.c: 58: {
 {
-[e :U _getch ]
+[e :U _LCD_Init ]
+"57
+[; ;I2C_LCD.c: 57: void LCD_Init(unsigned char I2C_Add)
+[v _I2C_Add `uc ~T0 @X0 1 r1 ]
+"58
+[; ;I2C_LCD.c: 58: {
 [f ]
-"119
-[; ;mcc_generated_files/eusart.c: 119:     return EUSART_Read();
-[e ) -> ( _EUSART_Read ..  `uc ]
-[e $UE 1580  ]
-"120
-[; ;mcc_generated_files/eusart.c: 120: }
+"59
+[; ;I2C_LCD.c: 59:   i2c_add = I2C_Add;
+[e = _i2c_add _I2C_Add ]
+"60
+[; ;I2C_LCD.c: 60:   IO_Expander_Write(0x00);
+[e ( _IO_Expander_Write (1 -> -> 0 `i `uc ]
+"61
+[; ;I2C_LCD.c: 61:   Delay(3000);
+[e ( _Delay (1 -> -> 3000 `i `ui ]
+"62
+[; ;I2C_LCD.c: 62:   LCD_CMD(0x03);
+[e ( _LCD_CMD (1 -> -> 3 `i `uc ]
+"63
+[; ;I2C_LCD.c: 63:   Delay(500);
+[e ( _Delay (1 -> -> 500 `i `ui ]
+"64
+[; ;I2C_LCD.c: 64:   LCD_CMD(0x03);
+[e ( _LCD_CMD (1 -> -> 3 `i `uc ]
+"65
+[; ;I2C_LCD.c: 65:   Delay(500);
+[e ( _Delay (1 -> -> 500 `i `ui ]
+"66
+[; ;I2C_LCD.c: 66:   LCD_CMD(0x03);
+[e ( _LCD_CMD (1 -> -> 3 `i `uc ]
+"67
+[; ;I2C_LCD.c: 67:   Delay(500);
+[e ( _Delay (1 -> -> 500 `i `ui ]
+"68
+[; ;I2C_LCD.c: 68:   LCD_CMD(0x02);
+[e ( _LCD_CMD (1 -> -> 2 `i `uc ]
+"69
+[; ;I2C_LCD.c: 69:   Delay(500);
+[e ( _Delay (1 -> -> 500 `i `ui ]
+"70
+[; ;I2C_LCD.c: 70:   LCD_CMD(0x20 | (2 << 2));
+[e ( _LCD_CMD (1 -> | -> 32 `i << -> 2 `i -> 2 `i `uc ]
+"71
+[; ;I2C_LCD.c: 71:   Delay(5000);
+[e ( _Delay (1 -> -> 5000 `i `ui ]
+"72
+[; ;I2C_LCD.c: 72:   LCD_CMD(0x0C);
+[e ( _LCD_CMD (1 -> -> 12 `i `uc ]
+"73
+[; ;I2C_LCD.c: 73:   Delay(5000);
+[e ( _Delay (1 -> -> 5000 `i `ui ]
+"74
+[; ;I2C_LCD.c: 74:   LCD_CMD(0x01);
+[e ( _LCD_CMD (1 -> -> 1 `i `uc ]
+"75
+[; ;I2C_LCD.c: 75:   Delay(5000);
+[e ( _Delay (1 -> -> 5000 `i `ui ]
+"76
+[; ;I2C_LCD.c: 76:   LCD_CMD(0x04 | 0x02);
+[e ( _LCD_CMD (1 -> | -> 4 `i -> 2 `i `uc ]
+"77
+[; ;I2C_LCD.c: 77:   Delay(5000);
+[e ( _Delay (1 -> -> 5000 `i `ui ]
+"78
+[; ;I2C_LCD.c: 78: }
+[e :UE 1579 ]
+}
+"79
+[; ;I2C_LCD.c: 79: void IO_Expander_Write(unsigned char Data)
+[v _IO_Expander_Write `(v ~T0 @X0 1 ef1`uc ]
+"80
+[; ;I2C_LCD.c: 80: {
+{
+[e :U _IO_Expander_Write ]
+"79
+[; ;I2C_LCD.c: 79: void IO_Expander_Write(unsigned char Data)
+[v _Data `uc ~T0 @X0 1 r1 ]
+"80
+[; ;I2C_LCD.c: 80: {
+[f ]
+"81
+[; ;I2C_LCD.c: 81:   I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"82
+[; ;I2C_LCD.c: 82:   I2C_Master_Write(i2c_add);
+[e ( _I2C_Master_Write (1 _i2c_add ]
+"83
+[; ;I2C_LCD.c: 83:   I2C_Master_Write(Data | BackLight_State);
+[e ( _I2C_Master_Write (1 -> | -> _Data `i -> _BackLight_State `i `uc ]
+"84
+[; ;I2C_LCD.c: 84:   I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"85
+[; ;I2C_LCD.c: 85: }
 [e :UE 1580 ]
 }
-"122
-[; ;mcc_generated_files/eusart.c: 122: void putch(char txData)
-[v _putch `(v ~T0 @X0 1 ef1`uc ]
-"123
-[; ;mcc_generated_files/eusart.c: 123: {
+"86
+[; ;I2C_LCD.c: 86: void LCD_Write_4Bit(unsigned char Nibble)
+[v _LCD_Write_4Bit `(v ~T0 @X0 1 ef1`uc ]
+"87
+[; ;I2C_LCD.c: 87: {
 {
-[e :U _putch ]
-"122
-[; ;mcc_generated_files/eusart.c: 122: void putch(char txData)
-[v _txData `uc ~T0 @X0 1 r1 ]
-"123
-[; ;mcc_generated_files/eusart.c: 123: {
+[e :U _LCD_Write_4Bit ]
+"86
+[; ;I2C_LCD.c: 86: void LCD_Write_4Bit(unsigned char Nibble)
+[v _Nibble `uc ~T0 @X0 1 r1 ]
+"87
+[; ;I2C_LCD.c: 87: {
 [f ]
-"124
-[; ;mcc_generated_files/eusart.c: 124:     EUSART_Write(txData);
-[e ( _EUSART_Write (1 -> _txData `uc ]
-"125
-[; ;mcc_generated_files/eusart.c: 125: }
+"89
+[; ;I2C_LCD.c: 89:   Nibble |= RS;
+[e =| _Nibble -> _RS `uc ]
+"90
+[; ;I2C_LCD.c: 90:   IO_Expander_Write(Nibble | 0x04);
+[e ( _IO_Expander_Write (1 -> | -> _Nibble `i -> 4 `i `uc ]
+"91
+[; ;I2C_LCD.c: 91:   IO_Expander_Write(Nibble & 0xFB);
+[e ( _IO_Expander_Write (1 -> & -> _Nibble `i -> 251 `i `uc ]
+"92
+[; ;I2C_LCD.c: 92:   Delay(50);
+[e ( _Delay (1 -> -> 50 `i `ui ]
+"93
+[; ;I2C_LCD.c: 93: }
 [e :UE 1581 ]
 }
-"128
-[; ;mcc_generated_files/eusart.c: 128: void EUSART_Receive_ISR(void)
-[v _EUSART_Receive_ISR `(v ~T0 @X0 1 ef ]
-"129
-[; ;mcc_generated_files/eusart.c: 129: {
+"94
+[; ;I2C_LCD.c: 94: void LCD_CMD(unsigned char CMD)
+[v _LCD_CMD `(v ~T0 @X0 1 ef1`uc ]
+"95
+[; ;I2C_LCD.c: 95: {
 {
-[e :U _EUSART_Receive_ISR ]
+[e :U _LCD_CMD ]
+"94
+[; ;I2C_LCD.c: 94: void LCD_CMD(unsigned char CMD)
+[v _CMD `uc ~T0 @X0 1 r1 ]
+"95
+[; ;I2C_LCD.c: 95: {
 [f ]
-"131
-[; ;mcc_generated_files/eusart.c: 131:     eusartRxStatusBuffer[eusartRxHead].status = 0;
-[e = . *U + &U _eusartRxStatusBuffer * -> _eusartRxHead `ux -> -> # *U &U _eusartRxStatusBuffer `ui `ux 1 -> -> 0 `i `uc ]
-"133
-[; ;mcc_generated_files/eusart.c: 133:     if(RC1STAbits.FERR){
-[e $ ! != -> . . _RC1STAbits 0 2 `i -> 0 `i 1583  ]
-{
-"134
-[; ;mcc_generated_files/eusart.c: 134:         eusartRxStatusBuffer[eusartRxHead].ferr = 1;
-[e = . . *U + &U _eusartRxStatusBuffer * -> _eusartRxHead `ux -> -> # *U &U _eusartRxStatusBuffer `ui `ux 0 1 -> -> 1 `i `uc ]
-"135
-[; ;mcc_generated_files/eusart.c: 135:         EUSART_FramingErrorHandler();
-[e ( *U _EUSART_FramingErrorHandler ..  ]
-"136
-[; ;mcc_generated_files/eusart.c: 136:     }
-}
-[e :U 1583 ]
-"138
-[; ;mcc_generated_files/eusart.c: 138:     if(RC1STAbits.OERR){
-[e $ ! != -> . . _RC1STAbits 0 1 `i -> 0 `i 1584  ]
-{
-"139
-[; ;mcc_generated_files/eusart.c: 139:         eusartRxStatusBuffer[eusartRxHead].oerr = 1;
-[e = . . *U + &U _eusartRxStatusBuffer * -> _eusartRxHead `ux -> -> # *U &U _eusartRxStatusBuffer `ui `ux 0 2 -> -> 1 `i `uc ]
-"140
-[; ;mcc_generated_files/eusart.c: 140:         EUSART_OverrunErrorHandler();
-[e ( *U _EUSART_OverrunErrorHandler ..  ]
-"141
-[; ;mcc_generated_files/eusart.c: 141:     }
-}
-[e :U 1584 ]
-"143
-[; ;mcc_generated_files/eusart.c: 143:     if(eusartRxStatusBuffer[eusartRxHead].status){
-[e $ ! != -> . *U + &U _eusartRxStatusBuffer * -> _eusartRxHead `ux -> -> # *U &U _eusartRxStatusBuffer `ui `ux 1 `i -> 0 `i 1585  ]
-{
-"144
-[; ;mcc_generated_files/eusart.c: 144:         EUSART_ErrorHandler();
-[e ( *U _EUSART_ErrorHandler ..  ]
-"145
-[; ;mcc_generated_files/eusart.c: 145:     } else {
-}
-[e $U 1586  ]
-[e :U 1585 ]
-{
-"146
-[; ;mcc_generated_files/eusart.c: 146:         EUSART_RxDataHandler();
-[e ( _EUSART_RxDataHandler ..  ]
-"147
-[; ;mcc_generated_files/eusart.c: 147:     }
-}
-[e :U 1586 ]
-"150
-[; ;mcc_generated_files/eusart.c: 150: }
+"96
+[; ;I2C_LCD.c: 96:   RS = 0;
+[e = _RS -> -> 0 `i `uc ]
+"97
+[; ;I2C_LCD.c: 97:   LCD_Write_4Bit(CMD & 0xF0);
+[e ( _LCD_Write_4Bit (1 -> & -> _CMD `i -> 240 `i `uc ]
+"98
+[; ;I2C_LCD.c: 98:   LCD_Write_4Bit((CMD << 4) & 0xF0);
+[e ( _LCD_Write_4Bit (1 -> & << -> _CMD `i -> 4 `i -> 240 `i `uc ]
+"99
+[; ;I2C_LCD.c: 99: }
 [e :UE 1582 ]
 }
-"152
-[; ;mcc_generated_files/eusart.c: 152: void EUSART_RxDataHandler(void){
-[v _EUSART_RxDataHandler `(v ~T0 @X0 1 ef ]
+"100
+[; ;I2C_LCD.c: 100: void LCD_Write_Char(char Data)
+[v _LCD_Write_Char `(v ~T0 @X0 1 ef1`uc ]
+"101
+[; ;I2C_LCD.c: 101: {
 {
-[e :U _EUSART_RxDataHandler ]
+[e :U _LCD_Write_Char ]
+"100
+[; ;I2C_LCD.c: 100: void LCD_Write_Char(char Data)
+[v _Data `uc ~T0 @X0 1 r1 ]
+"101
+[; ;I2C_LCD.c: 101: {
 [f ]
-"154
-[; ;mcc_generated_files/eusart.c: 154:     eusartRxBuffer[eusartRxHead++] = RC1REG;
-[e = *U + &U _eusartRxBuffer * -> ++ _eusartRxHead -> -> 1 `i `Vuc `ux -> -> # *U &U _eusartRxBuffer `ui `ux _RC1REG ]
-"155
-[; ;mcc_generated_files/eusart.c: 155:     int test =eusartRxHead;
-[v _test `i ~T0 @X0 1 a ]
-[e = _test -> _eusartRxHead `i ]
-"156
-[; ;mcc_generated_files/eusart.c: 156:     if(sizeof(eusartRxBuffer) <= eusartRxHead)
-[e $ ! <= -> # _eusartRxBuffer `ui -> _eusartRxHead `ui 1588  ]
-"157
-[; ;mcc_generated_files/eusart.c: 157:     {
-{
-"158
-[; ;mcc_generated_files/eusart.c: 158:         eusartRxHead = 0;
-[e = _eusartRxHead -> -> 0 `i `uc ]
-"159
-[; ;mcc_generated_files/eusart.c: 159:     }
+"102
+[; ;I2C_LCD.c: 102:   RS = 1;
+[e = _RS -> -> 1 `i `uc ]
+"103
+[; ;I2C_LCD.c: 103:   LCD_Write_4Bit(Data & 0xF0);
+[e ( _LCD_Write_4Bit (1 -> & -> _Data `i -> 240 `i `uc ]
+"104
+[; ;I2C_LCD.c: 104:   LCD_Write_4Bit((Data << 4) & 0xF0);
+[e ( _LCD_Write_4Bit (1 -> & << -> _Data `i -> 4 `i -> 240 `i `uc ]
+"105
+[; ;I2C_LCD.c: 105: }
+[e :UE 1583 ]
 }
+"106
+[; ;I2C_LCD.c: 106: void LCD_Write_String(char* Str)
+[v _LCD_Write_String `(v ~T0 @X0 1 ef1`*uc ]
+"107
+[; ;I2C_LCD.c: 107: {
+{
+[e :U _LCD_Write_String ]
+"106
+[; ;I2C_LCD.c: 106: void LCD_Write_String(char* Str)
+[v _Str `*uc ~T0 @X0 1 r1 ]
+"107
+[; ;I2C_LCD.c: 107: {
+[f ]
+"108
+[; ;I2C_LCD.c: 108:   for(int i=0; Str[i]!='\0'; i++)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 1588  ]
+[e :U 1585 ]
+"109
+[; ;I2C_LCD.c: 109:     LCD_Write_Char(Str[i]);
+[e ( _LCD_Write_Char (1 *U + _Str * -> _i `x -> -> # *U _Str `i `x ]
+[e ++ _i -> 1 `i ]
 [e :U 1588 ]
-"160
-[; ;mcc_generated_files/eusart.c: 160:     eusartRxCount++;
-[e ++ _eusartRxCount -> -> 1 `i `Vuc ]
-"162
-[; ;mcc_generated_files/eusart.c: 162: }
-[e :UE 1587 ]
+[e $ != -> *U + _Str * -> _i `x -> -> # *U _Str `i `x `ui -> 0 `ui 1585  ]
+[e :U 1586 ]
 }
-"164
-[; ;mcc_generated_files/eusart.c: 164: void EUSART_DefaultFramingErrorHandler(void){}
-[v _EUSART_DefaultFramingErrorHandler `(v ~T0 @X0 1 ef ]
+"110
+[; ;I2C_LCD.c: 110: }
+[e :UE 1584 ]
+}
+"111
+[; ;I2C_LCD.c: 111: void LCD_Set_Cursor(unsigned char ROW, unsigned char COL)
+[v _LCD_Set_Cursor `(v ~T0 @X0 1 ef2`uc`uc ]
+"112
+[; ;I2C_LCD.c: 112: {
 {
-[e :U _EUSART_DefaultFramingErrorHandler ]
+[e :U _LCD_Set_Cursor ]
+"111
+[; ;I2C_LCD.c: 111: void LCD_Set_Cursor(unsigned char ROW, unsigned char COL)
+[v _ROW `uc ~T0 @X0 1 r1 ]
+[v _COL `uc ~T0 @X0 1 r2 ]
+"112
+[; ;I2C_LCD.c: 112: {
 [f ]
+"113
+[; ;I2C_LCD.c: 113:   switch(ROW)
+[e $U 1591  ]
+"114
+[; ;I2C_LCD.c: 114:   {
+{
+"115
+[; ;I2C_LCD.c: 115:     case 2:
+[e :U 1592 ]
+"116
+[; ;I2C_LCD.c: 116:       LCD_CMD(0xC0 + COL-1);
+[e ( _LCD_CMD (1 -> - + -> 192 `i -> _COL `i -> 1 `i `uc ]
+"117
+[; ;I2C_LCD.c: 117:       break;
+[e $U 1590  ]
+"118
+[; ;I2C_LCD.c: 118:     case 3:
+[e :U 1593 ]
+"119
+[; ;I2C_LCD.c: 119:       LCD_CMD(0x94 + COL-1);
+[e ( _LCD_CMD (1 -> - + -> 148 `i -> _COL `i -> 1 `i `uc ]
+"120
+[; ;I2C_LCD.c: 120:       break;
+[e $U 1590  ]
+"121
+[; ;I2C_LCD.c: 121:     case 4:
+[e :U 1594 ]
+"122
+[; ;I2C_LCD.c: 122:       LCD_CMD(0xD4 + COL-1);
+[e ( _LCD_CMD (1 -> - + -> 212 `i -> _COL `i -> 1 `i `uc ]
+"123
+[; ;I2C_LCD.c: 123:       break;
+[e $U 1590  ]
+"125
+[; ;I2C_LCD.c: 125:     default:
+[e :U 1595 ]
+"126
+[; ;I2C_LCD.c: 126:       LCD_CMD(0x80 + COL-1);
+[e ( _LCD_CMD (1 -> - + -> 128 `i -> _COL `i -> 1 `i `uc ]
+"127
+[; ;I2C_LCD.c: 127:   }
+}
+[e $U 1590  ]
+[e :U 1591 ]
+[e [\ -> _ROW `i , $ -> 2 `i 1592
+ , $ -> 3 `i 1593
+ , $ -> 4 `i 1594
+ 1595 ]
+[e :U 1590 ]
+"128
+[; ;I2C_LCD.c: 128: }
 [e :UE 1589 ]
 }
-"166
-[; ;mcc_generated_files/eusart.c: 166: void EUSART_DefaultOverrunErrorHandler(void){
-[v _EUSART_DefaultOverrunErrorHandler `(v ~T0 @X0 1 ef ]
+"129
+[; ;I2C_LCD.c: 129: void Backlight()
+[v _Backlight `(v ~T0 @X0 1 ef ]
+"130
+[; ;I2C_LCD.c: 130: {
 {
-[e :U _EUSART_DefaultOverrunErrorHandler ]
+[e :U _Backlight ]
 [f ]
-"169
-[; ;mcc_generated_files/eusart.c: 169:     RC1STAbits.CREN = 0;
-[e = . . _RC1STAbits 0 4 -> -> 0 `i `uc ]
-"170
-[; ;mcc_generated_files/eusart.c: 170:     RC1STAbits.CREN = 1;
-[e = . . _RC1STAbits 0 4 -> -> 1 `i `uc ]
-"172
-[; ;mcc_generated_files/eusart.c: 172: }
-[e :UE 1590 ]
+"131
+[; ;I2C_LCD.c: 131:   BackLight_State = 0x08;
+[e = _BackLight_State -> -> 8 `i `uc ]
+"132
+[; ;I2C_LCD.c: 132:   IO_Expander_Write(0);
+[e ( _IO_Expander_Write (1 -> -> 0 `i `uc ]
+"133
+[; ;I2C_LCD.c: 133: }
+[e :UE 1596 ]
 }
-"174
-[; ;mcc_generated_files/eusart.c: 174: void EUSART_DefaultErrorHandler(void){
-[v _EUSART_DefaultErrorHandler `(v ~T0 @X0 1 ef ]
+"134
+[; ;I2C_LCD.c: 134: void noBacklight()
+[v _noBacklight `(v ~T0 @X0 1 ef ]
+"135
+[; ;I2C_LCD.c: 135: {
 {
-[e :U _EUSART_DefaultErrorHandler ]
+[e :U _noBacklight ]
 [f ]
-"175
-[; ;mcc_generated_files/eusart.c: 175:     EUSART_RxDataHandler();
-[e ( _EUSART_RxDataHandler ..  ]
-"176
-[; ;mcc_generated_files/eusart.c: 176: }
-[e :UE 1591 ]
+"136
+[; ;I2C_LCD.c: 136:   BackLight_State = 0x00;
+[e = _BackLight_State -> -> 0 `i `uc ]
+"137
+[; ;I2C_LCD.c: 137:   IO_Expander_Write(0);
+[e ( _IO_Expander_Write (1 -> -> 0 `i `uc ]
+"138
+[; ;I2C_LCD.c: 138: }
+[e :UE 1597 ]
 }
-"178
-[; ;mcc_generated_files/eusart.c: 178: void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void)){
-[v _EUSART_SetFramingErrorHandler `(v ~T0 @X0 1 ef1`*F12049 ]
+"139
+[; ;I2C_LCD.c: 139: void LCD_SL()
+[v _LCD_SL `(v ~T0 @X0 1 ef ]
+"140
+[; ;I2C_LCD.c: 140: {
 {
-[e :U _EUSART_SetFramingErrorHandler ]
-[v _interruptHandler `*F12051 ~T0 @X0 1 r1 ]
+[e :U _LCD_SL ]
 [f ]
-"179
-[; ;mcc_generated_files/eusart.c: 179:     EUSART_FramingErrorHandler = interruptHandler;
-[e = _EUSART_FramingErrorHandler _interruptHandler ]
-"180
-[; ;mcc_generated_files/eusart.c: 180: }
-[e :UE 1592 ]
+"141
+[; ;I2C_LCD.c: 141:   LCD_CMD(0x18);
+[e ( _LCD_CMD (1 -> -> 24 `i `uc ]
+"142
+[; ;I2C_LCD.c: 142:   Delay(40);
+[e ( _Delay (1 -> -> 40 `i `ui ]
+"143
+[; ;I2C_LCD.c: 143: }
+[e :UE 1598 ]
 }
-"182
-[; ;mcc_generated_files/eusart.c: 182: void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void)){
-[v _EUSART_SetOverrunErrorHandler `(v ~T0 @X0 1 ef1`*F12054 ]
+"144
+[; ;I2C_LCD.c: 144: void LCD_SR()
+[v _LCD_SR `(v ~T0 @X0 1 ef ]
+"145
+[; ;I2C_LCD.c: 145: {
 {
-[e :U _EUSART_SetOverrunErrorHandler ]
-[v _interruptHandler `*F12056 ~T0 @X0 1 r1 ]
+[e :U _LCD_SR ]
 [f ]
-"183
-[; ;mcc_generated_files/eusart.c: 183:     EUSART_OverrunErrorHandler = interruptHandler;
-[e = _EUSART_OverrunErrorHandler _interruptHandler ]
-"184
-[; ;mcc_generated_files/eusart.c: 184: }
-[e :UE 1593 ]
+"146
+[; ;I2C_LCD.c: 146:   LCD_CMD(0x1C);
+[e ( _LCD_CMD (1 -> -> 28 `i `uc ]
+"147
+[; ;I2C_LCD.c: 147:   Delay(40);
+[e ( _Delay (1 -> -> 40 `i `ui ]
+"148
+[; ;I2C_LCD.c: 148: }
+[e :UE 1599 ]
 }
-"186
-[; ;mcc_generated_files/eusart.c: 186: void EUSART_SetErrorHandler(void (* interruptHandler)(void)){
-[v _EUSART_SetErrorHandler `(v ~T0 @X0 1 ef1`*F12059 ]
+"149
+[; ;I2C_LCD.c: 149: void LCD_Clear()
+[v _LCD_Clear `(v ~T0 @X0 1 ef ]
+"150
+[; ;I2C_LCD.c: 150: {
 {
-[e :U _EUSART_SetErrorHandler ]
-[v _interruptHandler `*F12061 ~T0 @X0 1 r1 ]
+[e :U _LCD_Clear ]
 [f ]
-"187
-[; ;mcc_generated_files/eusart.c: 187:     EUSART_ErrorHandler = interruptHandler;
-[e = _EUSART_ErrorHandler _interruptHandler ]
-"188
-[; ;mcc_generated_files/eusart.c: 188: }
-[e :UE 1594 ]
+"151
+[; ;I2C_LCD.c: 151:   LCD_CMD(0x01);
+[e ( _LCD_CMD (1 -> -> 1 `i `uc ]
+"152
+[; ;I2C_LCD.c: 152:   Delay(40);
+[e ( _Delay (1 -> -> 40 `i `ui ]
+"153
+[; ;I2C_LCD.c: 153: }
+[e :UE 1600 ]
 }
-"191
-[; ;mcc_generated_files/eusart.c: 191: void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
-[v _EUSART_SetRxInterruptHandler `(v ~T0 @X0 1 ef1`*F12064 ]
+"154
+[; ;I2C_LCD.c: 154: void Delay(unsigned int counter){
+[v _Delay `(v ~T0 @X0 1 ef1`ui ]
 {
-[e :U _EUSART_SetRxInterruptHandler ]
-[v _interruptHandler `*F12066 ~T0 @X0 1 r1 ]
+[e :U _Delay ]
+[v _counter `ui ~T0 @X0 1 r1 ]
 [f ]
-"192
-[; ;mcc_generated_files/eusart.c: 192:     EUSART_RxDefaultInterruptHandler = interruptHandler;
-[e = _EUSART_RxDefaultInterruptHandler _interruptHandler ]
-"193
-[; ;mcc_generated_files/eusart.c: 193: }
-[e :UE 1595 ]
+"155
+[; ;I2C_LCD.c: 155:   while(counter>0) counter--;
+[e $U 1602  ]
+[e :U 1603 ]
+[e -- _counter -> -> 1 `i `ui ]
+[e :U 1602 ]
+[e $ > _counter -> -> 0 `i `ui 1603  ]
+[e :U 1604 ]
+"156
+[; ;I2C_LCD.c: 156: }
+[e :UE 1601 ]
 }

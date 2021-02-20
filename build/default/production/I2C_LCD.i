@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/eusart.c"
+# 1 "I2C_LCD.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,9 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/eusart.c" 2
-# 1 "mcc_generated_files/eusart.h" 1
-# 54 "mcc_generated_files/eusart.h"
+# 1 "I2C_LCD.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -19666,473 +19664,185 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\xc.h" 2 3
-# 54 "mcc_generated_files/eusart.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdbool.h" 1 3
-# 55 "mcc_generated_files/eusart.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-# 173 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 209 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 139 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int32_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint32_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 139 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdint.h" 2 3
-# 56 "mcc_generated_files/eusart.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 1 3
-
-
-
-
-
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 137 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 246 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 399 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 57 "mcc_generated_files/eusart.h" 2
-# 76 "mcc_generated_files/eusart.h"
-typedef union {
-    struct {
-        unsigned perr : 1;
-        unsigned ferr : 1;
-        unsigned oerr : 1;
-        unsigned reserved : 5;
-    };
-    uint8_t status;
-}eusart_status_t;
-
-
-
-
-extern volatile uint8_t eusartTxBufferRemaining;
-extern volatile uint8_t eusartRxCount;
-
-
-
-
-extern void (*EUSART_RxDefaultInterruptHandler)(void);
-# 117 "mcc_generated_files/eusart.h"
-void EUSART_Initialize(void);
-# 165 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_ready(void);
-# 213 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_rx_ready(void);
-# 260 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_done(void);
-# 308 "mcc_generated_files/eusart.h"
-eusart_status_t EUSART_get_last_status(void);
-# 328 "mcc_generated_files/eusart.h"
-uint8_t EUSART_Read(void);
-# 348 "mcc_generated_files/eusart.h"
-void EUSART_Write(uint8_t txData);
-# 370 "mcc_generated_files/eusart.h"
-void EUSART_Receive_ISR(void);
-# 391 "mcc_generated_files/eusart.h"
-void EUSART_RxDataHandler(void);
-# 409 "mcc_generated_files/eusart.h"
-void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 427 "mcc_generated_files/eusart.h"
-void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 445 "mcc_generated_files/eusart.h"
-void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 466 "mcc_generated_files/eusart.h"
-void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 1 "mcc_generated_files/eusart.c" 2
-
-
-
-
-
-
-
-
-volatile uint8_t eusartRxHead = 0;
-volatile uint8_t eusartRxTail = 0;
-volatile uint8_t eusartRxBuffer[39];
-volatile eusart_status_t eusartRxStatusBuffer[39];
-volatile uint8_t eusartRxCount;
-volatile eusart_status_t eusartRxLastError;
-
-
-
-
-void (*EUSART_RxDefaultInterruptHandler)(void);
-
-void (*EUSART_FramingErrorHandler)(void);
-void (*EUSART_OverrunErrorHandler)(void);
-void (*EUSART_ErrorHandler)(void);
-
-void EUSART_DefaultFramingErrorHandler(void);
-void EUSART_DefaultOverrunErrorHandler(void);
-void EUSART_DefaultErrorHandler(void);
-
-void EUSART_Initialize(void)
+# 1 "I2C_LCD.c" 2
+
+# 1 "./I2C_LCD.h" 1
+# 25 "./I2C_LCD.h"
+void I2C_Master_Wait();
+void I2C_Master_Start();
+void I2C_Master_RepeatedStart();
+void I2C_Master_Stop();
+void I2C_ACK();
+void I2C_NACK();
+unsigned char I2C_Master_Write(unsigned char data);
+unsigned char I2C_Read_Byte(void);
+
+void LCD_Init(unsigned char I2C_Add);
+void IO_Expander_Write(unsigned char Data);
+void LCD_Write_4Bit(unsigned char Nibble);
+void LCD_CMD(unsigned char CMD);
+void LCD_Set_Cursor(unsigned char ROW, unsigned char COL);
+void LCD_Write_Char(char);
+void LCD_Write_String(char*);
+void Backlight();
+void noBacklight();
+void LCD_SR();
+void LCD_SL();
+void LCD_Clear();
+void Delay(unsigned int counter);
+# 2 "I2C_LCD.c" 2
+
+unsigned char RS, i2c_add, BackLight_State = 0x08;
+
+
+void I2C_Master_Wait()
+{
+  while ((SSP1STAT & 0x04) || (SSP1CON2 & 0x1F));
+}
+void I2C_Master_Start()
+{
+  I2C_Master_Wait();
+  SSP1CON2bits.SEN = 1;
+}
+void I2C_Master_RepeatedStart()
+{
+  I2C_Master_Wait();
+  SSP1CON2bits.RSEN = 1;
+}
+void I2C_Master_Stop()
+{
+  I2C_Master_Wait();
+  SSP1CON2bits.PEN = 1;
+}
+void I2C_ACK(void)
+{
+  SSP1CON2bits.ACKDT = 0;
+  I2C_Master_Wait();
+  SSP1CON2bits.ACKEN = 1;
+}
+void I2C_NACK(void)
+{
+  SSP1CON2bits.ACKDT = 1;
+  I2C_Master_Wait();
+  SSP1CON2bits.ACKEN = 1;
+}
+unsigned char I2C_Master_Write(unsigned char data){
+  I2C_Master_Wait();
+  SSP1BUF = data;
+  while(!PIR3bits.SSP1IF);
+  PIR3bits.SSP1IF = 0;
+  return SSP1CON2bits.ACKSTAT;
+}
+unsigned char I2C_Read_Byte(void)
 {
 
-    PIE3bits.RCIE = 0;
-    EUSART_SetRxInterruptHandler(EUSART_Receive_ISR);
-
-
-
-    BAUD1CON = 0x08;
-
-
-    RC1STA = 0x90;
-
-
-    TX1STA = 0x24;
-
-
-    SP1BRGL = 0x19;
-
-
-    SP1BRGH = 0x00;
-
-
-    EUSART_SetFramingErrorHandler(EUSART_DefaultFramingErrorHandler);
-    EUSART_SetOverrunErrorHandler(EUSART_DefaultOverrunErrorHandler);
-    EUSART_SetErrorHandler(EUSART_DefaultErrorHandler);
-
-    eusartRxLastError.status = 0;
-
-
-    eusartRxHead = 0;
-    eusartRxTail = 0;
-    eusartRxCount = 0;
-
-
-    PIE3bits.RCIE = 1;
+  I2C_Master_Wait();
+  SSP1CON2bits.RCEN = 1;
+  while(!PIR3bits.SSP1IF);
+  PIR3bits.SSP1IF = 0;
+  I2C_Master_Wait();
+  return SSP1BUF;
 }
 
-_Bool EUSART_is_tx_ready(void)
+
+
+void LCD_Init(unsigned char I2C_Add)
 {
-    return (_Bool)(PIR3bits.TXIF && TX1STAbits.TXEN);
+  i2c_add = I2C_Add;
+  IO_Expander_Write(0x00);
+  Delay(3000);
+  LCD_CMD(0x03);
+  Delay(500);
+  LCD_CMD(0x03);
+  Delay(500);
+  LCD_CMD(0x03);
+  Delay(500);
+  LCD_CMD(0x02);
+  Delay(500);
+  LCD_CMD(0x20 | (2 << 2));
+  Delay(5000);
+  LCD_CMD(0x0C);
+  Delay(5000);
+  LCD_CMD(0x01);
+  Delay(5000);
+  LCD_CMD(0x04 | 0x02);
+  Delay(5000);
 }
-
-_Bool EUSART_is_rx_ready(void)
+void IO_Expander_Write(unsigned char Data)
 {
-    return (eusartRxCount ? 1 : 0);
+  I2C_Master_Start();
+  I2C_Master_Write(i2c_add);
+  I2C_Master_Write(Data | BackLight_State);
+  I2C_Master_Stop();
 }
-
-_Bool EUSART_is_tx_done(void)
-{
-    return TX1STAbits.TRMT;
-}
-
-eusart_status_t EUSART_get_last_status(void){
-    return eusartRxLastError;
-}
-
-uint8_t EUSART_Read(void)
-{
-    uint8_t readValue = 0;
-
-    while(0 == eusartRxCount)
-    {
-    }
-
-    eusartRxLastError = eusartRxStatusBuffer[eusartRxTail];
-
-    readValue = eusartRxBuffer[eusartRxTail++];
-    if(sizeof(eusartRxBuffer) <= eusartRxTail)
-    {
-        eusartRxTail = 0;
-    }
-    PIE3bits.RCIE = 0;
-    eusartRxCount--;
-    PIE3bits.RCIE = 1;
-
-    return readValue;
-}
-
-void EUSART_Write(uint8_t txData)
-{
-    while(0 == PIR3bits.TXIF)
-    {
-    }
-
-    TX1REG = txData;
-}
-
-char getch(void)
-{
-    return EUSART_Read();
-}
-
-void putch(char txData)
-{
-    EUSART_Write(txData);
-}
-
-
-void EUSART_Receive_ISR(void)
+void LCD_Write_4Bit(unsigned char Nibble)
 {
 
-    eusartRxStatusBuffer[eusartRxHead].status = 0;
-
-    if(RC1STAbits.FERR){
-        eusartRxStatusBuffer[eusartRxHead].ferr = 1;
-        EUSART_FramingErrorHandler();
-    }
-
-    if(RC1STAbits.OERR){
-        eusartRxStatusBuffer[eusartRxHead].oerr = 1;
-        EUSART_OverrunErrorHandler();
-    }
-
-    if(eusartRxStatusBuffer[eusartRxHead].status){
-        EUSART_ErrorHandler();
-    } else {
-        EUSART_RxDataHandler();
-    }
-
-
+  Nibble |= RS;
+  IO_Expander_Write(Nibble | 0x04);
+  IO_Expander_Write(Nibble & 0xFB);
+  Delay(50);
 }
-
-void EUSART_RxDataHandler(void){
-
-    eusartRxBuffer[eusartRxHead++] = RC1REG;
-    int test =eusartRxHead;
-    if(sizeof(eusartRxBuffer) <= eusartRxHead)
-    {
-        eusartRxHead = 0;
-    }
-    eusartRxCount++;
-
+void LCD_CMD(unsigned char CMD)
+{
+  RS = 0;
+  LCD_Write_4Bit(CMD & 0xF0);
+  LCD_Write_4Bit((CMD << 4) & 0xF0);
 }
-
-void EUSART_DefaultFramingErrorHandler(void){}
-
-void EUSART_DefaultOverrunErrorHandler(void){
-
-
-    RC1STAbits.CREN = 0;
-    RC1STAbits.CREN = 1;
-
+void LCD_Write_Char(char Data)
+{
+  RS = 1;
+  LCD_Write_4Bit(Data & 0xF0);
+  LCD_Write_4Bit((Data << 4) & 0xF0);
 }
-
-void EUSART_DefaultErrorHandler(void){
-    EUSART_RxDataHandler();
+void LCD_Write_String(char* Str)
+{
+  for(int i=0; Str[i]!='\0'; i++)
+    LCD_Write_Char(Str[i]);
 }
+void LCD_Set_Cursor(unsigned char ROW, unsigned char COL)
+{
+  switch(ROW)
+  {
+    case 2:
+      LCD_CMD(0xC0 + COL-1);
+      break;
+    case 3:
+      LCD_CMD(0x94 + COL-1);
+      break;
+    case 4:
+      LCD_CMD(0xD4 + COL-1);
+      break;
 
-void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void)){
-    EUSART_FramingErrorHandler = interruptHandler;
+    default:
+      LCD_CMD(0x80 + COL-1);
+  }
 }
-
-void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void)){
-    EUSART_OverrunErrorHandler = interruptHandler;
+void Backlight()
+{
+  BackLight_State = 0x08;
+  IO_Expander_Write(0);
 }
-
-void EUSART_SetErrorHandler(void (* interruptHandler)(void)){
-    EUSART_ErrorHandler = interruptHandler;
+void noBacklight()
+{
+  BackLight_State = 0x00;
+  IO_Expander_Write(0);
 }
-
-
-void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
-    EUSART_RxDefaultInterruptHandler = interruptHandler;
+void LCD_SL()
+{
+  LCD_CMD(0x18);
+  Delay(40);
+}
+void LCD_SR()
+{
+  LCD_CMD(0x1C);
+  Delay(40);
+}
+void LCD_Clear()
+{
+  LCD_CMD(0x01);
+  Delay(40);
+}
+void Delay(unsigned int counter){
+  while(counter>0) counter--;
 }

@@ -16,7 +16,8 @@
 
 
 # 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -19674,17 +19675,19 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
+# 3 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
+# 4 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
 # 122 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 # 134 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
+
+void master_init(void);
+# 5 "./mcc_generated_files/mcc.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdint.h" 3
@@ -19769,10 +19772,10 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "./mcc_generated_files/mcc.h" 2
+# 6 "./mcc_generated_files/mcc.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
+# 7 "./mcc_generated_files/mcc.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\conio.h" 1 3
 
@@ -19805,10 +19808,10 @@ extern __bit kbhit(void);
 
 extern char * cgets(char *);
 extern void cputs(const char *);
-# 54 "./mcc_generated_files/mcc.h" 2
+# 8 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/interrupt_manager.h" 1
-# 55 "./mcc_generated_files/mcc.h" 2
+# 9 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr0.h" 1
 # 100 "./mcc_generated_files/tmr0.h"
@@ -19825,7 +19828,7 @@ void TMR0_WriteTimer(uint8_t timerVal);
 void TMR0_Reload(uint8_t periodVal);
 # 308 "./mcc_generated_files/tmr0.h"
 _Bool TMR0_HasOverflowOccured(void);
-# 56 "./mcc_generated_files/mcc.h" 2
+# 10 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/eusart.h" 1
 # 57 "./mcc_generated_files/eusart.h"
@@ -20015,14 +20018,44 @@ void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 # 466 "./mcc_generated_files/eusart.h"
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 57 "./mcc_generated_files/mcc.h" 2
-# 71 "./mcc_generated_files/mcc.h"
+# 11 "./mcc_generated_files/mcc.h" 2
+# 26 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 84 "./mcc_generated_files/mcc.h"
+# 39 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 97 "./mcc_generated_files/mcc.h"
+# 52 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
+
+void master_init(void);
 # 9 "main.c" 2
+
+# 1 "./I2C_LCD.h" 1
+# 25 "./I2C_LCD.h"
+void I2C_Master_Wait();
+void I2C_Master_Start();
+void I2C_Master_RepeatedStart();
+void I2C_Master_Stop();
+void I2C_ACK();
+void I2C_NACK();
+unsigned char I2C_Master_Write(unsigned char data);
+unsigned char I2C_Read_Byte(void);
+
+void LCD_Init(unsigned char I2C_Add);
+void IO_Expander_Write(unsigned char Data);
+void LCD_Write_4Bit(unsigned char Nibble);
+void LCD_CMD(unsigned char CMD);
+void LCD_Set_Cursor(unsigned char ROW, unsigned char COL);
+void LCD_Write_Char(char);
+void LCD_Write_String(char*);
+void Backlight();
+void noBacklight();
+void LCD_SR();
+void LCD_SL();
+void LCD_Clear();
+void Delay(unsigned int counter);
+# 10 "main.c" 2
+
+
 
 
 
@@ -20101,7 +20134,9 @@ void main(void)
             }
             BadBetteryFilter();
 
-
+            LCD_Init(0x4E);
+            LCD_Set_Cursor(1, 1);
+            LCD_Write_String(((char)j));
         }
     }
 }

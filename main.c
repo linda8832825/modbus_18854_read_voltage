@@ -7,10 +7,13 @@
 
 
 #include "mcc_generated_files/mcc.h"
+#include "I2C_LCD.h"
 
 #define VoltageSet_H          3500          //充電最高點
 #define VoltageSet_L          2500          //充電最低點
-#define Voltage_difference    150          //單電芯壓差容忍值
+#define Voltage_difference    150           //單電芯壓差容忍值
+#define SLAVE_ADD 0x4E                      //螢幕的ID
+
 typedef struct tagCoulomb_Data_struct {
     unsigned int   ID  ;  //庫倫計回的值
     unsigned int   Features ; //功能  庫倫計回的值
@@ -84,7 +87,9 @@ void main(void)
             }
             BadBetteryFilter();
             //顯示誰是壞電池 和最高電池的電壓多少和壞電池壓差多少
-            ////////////////////////////////////////////////////////
+            LCD_Init(SLAVE_ADD); // Initialize LCD module with I2C address = 01001110
+            LCD_Set_Cursor(1, 1);
+            LCD_Write_String(((char)j));/////////////
         }
     }
 }
