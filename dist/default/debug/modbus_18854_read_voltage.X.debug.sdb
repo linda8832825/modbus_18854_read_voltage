@@ -15,9 +15,9 @@
 [v _main main `(v  1 e 1 0 ]
 "92
 [v _Get_Voltage Get_Voltage `(v  1 e 1 0 ]
-"100
-[v _quickSort quickSort `(v  1 e 1 0 ]
 "119
+[v _Sort Sort `(v  1 e 1 0 ]
+"135
 [v _BadBetteryFilter BadBetteryFilter `(v  1 e 1 0 ]
 "29 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -266,8 +266,6 @@
 [v _Voltage_sort Voltage_sort `[17]ui  1 e 34 0 ]
 "45
 [v _badBettery badBettery `[17]ui  1 e 34 0 ]
-"46
-[v _mid mid `ui  1 e 2 0 ]
 "9 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
 [v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
 "10
@@ -397,28 +395,21 @@
 [v EUSART_Read@readValue readValue `uc  1 a 1 4 ]
 "106
 } 0
-"119 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+"135 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
 [v _BadBetteryFilter BadBetteryFilter `(v  1 e 1 0 ]
 {
-"123
-[v BadBetteryFilter@k k `i  1 a 2 16 ]
-"126
+"149
+[v BadBetteryFilter@k k `i  1 a 2 3 ]
+"152
 } 0
-"100
-[v _quickSort quickSort `(v  1 e 1 0 ]
+"119
+[v _Sort Sort `(v  1 e 1 0 ]
 {
-"101
-[v quickSort@i i `i  1 a 2 8 ]
-"102
-[v quickSort@j j `i  1 a 2 6 ]
-"104
-[v quickSort@key key `i  1 a 2 4 ]
-"103
-[v quickSort@temp temp `i  1 a 2 2 ]
-"100
-[v quickSort@left left `i  1 p 2 3 ]
-[v quickSort@right right `i  1 p 2 5 ]
-"118
+"120
+[v Sort@j j `i  1 a 2 10 ]
+[v Sort@i i `i  1 a 2 8 ]
+[v Sort@tmp tmp `i  1 a 2 4 ]
+"134
 } 0
 "56 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]

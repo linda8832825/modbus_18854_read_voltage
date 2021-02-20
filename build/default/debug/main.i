@@ -20067,7 +20067,7 @@ void main(void)
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
 
-    unsigned char out[8]={0x01,0x03,0x00,0x03,0x00,0x11,0x9F,0x9C};
+    unsigned char out[8]={0x01,0x03,0x00,0x03,0x00,0x11,0x75,0xC6};
     int i,j,a=0;
 
     int H_L_counter=0;
@@ -20097,8 +20097,8 @@ void main(void)
                 Voltage_sort[j] = Coulomb_Data.Voltage[j];
             }
             for(j=0;j<=17;j++){
-                if(Coulomb_Data.Voltage[j]>=3500) PORTAbits.RA0=1;
-                if(Coulomb_Data.Voltage[j]<=2500) PORTAbits.RA1=1;
+                if(Coulomb_Data.Voltage[j]>=3500) PORTAbits.RA2=1;
+                if(Coulomb_Data.Voltage[j]<=2500) PORTAbits.RA3=1;
             }
             BadBetteryFilter();
 
@@ -20114,29 +20114,26 @@ void Get_Voltage(int k) {
 
 
 }
-void quickSort(int left,int right){
-    int i = left;
-    int j = right;
-    int temp = 0;
-    int key = Voltage_sort[left] ;
-    while(i != j){
-        while((Voltage_sort[j] > key) && (i < j)) j -= 1;
-        while((Voltage_sort[i] <= key) && (i < j)) i += 1;
-        if(i < j) {
-            temp = Voltage_sort[i];
-            Voltage_sort[i] = Voltage_sort[j];
-            Voltage_sort[j] = temp;
+# 119 "main.c"
+void Sort(){
+    int i, j, tmp;
+    int n = 17;
+    for(i = n-1; i > 0; i--)
+    {
+        for(j = 0; j <= i-1; j++)
+        {
+            if( Voltage_sort[j] > Voltage_sort[j+1])
+            {
+                tmp = Voltage_sort [j];
+                Voltage_sort[j] = Voltage_sort[j+1];
+                Voltage_sort[j+1] = tmp;
+            }
         }
     }
-
-    Voltage_sort[left] = Voltage_sort[i];
-    Voltage_sort[i] = key;
-    mid=i;
 }
 void BadBetteryFilter(){
-    quickSort(0,17);
-    quickSort(0, mid-1);
-    quickSort(mid+1, 17);
+    Sort();
+# 149 "main.c"
     for(int k=0;k<=17;k++){
         if((Voltage_sort[16]-Coulomb_Data.Voltage[k])>=150) badBettery[k]=1;
     }

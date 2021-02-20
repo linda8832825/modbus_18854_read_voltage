@@ -1664,15 +1664,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i F12071
 :U ..
 "53
-[; ;main.c: 53:     unsigned char out[8]={0x01,0x03,0x00,0x03,0x00,0x11,0x9F,0x9C};
+[; ;main.c: 53:     unsigned char out[8]={0x01,0x03,0x00,0x03,0x00,0x11,0x75,0xC6};
 -> -> 1 `i `uc
 -> -> 3 `i `uc
 -> -> 0 `i `uc
 -> -> 3 `i `uc
 -> -> 0 `i `uc
 -> -> 17 `i `uc
--> -> 159 `i `uc
--> -> 156 `i `uc
+-> -> 117 `i `uc
+-> -> 198 `i `uc
 ..
 ]
 [v _out `uc ~T0 @X0 -> 8 `i a ]
@@ -1802,14 +1802,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1590 ]
 {
 "83
-[; ;main.c: 83:                 if(Coulomb_Data.Voltage[j]>=3500) PORTAbits.RA0=1;
+[; ;main.c: 83:                 if(Coulomb_Data.Voltage[j]>=3500) PORTAbits.RA2=1;
 [e $ ! >= *U + &U . _Coulomb_Data 9 * -> -> _j `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 3500 `i `ui 1593  ]
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
 [e :U 1593 ]
 "84
-[; ;main.c: 84:                 if(Coulomb_Data.Voltage[j]<=2500) PORTAbits.RA1=1;
+[; ;main.c: 84:                 if(Coulomb_Data.Voltage[j]<=2500) PORTAbits.RA3=1;
 [e $ ! <= *U + &U . _Coulomb_Data 9 * -> -> _j `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 2500 `i `ui 1594  ]
-[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
 [e :U 1594 ]
 "85
 [; ;main.c: 85:             }
@@ -1849,126 +1849,109 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 99: }
 [e :UE 1595 ]
 }
-"100
-[; ;main.c: 100: void quickSort(int left,int right){
-[v _quickSort `(v ~T0 @X0 1 ef2`i`i ]
+"119
+[; ;main.c: 119: void Sort(){
+[v _Sort `(v ~T0 @X0 1 ef ]
 {
-[e :U _quickSort ]
-[v _left `i ~T0 @X0 1 r1 ]
-[v _right `i ~T0 @X0 1 r2 ]
+[e :U _Sort ]
 [f ]
-"101
-[; ;main.c: 101:     int i = left;
+"120
+[; ;main.c: 120:     int i, j, tmp;
 [v _i `i ~T0 @X0 1 a ]
-[e = _i _left ]
-"102
-[; ;main.c: 102:     int j = right;
 [v _j `i ~T0 @X0 1 a ]
-[e = _j _right ]
-"103
-[; ;main.c: 103:     int temp = 0;
-[v _temp `i ~T0 @X0 1 a ]
-[e = _temp -> 0 `i ]
-"104
-[; ;main.c: 104:     int key = Voltage_sort[left] ;
-[v _key `i ~T0 @X0 1 a ]
-[e = _key -> *U + &U _Voltage_sort * -> -> _left `ui `ux -> -> # *U &U _Voltage_sort `ui `ux `i ]
-"105
-[; ;main.c: 105:     while(i != j){
-[e $U 1597  ]
-[e :U 1598 ]
+[v _tmp `i ~T0 @X0 1 a ]
+"121
+[; ;main.c: 121:     int n = 17;
+[v _n `i ~T0 @X0 1 a ]
+[e = _n -> 17 `i ]
+"122
+[; ;main.c: 122:     for(i = n-1; i > 0; i--)
 {
-"106
-[; ;main.c: 106:         while((Voltage_sort[j] > key) && (i < j)) j -= 1;
-[e $U 1600  ]
-[e :U 1601 ]
-[e =- _j -> 1 `i ]
-[e :U 1600 ]
-[e $ && > *U + &U _Voltage_sort * -> -> _j `ui `ux -> -> # *U &U _Voltage_sort `ui `ux -> _key `ui < _i _j 1601  ]
-[e :U 1602 ]
-"107
-[; ;main.c: 107:         while((Voltage_sort[i] <= key) && (i < j)) i += 1;
-[e $U 1603  ]
-[e :U 1604 ]
-[e =+ _i -> 1 `i ]
-[e :U 1603 ]
-[e $ && <= *U + &U _Voltage_sort * -> -> _i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux -> _key `ui < _i _j 1604  ]
-[e :U 1605 ]
-"108
-[; ;main.c: 108:         if(i < j) {
-[e $ ! < _i _j 1606  ]
-{
-"109
-[; ;main.c: 109:             temp = Voltage_sort[i];
-[e = _temp -> *U + &U _Voltage_sort * -> -> _i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux `i ]
-"110
-[; ;main.c: 110:             Voltage_sort[i] = Voltage_sort[j];
-[e = *U + &U _Voltage_sort * -> -> _i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U _Voltage_sort * -> -> _j `ui `ux -> -> # *U &U _Voltage_sort `ui `ux ]
-"111
-[; ;main.c: 111:             Voltage_sort[j] = temp;
-[e = *U + &U _Voltage_sort * -> -> _j `ui `ux -> -> # *U &U _Voltage_sort `ui `ux -> _temp `ui ]
-"112
-[; ;main.c: 112:         }
-}
-[e :U 1606 ]
-"113
-[; ;main.c: 113:     }
-}
+[e = _i - _n -> 1 `i ]
+[e $ > _i -> 0 `i 1597  ]
+[e $U 1598  ]
 [e :U 1597 ]
-"105
-[; ;main.c: 105:     while(i != j){
-[e $ != _i _j 1598  ]
-[e :U 1599 ]
-"115
-[; ;main.c: 115:     Voltage_sort[left] = Voltage_sort[i];
-[e = *U + &U _Voltage_sort * -> -> _left `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U _Voltage_sort * -> -> _i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux ]
-"116
-[; ;main.c: 116:     Voltage_sort[i] = key;
-[e = *U + &U _Voltage_sort * -> -> _i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux -> _key `ui ]
-"117
-[; ;main.c: 117:     mid=i;
-[e = _mid -> _i `ui ]
-"118
-[; ;main.c: 118: }
+"123
+[; ;main.c: 123:     {
+{
+"124
+[; ;main.c: 124:         for(j = 0; j <= i-1; j++)
+{
+[e = _j -> 0 `i ]
+[e $U 1603  ]
+[e :U 1600 ]
+"125
+[; ;main.c: 125:         {
+{
+"126
+[; ;main.c: 126:             if( Voltage_sort[j] > Voltage_sort[j+1])
+[e $ ! > *U + &U _Voltage_sort * -> -> _j `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U _Voltage_sort * -> -> + _j -> 1 `i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux 1604  ]
+"127
+[; ;main.c: 127:             {
+{
+"128
+[; ;main.c: 128:                 tmp = Voltage_sort [j];
+[e = _tmp -> *U + &U _Voltage_sort * -> -> _j `ui `ux -> -> # *U &U _Voltage_sort `ui `ux `i ]
+"129
+[; ;main.c: 129:                 Voltage_sort[j] = Voltage_sort[j+1];
+[e = *U + &U _Voltage_sort * -> -> _j `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U _Voltage_sort * -> -> + _j -> 1 `i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux ]
+"130
+[; ;main.c: 130:                 Voltage_sort[j+1] = tmp;
+[e = *U + &U _Voltage_sort * -> -> + _j -> 1 `i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux -> _tmp `ui ]
+"131
+[; ;main.c: 131:             }
+}
+[e :U 1604 ]
+"132
+[; ;main.c: 132:         }
+}
+[e ++ _j -> 1 `i ]
+[e :U 1603 ]
+[e $ <= _j - _i -> 1 `i 1600  ]
+[e :U 1601 ]
+}
+"133
+[; ;main.c: 133:     }
+}
+[e -- _i -> 1 `i ]
+[e $ > _i -> 0 `i 1597  ]
+[e :U 1598 ]
+}
+"134
+[; ;main.c: 134: }
 [e :UE 1596 ]
 }
-"119
-[; ;main.c: 119: void BadBetteryFilter(){
+"135
+[; ;main.c: 135: void BadBetteryFilter(){
 [v _BadBetteryFilter `(v ~T0 @X0 1 ef ]
 {
 [e :U _BadBetteryFilter ]
 [f ]
-"120
-[; ;main.c: 120:     quickSort(0,17);
-[e ( _quickSort (2 , -> 0 `i -> 17 `i ]
-"121
-[; ;main.c: 121:     quickSort(0, mid-1);
-[e ( _quickSort (2 , -> 0 `i -> - _mid -> -> 1 `i `ui `i ]
-"122
-[; ;main.c: 122:     quickSort(mid+1, 17);
-[e ( _quickSort (2 , -> + _mid -> -> 1 `i `ui `i -> 17 `i ]
-"123
-[; ;main.c: 123:     for(int k=0;k<=17;k++){
+"136
+[; ;main.c: 136:     Sort();
+[e ( _Sort ..  ]
+"149
+[; ;main.c: 149:     for(int k=0;k<=17;k++){
 {
 [v _k `i ~T0 @X0 1 a ]
 [e = _k -> 0 `i ]
-[e $ <= _k -> 17 `i 1608  ]
-[e $U 1609  ]
-[e :U 1608 ]
+[e $ <= _k -> 17 `i 1606  ]
+[e $U 1607  ]
+[e :U 1606 ]
 {
-"124
-[; ;main.c: 124:         if((Voltage_sort[16]-Coulomb_Data.Voltage[k])>=150) badBettery[k]=1;
-[e $ ! >= - *U + &U _Voltage_sort * -> -> -> 16 `i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 150 `i `ui 1611  ]
+"150
+[; ;main.c: 150:         if((Voltage_sort[16]-Coulomb_Data.Voltage[k])>=150) badBettery[k]=1;
+[e $ ! >= - *U + &U _Voltage_sort * -> -> -> 16 `i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 150 `i `ui 1609  ]
 [e = *U + &U _badBettery * -> -> _k `ui `ux -> -> # *U &U _badBettery `ui `ux -> -> 1 `i `ui ]
-[e :U 1611 ]
-"125
-[; ;main.c: 125:     }
+[e :U 1609 ]
+"151
+[; ;main.c: 151:     }
 }
 [e ++ _k -> 1 `i ]
-[e $ <= _k -> 17 `i 1608  ]
-[e :U 1609 ]
+[e $ <= _k -> 17 `i 1606  ]
+[e :U 1607 ]
 }
-"126
-[; ;main.c: 126: }
-[e :UE 1607 ]
+"152
+[; ;main.c: 152: }
+[e :UE 1605 ]
 }
