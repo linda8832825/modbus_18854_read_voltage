@@ -20084,7 +20084,6 @@ typedef struct tagCoulomb_Data_struct {
   };
  };
     unsigned int Voltage[17];
-
 } Coulomb_Data_struct_define;
 
 Coulomb_Data_struct_define Coulomb_Data ;
@@ -20093,6 +20092,9 @@ void BadBetteryFilter();
 void Sort();
 unsigned int Voltage_sort[17]={0};
 unsigned int badBettery[17]={0};
+unsigned int diffBettery[17]={0};
+char ShowbadBettery;
+char no;
 void main(void)
 {
     SYSTEM_Initialize();
@@ -20100,10 +20102,7 @@ void main(void)
     (INTCONbits.PEIE = 1);
 
     unsigned char out[8]={0x01,0x03,0x00,0x03,0x00,0x11,0x75,0xC6};
-    int i,j,a=0;
-
-    int H_L_counter=0;
-
+    int i,j,H_L_counter=0;
 
     while (1){
         if(TMR0_ReadTimer()==0){
@@ -20124,29 +20123,36 @@ void main(void)
                     else index-=0x10;
                 }
             }
-            for(j=0;j<=17;j++) {
+            for(j=0;j<=16;j++) {
                 Get_Voltage(j);
                 Voltage_sort[j] = Coulomb_Data.Voltage[j];
             }
-            for(j=0;j<=17;j++){
+            for(j=0;j<=16;j++){
                 if(Coulomb_Data.Voltage[j]>=3500) PORTAbits.RA2=1;
                 if(Coulomb_Data.Voltage[j]<=2500) PORTAbits.RA3=1;
             }
             BadBetteryFilter();
-
-            LCD_Init(0x4E);
-            LCD_Set_Cursor(1, 1);
-            LCD_Write_String(((char)j));
+            for(j=1; j<=17 ;j++){
+                LCD_Init(0x4E);
+                LCD_Set_Cursor(1, 1);
+                sprintf(&no, "%d", j);
+                LCD_Write_String(&no);
+                LCD_Set_Cursor(2, 1);
+                sprintf(&ShowbadBettery, "%d", diffBettery[j-1]);
+                LCD_Write_String(&ShowbadBettery);
+                Delay(25000);
+            }
         }
     }
+
 }
 void Get_Voltage(int k) {
     Coulomb_Data.Voltage[k] = (Coulomb_Data.Voltage_H[k] << 8) + Coulomb_Data.Voltage_L[k];
-
-
-
-
-
+    if(Coulomb_Data.Voltage_Point==4) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/10000;
+ else if(Coulomb_Data.Voltage_Point==3) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/1000;
+ else if(Coulomb_Data.Voltage_Point==2) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/100;
+    else if(Coulomb_Data.Voltage_Point==1) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/10;
+ else if(Coulomb_Data.Voltage_Point==0) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/1 ;
 }
 void Sort(){
     int i, j, tmp;
@@ -20163,7 +20169,8 @@ void Sort(){
 }
 void BadBetteryFilter(){
     Sort();
-    for(int k=0;k<=17;k++){
+    for(int k=0;k<=16;k++){
         if((Voltage_sort[16]-Coulomb_Data.Voltage[k])>=150) badBettery[k]=1;
+        diffBettery[k]=Voltage_sort[16]-Coulomb_Data.Voltage[k];
     }
 }

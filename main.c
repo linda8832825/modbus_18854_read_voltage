@@ -37,7 +37,6 @@ typedef struct tagCoulomb_Data_struct {
 		};
 	}; //聯合主要用來表示同概念但不同資料類型的實體
     unsigned int Voltage[17];  //庫倫計回的值
-//    unsigned int Current;  //庫倫計回的值
 } Coulomb_Data_struct_define;//存庫輪計回的值
 
 Coulomb_Data_struct_define Coulomb_Data ; //用一個struct
@@ -46,6 +45,9 @@ void BadBetteryFilter();  //函數宣告
 void Sort();  //函數宣告
 unsigned int Voltage_sort[17]={0};
 unsigned int badBettery[17]={0};
+unsigned int diffBettery[17]={0};
+char ShowbadBettery;
+char no;
 void main(void)
 {
     SYSTEM_Initialize();  //mcc出來的東西，用來初始化記憶體設定
@@ -53,10 +55,7 @@ void main(void)
     INTERRUPT_PeripheralInterruptEnable();//INTCONbits.PEIE = 1   //讓中斷的功能打開
 
     unsigned char out[8]={0x01,0x03,0x00,0x03,0x00,0x11,0x75,0xC6};  
-    int i,j,a=0;//a=1時會先a=0 把電壓拉低再升高
-              //a=0時會先把變壓拉高  
-    int H_L_counter=0;
-    
+    int i,j,H_L_counter=0;
     
     while (1){
         if(TMR0_ReadTimer()==0){  //計時用的，時間到了就中斷，間隔一秒發送一次
@@ -77,29 +76,36 @@ void main(void)
                     else index-=0x10;                //輪下一個位置
                 }
             }//在eusart裡會把資料丟進格式裡，那邊會每丟一個就減一，當eusartRxCount到0時跳出來
-            for(j=0;j<=17;j++) {//把電芯電壓的高低位元組起來並且做一個一樣的陣列
+            for(j=0;j<=16;j++) {//把電芯電壓的高低位元組起來並且做一個一樣的陣列
                 Get_Voltage(j);
                 Voltage_sort[j] = Coulomb_Data.Voltage[j];
             }
-            for(j=0;j<=17;j++){
+            for(j=0;j<=16;j++){
                 if(Coulomb_Data.Voltage[j]>=VoltageSet_H) PORTAbits.RA2=1;  //停止充電
                 if(Coulomb_Data.Voltage[j]<=VoltageSet_L) PORTAbits.RA3=1;  //停止放電
             }
-            BadBetteryFilter();
-            //顯示誰是壞電池 和最高電池的電壓多少和壞電池壓差多少
-            LCD_Init(SLAVE_ADD); // Initialize LCD module with I2C address = 01001110
-            LCD_Set_Cursor(1, 1);
-            LCD_Write_String(((char)j));/////////////
+            BadBetteryFilter();  //找出壞電池
+            for(j=1; j<=17 ;j++){  //顯示誰是壞電池 和最高電池的電壓多少和壞電池壓差多少
+                LCD_Init(SLAVE_ADD); // Initialize LCD module with I2C address = 01001110
+                LCD_Set_Cursor(1, 1);
+                sprintf(&no, "%d", j); //第幾顆電池
+                LCD_Write_String(&no);
+                LCD_Set_Cursor(2, 1);
+                sprintf(&ShowbadBettery, "%d", diffBettery[j-1]); //那顆電池的電壓   
+                LCD_Write_String(&ShowbadBettery);
+                Delay(25000);
+            }
         }
     }
+    
 }
 void Get_Voltage(int k) {  //為了精密所以取到小數點第一位
     Coulomb_Data.Voltage[k] = (Coulomb_Data.Voltage_H[k] << 8) + Coulomb_Data.Voltage_L[k];//為了把高位跟低位元合起來，也可以把高位乘256再加低位
-//    if(Coulomb_Data.Voltage_Point==4)   Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/10000;	 		//電壓   
-//	else if(Coulomb_Data.Voltage_Point==3)  Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/1000;	 	//電壓  
-//	else if(Coulomb_Data.Voltage_Point==2)  Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/100;     	//電壓    
-//    else if(Coulomb_Data.Voltage_Point==1)  Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/10;     	//電壓    
-//	else if(Coulomb_Data.Voltage_Point==0)  Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/1 ;         //電壓    
+    if(Coulomb_Data.Voltage_Point==4)   Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/10000;	 		//電壓   
+	else if(Coulomb_Data.Voltage_Point==3)  Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/1000;	 	//電壓  
+	else if(Coulomb_Data.Voltage_Point==2)  Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/100;     	//電壓    
+    else if(Coulomb_Data.Voltage_Point==1)  Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/10;     	//電壓    
+	else if(Coulomb_Data.Voltage_Point==0)  Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/1 ;         //電壓    
 }
 void Sort(){
     int i, j, tmp;
@@ -116,7 +122,8 @@ void Sort(){
 }
 void BadBetteryFilter(){
     Sort();
-    for(int k=0;k<=17;k++){ //挑出最低點
+    for(int k=0;k<=16;k++){ //挑出最低點
         if((Voltage_sort[16]-Coulomb_Data.Voltage[k])>=Voltage_difference)   badBettery[k]=1;
+        diffBettery[k]=Voltage_sort[16]-Coulomb_Data.Voltage[k];
     }
 }
