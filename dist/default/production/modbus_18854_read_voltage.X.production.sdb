@@ -19,6 +19,8 @@
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\nf_fputs.c
@@ -57,15 +59,17 @@
 [v _LCD_Write_String LCD_Write_String `(v  1 e 1 0 ]
 "111
 [v _LCD_Set_Cursor LCD_Set_Cursor `(v  1 e 1 0 ]
-"154
+"149
+[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
+"192
 [v _Delay Delay `(v  1 e 1 0 ]
-"51 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+"52 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"102
+"157
 [v _Get_Voltage Get_Voltage `(v  1 e 1 0 ]
-"110
+"165
 [v _Sort Sort `(v  1 e 1 0 ]
-"123
+"178
 [v _BadBetteryFilter BadBetteryFilter `(v  1 e 1 0 ]
 "29 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -317,7 +321,7 @@
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @400 ]
 "5042
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @401 ]
-[s S817 . 1 `uc 1 SEN 1 0 :1:0 
+[s S836 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -327,17 +331,17 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "5089
-[s S826 . 1 `uc 1 . 1 0 :1:0 
+[s S845 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK 1 0 :5:1 
 ]
-[s S829 . 1 `uc 1 . 1 0 :1:0 
+[s S848 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK1 1 0 :1:1 
 `uc 1 ADMSK2 1 0 :1:2 
 `uc 1 ADMSK3 1 0 :1:3 
 `uc 1 ADMSK4 1 0 :1:4 
 `uc 1 ADMSK5 1 0 :1:5 
 ]
-[s S836 . 1 `uc 1 SEN1 1 0 :1:0 
+[s S855 . 1 `uc 1 SEN1 1 0 :1:0 
 `uc 1 ADMSK11 1 0 :1:1 
 `uc 1 ADMSK21 1 0 :1:2 
 `uc 1 ADMSK31 1 0 :1:3 
@@ -346,15 +350,15 @@
 `uc 1 ACKSTAT1 1 0 :1:6 
 `uc 1 GCEN1 1 0 :1:7 
 ]
-[s S845 . 1 `uc 1 . 1 0 :1:0 
+[s S864 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RSEN1 1 0 :1:1 
 `uc 1 PEN1 1 0 :1:2 
 `uc 1 RCEN1 1 0 :1:3 
 `uc 1 ADMSK41 1 0 :1:4 
 `uc 1 ADMSK51 1 0 :1:5 
 ]
-[u S852 . 1 `S817 1 . 1 0 `S826 1 . 1 0 `S829 1 . 1 0 `S836 1 . 1 0 `S845 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES852  1 e 1 @401 ]
+[u S871 . 1 `S836 1 . 1 0 `S845 1 . 1 0 `S848 1 . 1 0 `S855 1 . 1 0 `S864 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES871  1 e 1 @401 ]
 [s S524 . 1 `uc 1 INTF 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIF 1 0 :1:4 
@@ -466,7 +470,7 @@
 [s S659 . 1 `uc 1 Voltage_Point 1 0 :4:0 
 `uc 1 Voltage_statue 1 0 :4:4 
 ]
-"42 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+"43 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
 [u S662 . 2 `ui 1 _Voltage 2 0 `S659 1 . 1 0 ]
 [s S665 . 1 `uc 1 Current_Point 1 0 :4:0 
 `uc 1 Current_statue 1 0 :4:4 
@@ -474,15 +478,15 @@
 [u S668 . 2 `ui 1 _Current 2 0 `S665 1 . 1 0 ]
 [s S671 tagCoulomb_Data_struct 116 `ui 1 ID 2 0 `ui 1 Features 2 2 `ui 1 Quantity 2 4 `[17]ui 1 Voltage_H 34 6 `[17]ui 1 Voltage_L 34 40 `ui 1 CRC_H 2 74 `ui 1 CRC_L 2 76 `S662 1 . 2 78 `S668 1 . 2 80 `[17]ui 1 Voltage 34 82 ]
 [v _Coulomb_Data Coulomb_Data `S671  1 e 116 @8572 ]
-"46
-[v _Voltage_sort Voltage_sort `[17]ui  1 e 34 0 ]
 "47
-[v _badBettery badBettery `[17]ui  1 e 34 0 ]
+[v _Voltage_sort Voltage_sort `[17]ui  1 e 34 0 ]
 "48
-[v _diffBettery diffBettery `[17]ui  1 e 34 0 ]
+[v _badBettery badBettery `[17]ui  1 e 34 0 ]
 "49
-[v _ShowbadBettery ShowbadBettery `uc  1 e 1 0 ]
+[v _diffBettery diffBettery `[17]ui  1 e 34 0 ]
 "50
+[v _ShowbadBettery ShowbadBettery `[4]uc  1 e 4 0 ]
+"51
 [v _no no `uc  1 e 1 0 ]
 "9 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
 [v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
@@ -514,74 +518,75 @@
 [v _i i `VEi  1 e 2 0 ]
 "54
 [v _ch ch `VEuc  1 e 1 0 ]
-"51 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+"52 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"68
-[v main@index index `*.39ui  1 a 2 8 ]
-"57
-[v main@out out `[8]uc  1 a 8 0 ]
+"70
+[v main@index index `*.39ui  1 a 2 34 ]
+"72
+[v main@index_V_L index_V_L `*.39ui  1 a 2 32 ]
+"71
+[v main@index_V_H index_V_H `*.39ui  1 a 2 30 ]
 "58
-[v main@j j `i  1 a 2 14 ]
-[v main@H_L_counter H_L_counter `i  1 a 2 12 ]
-[v main@i i `i  1 a 2 10 ]
-"55
+[v main@out out `[8]uc  1 a 8 22 ]
+"59
+[v main@j j `i  1 a 2 0 ]
+[v main@H_L_counter H_L_counter `i  1 a 2 38 ]
+[v main@i i `i  1 a 2 36 ]
+"56
 [v main@F12104 F12104 `[8]uc  1 s 8 F12104 ]
-"101
+"156
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[v sprintf@s s `*.5uc  1 a 1 wreg ]
-[s S1397 _IO_FILE 5 `*.5uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[s S1416 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S1397  1 a 5 9 ]
+[v sprintf@f f `S1416  1 a 6 10 ]
 "12
-[v sprintf@ap ap `[1]*.4v  1 a 1 7 ]
+[v sprintf@ap ap `[1]*.4v  1 a 1 9 ]
 "9
-[v sprintf@s s `*.5uc  1 a 1 wreg ]
-[v sprintf@fmt fmt `*.25DCuc  1 p 2 0 ]
-"15
-[v sprintf@s s `*.5uc  1 a 1 8 ]
+[v sprintf@s s `*.39uc  1 p 2 0 ]
+[v sprintf@fmt fmt `*.25DCuc  1 p 2 2 ]
 "23
 } 0
 "1368 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S1423 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.4S1423  1 a 1 wreg ]
+[s S1442 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S1442  1 a 1 wreg ]
 "1371
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 78 ]
 "1368
-[v vfprintf@fp fp `*.4S1423  1 a 1 wreg ]
+[v vfprintf@fp fp `*.4S1442  1 a 1 wreg ]
 [v vfprintf@fmt fmt `*.25DCuc  1 p 2 72 ]
 [v vfprintf@ap ap `*.4*.4v  1 p 1 74 ]
 "1373
 "1368
-[v vfprintf@fp fp `*.4S1423  1 a 1 77 ]
+[v vfprintf@fp fp `*.4S1442  1 a 1 77 ]
 "1382
 } 0
 "670
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S1423 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.4S1423  1 a 1 wreg ]
+[s S1442 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S1442  1 a 1 wreg ]
 "674
 [v vfpfcnvrt@ll ll `o  1 a 8 63 ]
 "670
-[v vfpfcnvrt@fp fp `*.4S1423  1 a 1 wreg ]
+[v vfpfcnvrt@fp fp `*.4S1442  1 a 1 wreg ]
 [v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 56 ]
 [v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 57 ]
 "680
 "670
-[v vfpfcnvrt@fp fp `*.4S1423  1 a 1 71 ]
+[v vfpfcnvrt@fp fp `*.4S1442  1 a 1 71 ]
 "1365
 } 0
 "274
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
-[s S1423 _IO_FILE 0 ]
-[v dtoa@fp fp `*.4S1423  1 a 1 wreg ]
+[s S1442 _IO_FILE 0 ]
+[v dtoa@fp fp `*.4S1442  1 a 1 wreg ]
 "277
 [v dtoa@n n `o  1 a 8 46 ]
 "276
@@ -590,28 +595,28 @@
 [v dtoa@w w `i  1 a 2 42 ]
 [v dtoa@p p `i  1 a 2 40 ]
 "274
-[v dtoa@fp fp `*.4S1423  1 a 1 wreg ]
+[v dtoa@fp fp `*.4S1442  1 a 1 wreg ]
 [v dtoa@d d `o  1 p 8 26 ]
 "280
 "274
-[v dtoa@fp fp `*.4S1423  1 a 1 37 ]
+[v dtoa@fp fp `*.4S1442  1 a 1 37 ]
 "315
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
-[s S1423 _IO_FILE 0 ]
-[v pad@fp fp `*.4S1423  1 a 1 wreg ]
+[s S1442 _IO_FILE 0 ]
+[v pad@fp fp `*.4S1442  1 a 1 wreg ]
 "74
 [v pad@w w `i  1 a 2 19 ]
 [v pad@i i `i  1 a 2 17 ]
 "72
-[v pad@fp fp `*.4S1423  1 a 1 wreg ]
+[v pad@fp fp `*.4S1442  1 a 1 wreg ]
 [v pad@buf buf `*.5uc  1 p 1 13 ]
 [v pad@p p `i  1 p 2 14 ]
 "77
 "72
-[v pad@fp fp `*.4S1423  1 a 1 21 ]
+[v pad@fp fp `*.4S1442  1 a 1 21 ]
 "95
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\strlen.c
@@ -636,8 +641,8 @@
 [v fputs@c c `uc  1 a 1 9 ]
 "8
 [v fputs@s s `*.5DCuc  1 a 1 wreg ]
-[s S1397 _IO_FILE 5 `*.5uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.4S1397  1 p 1 5 ]
+[s S1416 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.4S1416  1 p 1 5 ]
 "13
 [v fputs@s s `*.5DCuc  1 a 1 12 ]
 "19
@@ -646,8 +651,8 @@
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 5 ]
-[s S1397 _IO_FILE 5 `*.5uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.4S1397  1 p 1 7 ]
+[s S1416 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.4S1416  1 p 1 7 ]
 "21
 } 0
 "122 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/eusart.c
@@ -696,6 +701,16 @@
 [v ___aodiv@divisor divisor `o  1 p 8 0 ]
 [v ___aodiv@dividend dividend `o  1 p 8 8 ]
 "43
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 0 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 3 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 5 ]
+"25
 } 0
 "92 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/tmr0.c
 [v _TMR0_ReadTimer TMR0_ReadTimer `(uc  1 e 1 0 ]
@@ -766,13 +781,10 @@
 "106 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\I2C_LCD.c
 [v _LCD_Write_String LCD_Write_String `(v  1 e 1 0 ]
 {
-[v LCD_Write_String@Str Str `*.5uc  1 a 1 wreg ]
 "108
-[v LCD_Write_String@i i `i  1 a 2 2 ]
+[v LCD_Write_String@i i `i  1 a 2 4 ]
 "106
-[v LCD_Write_String@Str Str `*.5uc  1 a 1 wreg ]
-"108
-[v LCD_Write_String@Str Str `*.5uc  1 a 1 4 ]
+[v LCD_Write_String@Str Str `*.26uc  1 p 2 1 ]
 "110
 } 0
 "100
@@ -801,6 +813,11 @@
 "59
 [v LCD_Init@I2C_Add I2C_Add `uc  1 a 1 2 ]
 "78
+} 0
+"149
+[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
+{
+"153
 } 0
 "94
 [v _LCD_CMD LCD_CMD `(v  1 e 1 0 ]
@@ -852,17 +869,17 @@
 {
 "9
 } 0
-"154
+"192
 [v _Delay Delay `(v  1 e 1 0 ]
 {
 [v Delay@counter counter `ui  1 p 2 3 ]
-"156
+"194
 } 0
-"102 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+"157 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
 [v _Get_Voltage Get_Voltage `(v  1 e 1 0 ]
 {
 [v Get_Voltage@k k `i  1 p 2 3 ]
-"109
+"164
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
@@ -883,21 +900,21 @@
 [v EUSART_Read@readValue readValue `uc  1 a 1 4 ]
 "106
 } 0
-"123 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
+"178 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\main.c
 [v _BadBetteryFilter BadBetteryFilter `(v  1 e 1 0 ]
 {
-"125
+"180
 [v BadBetteryFilter@k k `i  1 a 2 14 ]
-"129
+"184
 } 0
-"110
+"165
 [v _Sort Sort `(v  1 e 1 0 ]
 {
-"111
+"166
 [v Sort@j j `i  1 a 2 6 ]
 [v Sort@i i `i  1 a 2 4 ]
 [v Sort@tmp tmp `i  1 a 2 0 ]
-"122
+"177
 } 0
 "56 C:\Users\linda\MPLABXProjects\modbus_18854_read_voltage.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]

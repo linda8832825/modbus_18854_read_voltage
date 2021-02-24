@@ -1,22 +1,22 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"27 main.c
-[; ;main.c: 27:   struct {
+"28 main.c
+[; ;main.c: 28:   struct {
 [s S1568 :4 `uc 1 :4 `uc 1 ]
 [n S1568 . Voltage_Point Voltage_statue ]
-"25
-[; ;main.c: 25:     union {
+"26
+[; ;main.c: 26:     union {
 [u S1567 `ui 1 `S1568 1 ]
 [n S1567 . _Voltage . ]
-"34
-[; ;main.c: 34:   struct {
+"35
+[; ;main.c: 35:   struct {
 [s S1570 :4 `uc 1 :4 `uc 1 ]
 [n S1570 . Current_Point Current_statue ]
-"32
-[; ;main.c: 32:     union {
+"33
+[; ;main.c: 33:     union {
 [u S1569 `ui 1 `S1570 1 ]
 [n S1569 . _Current . ]
-"17
-[; ;main.c: 17: typedef struct tagCoulomb_Data_struct {
+"18
+[; ;main.c: 18: typedef struct tagCoulomb_Data_struct {
 [s S1566 `ui 1 `ui 1 `ui 1 `ui -> 17 `i `ui -> 17 `i `ui 1 `ui 1 `S1567 1 `S1569 1 `ui -> 17 `i ]
 [n S1566 tagCoulomb_Data_struct ID Features Quantity Voltage_H Voltage_L CRC_H CRC_L . . Voltage ]
 [p mainexit ]
@@ -49,8 +49,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "328
 [; ;./mcc_generated_files/eusart.h: 328: uint8_t EUSART_Read(void);
 [v _EUSART_Read `(uc ~T0 @X0 0 ef ]
-"43 main.c
-[; ;main.c: 43: void Get_Voltage(int);
+"44 main.c
+[; ;main.c: 44: void Get_Voltage(int);
 [v _Get_Voltage `(v ~T0 @X0 0 ef1`i ]
 "390 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 390:     struct {
@@ -63,21 +63,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "401
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 401: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
 [v _PORTAbits `VS32 ~T0 @X0 0 e@12 ]
-"44 main.c
-[; ;main.c: 44: void BadBetteryFilter();
+"45 main.c
+[; ;main.c: 45: void BadBetteryFilter();
 [v _BadBetteryFilter `(v ~T0 @X0 0 e? ]
 "34 ./I2C_LCD.h
 [; ;./I2C_LCD.h: 34: void LCD_Init(unsigned char I2C_Add);
 [v _LCD_Init `(v ~T0 @X0 0 ef1`uc ]
+"45
+[; ;./I2C_LCD.h: 45: void LCD_Clear();
+[v _LCD_Clear `(v ~T0 @X0 0 e? ]
 "38
 [; ;./I2C_LCD.h: 38: void LCD_Set_Cursor(unsigned char ROW, unsigned char COL);
 [v _LCD_Set_Cursor `(v ~T0 @X0 0 ef2`uc`uc ]
-"113 C:\Program Files\Microchip\xc8\v2.20\pic\include\c99\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"40 ./I2C_LCD.h
+"40
 [; ;./I2C_LCD.h: 40: void LCD_Write_String(char*);
 [v _LCD_Write_String `(v ~T0 @X0 0 ef1`*uc ]
-"46
+"113 C:\Program Files\Microchip\xc8\v2.20\pic\include\c99\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"46 ./I2C_LCD.h
 [; ;./I2C_LCD.h: 46: void Delay(unsigned int counter);
 [v _Delay `(v ~T0 @X0 0 ef1`ui ]
 "54 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h
@@ -1631,62 +1634,67 @@ Version 4.0 HI-TECH Software Intermediate Code
 "34906
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 34906: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"42 main.c
-[; ;main.c: 42: Coulomb_Data_struct_define Coulomb_Data ;
+"43 main.c
+[; ;main.c: 43: Coulomb_Data_struct_define Coulomb_Data ;
 [v _Coulomb_Data `S1566 ~T0 @X0 1 e ]
-"46
-[; ;main.c: 46: unsigned int Voltage_sort[17]={0};
+"47
+[; ;main.c: 47: unsigned int Voltage_sort[17]={0};
 [v _Voltage_sort `ui ~T0 @X0 -> 17 `i e ]
 [i _Voltage_sort
 :U ..
 -> -> 0 `i `ui
 ..
 ]
-"47
-[; ;main.c: 47: unsigned int badBettery[17]={0};
+"48
+[; ;main.c: 48: unsigned int badBettery[17]={0};
 [v _badBettery `ui ~T0 @X0 -> 17 `i e ]
 [i _badBettery
 :U ..
 -> -> 0 `i `ui
 ..
 ]
-"48
-[; ;main.c: 48: unsigned int diffBettery[17]={0};
+"49
+[; ;main.c: 49: unsigned int diffBettery[17]={0};
 [v _diffBettery `ui ~T0 @X0 -> 17 `i e ]
 [i _diffBettery
 :U ..
 -> -> 0 `i `ui
 ..
 ]
-"49
-[; ;main.c: 49: char ShowbadBettery;
-[v _ShowbadBettery `uc ~T0 @X0 1 e ]
 "50
-[; ;main.c: 50: char no;
+[; ;main.c: 50: char ShowbadBettery[4]={0};
+[v _ShowbadBettery `uc ~T0 @X0 -> 4 `i e ]
+[i _ShowbadBettery
+:U ..
+-> -> 0 `i `uc
+..
+]
+"51
+[; ;main.c: 51: char no;
 [v _no `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"51
-[; ;main.c: 51: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
 "52
-[; ;main.c: 52: {
+[; ;main.c: 52: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"53
+[; ;main.c: 53: {
 {
 [e :U _main ]
 [f ]
-"53
-[; ;main.c: 53:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
 "54
-[; ;main.c: 54:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 54:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "55
-[; ;main.c: 55:     (INTCONbits.PEIE = 1);
+[; ;main.c: 55:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"56
+[; ;main.c: 56:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
 [v F12104 `uc ~T0 @X0 -> 8 `i s ]
 [i F12104
 :U ..
-"57
-[; ;main.c: 57:     unsigned char out[8]={0x01,0x03,0x00,0x03,0x00,0x11,0x75,0xC6};
+"58
+[; ;main.c: 58:     unsigned char out[8]={0x01,0x03,0x00,0x03,0x00,0x11,0x75,0xC6};
 -> -> 1 `i `uc
 -> -> 3 `i `uc
 -> -> 0 `i `uc
@@ -1699,349 +1707,509 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _out `uc ~T0 @X0 -> 8 `i a ]
 [e = _out F12104 ]
-"58
-[; ;main.c: 58:     int i,j,H_L_counter=0;
+"59
+[; ;main.c: 59:     int i,j,H_L_counter=0;
 [v _i `i ~T0 @X0 1 a ]
 [v _j `i ~T0 @X0 1 a ]
 [v _H_L_counter `i ~T0 @X0 1 a ]
 [e = _H_L_counter -> 0 `i ]
-"60
-[; ;main.c: 60:     while (1){
+"61
+[; ;main.c: 61:     while (1){
 [e :U 1573 ]
 {
-"61
-[; ;main.c: 61:         if(TMR0_ReadTimer()==0){
+"62
+[; ;main.c: 62:         H_L_counter=0;
+[e = _H_L_counter -> 0 `i ]
+"63
+[; ;main.c: 63:         if(TMR0_ReadTimer()==0){
 [e $ ! == -> ( _TMR0_ReadTimer ..  `i -> 0 `i 1575  ]
 {
-"62
-[; ;main.c: 62:             for(i=0;i<8;i++){
+"64
+[; ;main.c: 64:             for(i=0;i<8;i++){
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 8 `i 1576  ]
 [e $U 1577  ]
 [e :U 1576 ]
 {
-"63
-[; ;main.c: 63:                 EUSART_Write(out[i]);
-[e ( _EUSART_Write (1 *U + &U _out * -> -> _i `ui `ux -> -> # *U &U _out `ui `ux ]
-"64
-[; ;main.c: 64:                 __nop();
-[e ( ___nop ..  ]
 "65
-[; ;main.c: 65:             }
+[; ;main.c: 65:                 EUSART_Write(out[i]);
+[e ( _EUSART_Write (1 *U + &U _out * -> -> _i `ui `ux -> -> # *U &U _out `ui `ux ]
+"66
+[; ;main.c: 66:                 __nop();
+[e ( ___nop ..  ]
+"67
+[; ;main.c: 67:             }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 1576  ]
 [e :U 1577 ]
 }
-"66
-[; ;main.c: 66:         }
+"68
+[; ;main.c: 68:         }
 }
 [e :U 1575 ]
-"67
-[; ;main.c: 67:         if(eusartRxCount == 39){
+"69
+[; ;main.c: 69:         if(eusartRxCount == 39){
 [e $ ! == -> _eusartRxCount `i -> 39 `i 1579  ]
 {
-"68
-[; ;main.c: 68:             unsigned int *index;
-[v _index `*ui ~T0 @X0 1 a ]
-"69
-[; ;main.c: 69:             index=&Coulomb_Data.ID;
-[e = _index &U . _Coulomb_Data 0 ]
 "70
-[; ;main.c: 70:             while(eusartRxCount != 0){
+[; ;main.c: 70:             unsigned int *index;
+[v _index `*ui ~T0 @X0 1 a ]
+"71
+[; ;main.c: 71:             unsigned int *index_V_H;
+[v _index_V_H `*ui ~T0 @X0 1 a ]
+"72
+[; ;main.c: 72:             unsigned int *index_V_L;
+[v _index_V_L `*ui ~T0 @X0 1 a ]
+"73
+[; ;main.c: 73:             index=&Coulomb_Data.ID;
+[e = _index &U . _Coulomb_Data 0 ]
+"74
+[; ;main.c: 74:             index_V_H=&Coulomb_Data.Voltage_H[0];
+[e = _index_V_H &U *U + &U . _Coulomb_Data 3 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Coulomb_Data 3 `ui `ux ]
+"75
+[; ;main.c: 75:             index_V_L=&Coulomb_Data.Voltage_L[0];
+[e = _index_V_L &U *U + &U . _Coulomb_Data 4 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Coulomb_Data 4 `ui `ux ]
+"76
+[; ;main.c: 76:             while(eusartRxCount != 0){
 [e $U 1580  ]
 [e :U 1581 ]
 {
-"71
-[; ;main.c: 71:                 *index = EUSART_Read();
+"77
+[; ;main.c: 77:                 *index = EUSART_Read();
 [e = *U _index -> ( _EUSART_Read ..  `ui ]
-"72
-[; ;main.c: 72:                 H_L_counter++;
+"78
+[; ;main.c: 78:                 H_L_counter++;
 [e ++ _H_L_counter -> 1 `i ]
-"73
-[; ;main.c: 73:                 if((H_L_counter<=3)||(H_L_counter>=0x27)) index++;
+"79
+[; ;main.c: 79:                 if((H_L_counter<=3)||(H_L_counter>=0x27)) index++;
 [e $ ! || <= _H_L_counter -> 3 `i >= _H_L_counter -> 39 `i 1583  ]
 [e ++ _index * -> -> 1 `i `x -> -> # *U _index `i `x ]
 [e $U 1584  ]
-"74
-[; ;main.c: 74:                 else{
+"80
+[; ;main.c: 80:                 else{
 [e :U 1583 ]
 {
-"75
-[; ;main.c: 75:                     if((H_L_counter%2)==0) index+=0x11;
-[e $ ! == % _H_L_counter -> 2 `i -> 0 `i 1585  ]
-[e =+ _index * -> -> 17 `i `x -> -> # *U _index `i `x ]
-[e $U 1586  ]
-"76
-[; ;main.c: 76:                     else index-=0x10;
-[e :U 1585 ]
-[e =- _index * -> -> 16 `i `x -> -> # *U _index `i `x ]
-[e :U 1586 ]
-"77
-[; ;main.c: 77:                 }
-}
-[e :U 1584 ]
-"78
-[; ;main.c: 78:             }
-}
-[e :U 1580 ]
-"70
-[; ;main.c: 70:             while(eusartRxCount != 0){
-[e $ != -> _eusartRxCount `i -> 0 `i 1581  ]
-[e :U 1582 ]
-"79
-[; ;main.c: 79:             for(j=0;j<=16;j++) {
-{
-[e = _j -> 0 `i ]
-[e $ <= _j -> 16 `i 1587  ]
-[e $U 1588  ]
-[e :U 1587 ]
-{
-"80
-[; ;main.c: 80:                 Get_Voltage(j);
-[e ( _Get_Voltage (1 _j ]
 "81
-[; ;main.c: 81:                 Voltage_sort[j] = Coulomb_Data.Voltage[j];
-[e = *U + &U _Voltage_sort * -> -> _j `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U . _Coulomb_Data 9 * -> -> _j `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux ]
+[; ;main.c: 81:                     if(H_L_counter==4) index=index_V_H;
+[e $ ! == _H_L_counter -> 4 `i 1585  ]
+[e = _index _index_V_H ]
+[e $U 1586  ]
 "82
-[; ;main.c: 82:             }
-}
-[e ++ _j -> 1 `i ]
-[e $ <= _j -> 16 `i 1587  ]
-[e :U 1588 ]
-}
+[; ;main.c: 82:                     else if(H_L_counter==5) index=index_V_L;
+[e :U 1585 ]
+[e $ ! == _H_L_counter -> 5 `i 1587  ]
+[e = _index _index_V_L ]
+[e $U 1588  ]
 "83
-[; ;main.c: 83:             for(j=0;j<=16;j++){
-{
-[e = _j -> 0 `i ]
-[e $ <= _j -> 16 `i 1590  ]
-[e $U 1591  ]
-[e :U 1590 ]
+[; ;main.c: 83:                     else if((H_L_counter%2)==0){
+[e :U 1587 ]
+[e $ ! == % _H_L_counter -> 2 `i -> 0 `i 1589  ]
 {
 "84
-[; ;main.c: 84:                 if(Coulomb_Data.Voltage[j]>=3500) PORTAbits.RA2=1;
-[e $ ! >= *U + &U . _Coulomb_Data 9 * -> -> _j `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 3500 `i `ui 1593  ]
-[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
-[e :U 1593 ]
+[; ;main.c: 84:                         index_V_H++;
+[e ++ _index_V_H * -> -> 1 `i `x -> -> # *U _index_V_H `i `x ]
 "85
-[; ;main.c: 85:                 if(Coulomb_Data.Voltage[j]<=2500) PORTAbits.RA3=1;
-[e $ ! <= *U + &U . _Coulomb_Data 9 * -> -> _j `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 2500 `i `ui 1594  ]
-[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-[e :U 1594 ]
+[; ;main.c: 85:                         index=index_V_H;
+[e = _index _index_V_H ]
 "86
-[; ;main.c: 86:             }
+[; ;main.c: 86:                     }
+}
+[e $U 1590  ]
+"87
+[; ;main.c: 87:                     else{
+[e :U 1589 ]
+{
+"88
+[; ;main.c: 88:                         index_V_L++;
+[e ++ _index_V_L * -> -> 1 `i `x -> -> # *U _index_V_L `i `x ]
+"89
+[; ;main.c: 89:                         index=index_V_L;
+[e = _index _index_V_L ]
+"90
+[; ;main.c: 90:                     }
+}
+[e :U 1590 ]
+[e :U 1588 ]
+[e :U 1586 ]
+"91
+[; ;main.c: 91:                 }
+}
+[e :U 1584 ]
+"92
+[; ;main.c: 92:             }
+}
+[e :U 1580 ]
+"76
+[; ;main.c: 76:             while(eusartRxCount != 0){
+[e $ != -> _eusartRxCount `i -> 0 `i 1581  ]
+[e :U 1582 ]
+"93
+[; ;main.c: 93:             for(j=0;j<=16;j++) {
+{
+[e = _j -> 0 `i ]
+[e $ <= _j -> 16 `i 1591  ]
+[e $U 1592  ]
+[e :U 1591 ]
+{
+"94
+[; ;main.c: 94:                 Get_Voltage(j);
+[e ( _Get_Voltage (1 _j ]
+"95
+[; ;main.c: 95:                 Voltage_sort[j] = Coulomb_Data.Voltage[j];
+[e = *U + &U _Voltage_sort * -> -> _j `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U . _Coulomb_Data 9 * -> -> _j `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux ]
+"96
+[; ;main.c: 96:             }
 }
 [e ++ _j -> 1 `i ]
-[e $ <= _j -> 16 `i 1590  ]
-[e :U 1591 ]
+[e $ <= _j -> 16 `i 1591  ]
+[e :U 1592 ]
 }
-"87
-[; ;main.c: 87:             BadBetteryFilter();
+"97
+[; ;main.c: 97:             for(j=0;j<=16;j++){
+{
+[e = _j -> 0 `i ]
+[e $ <= _j -> 16 `i 1594  ]
+[e $U 1595  ]
+[e :U 1594 ]
+{
+"98
+[; ;main.c: 98:                 if(Coulomb_Data.Voltage[j]>=3500) PORTAbits.RA2=1;
+[e $ ! >= *U + &U . _Coulomb_Data 9 * -> -> _j `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 3500 `i `ui 1597  ]
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+[e :U 1597 ]
+"99
+[; ;main.c: 99:                 if(Coulomb_Data.Voltage[j]<=2500) PORTAbits.RA3=1;
+[e $ ! <= *U + &U . _Coulomb_Data 9 * -> -> _j `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 2500 `i `ui 1598  ]
+[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
+[e :U 1598 ]
+"100
+[; ;main.c: 100:             }
+}
+[e ++ _j -> 1 `i ]
+[e $ <= _j -> 16 `i 1594  ]
+[e :U 1595 ]
+}
+"101
+[; ;main.c: 101:             BadBetteryFilter();
 [e ( _BadBetteryFilter ..  ]
-"88
-[; ;main.c: 88:             for(j=1; j<=17 ;j++){
+"102
+[; ;main.c: 102:             LCD_Init(0x4E);
+[e ( _LCD_Init (1 -> -> 78 `i `uc ]
+"105
+[; ;main.c: 105:             for(j=1; j<=17 ;j++){
 {
 [e = _j -> 1 `i ]
-[e $ <= _j -> 17 `i 1595  ]
-[e $U 1596  ]
-[e :U 1595 ]
+[e $ <= _j -> 17 `i 1599  ]
+[e $U 1600  ]
+[e :U 1599 ]
 {
-"89
-[; ;main.c: 89:                 LCD_Init(0x4E);
-[e ( _LCD_Init (1 -> -> 78 `i `uc ]
-"90
-[; ;main.c: 90:                 LCD_Set_Cursor(1, 1);
+"106
+[; ;main.c: 106:                 LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"107
+[; ;main.c: 107:                 LCD_Set_Cursor(1, 1);
 [e ( _LCD_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"91
-[; ;main.c: 91:                 sprintf(&no, "%d", j);
-[e ( _sprintf (1 , (. , &U _no :s 1C _j ]
-"92
-[; ;main.c: 92:                 LCD_Write_String(&no);
+"108
+[; ;main.c: 108:                 LCD_Write_String("No");
+[e ( _LCD_Write_String (1 :s 1C ]
+"109
+[; ;main.c: 109:                 LCD_Set_Cursor(1, 3);
+[e ( _LCD_Set_Cursor (2 , -> -> 1 `i `uc -> -> 3 `i `uc ]
+"110
+[; ;main.c: 110:                 sprintf(&no, "%d", j);
+[e ( _sprintf (1 , (. , &U _no :s 2C _j ]
+"111
+[; ;main.c: 111:                 LCD_Write_String(&no);
 [e ( _LCD_Write_String (1 &U _no ]
-"93
-[; ;main.c: 93:                 LCD_Set_Cursor(2, 1);
-[e ( _LCD_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"94
-[; ;main.c: 94:                 sprintf(&ShowbadBettery, "%d", diffBettery[j-1]);
-[e ( _sprintf (1 , (. , &U _ShowbadBettery :s 2C *U + &U _diffBettery * -> -> - _j -> 1 `i `ui `ux -> -> # *U &U _diffBettery `ui `ux ]
-"95
-[; ;main.c: 95:                 LCD_Write_String(&ShowbadBettery);
+"112
+[; ;main.c: 112:                 LCD_Set_Cursor(1, 5);
+[e ( _LCD_Set_Cursor (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
+"113
+[; ;main.c: 113:                 LCD_Write_String(":");
+[e ( _LCD_Write_String (1 :s 3C ]
+"114
+[; ;main.c: 114:                 LCD_Set_Cursor(1, 6);
+[e ( _LCD_Set_Cursor (2 , -> -> 1 `i `uc -> -> 6 `i `uc ]
+"115
+[; ;main.c: 115:                 sprintf(ShowbadBettery, "%d", (Coulomb_Data.Voltage[j-1]/1000));
+[e ( _sprintf (1 , (. , &U _ShowbadBettery :s 4C / *U + &U . _Coulomb_Data 9 * -> -> - _j -> 1 `i `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 1000 `i `ui ]
+"116
+[; ;main.c: 116:                 LCD_Write_String(ShowbadBettery);
 [e ( _LCD_Write_String (1 &U _ShowbadBettery ]
-"96
-[; ;main.c: 96:                 Delay(25000);
+"117
+[; ;main.c: 117:                 LCD_Set_Cursor(1, 7);
+[e ( _LCD_Set_Cursor (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
+"118
+[; ;main.c: 118:                 LCD_Write_String(".");
+[e ( _LCD_Write_String (1 :s 5C ]
+"119
+[; ;main.c: 119:                 LCD_Set_Cursor(1, 8);
+[e ( _LCD_Set_Cursor (2 , -> -> 1 `i `uc -> -> 8 `i `uc ]
+"120
+[; ;main.c: 120:                 sprintf(ShowbadBettery, "%d", (Coulomb_Data.Voltage[j-1]%1000));
+[e ( _sprintf (1 , (. , &U _ShowbadBettery :s 6C % *U + &U . _Coulomb_Data 9 * -> -> - _j -> 1 `i `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 1000 `i `ui ]
+"121
+[; ;main.c: 121:                 LCD_Write_String(ShowbadBettery);
+[e ( _LCD_Write_String (1 &U _ShowbadBettery ]
+"122
+[; ;main.c: 122:                 LCD_Set_Cursor(1, 11);
+[e ( _LCD_Set_Cursor (2 , -> -> 1 `i `uc -> -> 11 `i `uc ]
+"123
+[; ;main.c: 123:                 LCD_Write_String("v");
+[e ( _LCD_Write_String (1 :s 7C ]
+"125
+[; ;main.c: 125:                 LCD_Set_Cursor(2, 1);
+[e ( _LCD_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"126
+[; ;main.c: 126:                 LCD_Write_String("^");
+[e ( _LCD_Write_String (1 :s 8C ]
+"127
+[; ;main.c: 127:                 LCD_Set_Cursor(2, 2);
+[e ( _LCD_Set_Cursor (2 , -> -> 2 `i `uc -> -> 2 `i `uc ]
+"128
+[; ;main.c: 128:                 LCD_Write_String(&no);
+[e ( _LCD_Write_String (1 &U _no ]
+"129
+[; ;main.c: 129:                 LCD_Set_Cursor(2, 4);
+[e ( _LCD_Set_Cursor (2 , -> -> 2 `i `uc -> -> 4 `i `uc ]
+"130
+[; ;main.c: 130:                 LCD_Write_String(":");
+[e ( _LCD_Write_String (1 :s 9C ]
+"131
+[; ;main.c: 131:                 LCD_Set_Cursor(2, 5);
+[e ( _LCD_Set_Cursor (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
+"132
+[; ;main.c: 132:                 sprintf(ShowbadBettery, "%d", (diffBettery[j-1]/1000));
+[e ( _sprintf (1 , (. , &U _ShowbadBettery :s 10C / *U + &U _diffBettery * -> -> - _j -> 1 `i `ui `ux -> -> # *U &U _diffBettery `ui `ux -> -> 1000 `i `ui ]
+"133
+[; ;main.c: 133:                 LCD_Write_String(ShowbadBettery);
+[e ( _LCD_Write_String (1 &U _ShowbadBettery ]
+"134
+[; ;main.c: 134:                 LCD_Set_Cursor(2, 6);
+[e ( _LCD_Set_Cursor (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
+"135
+[; ;main.c: 135:                 LCD_Write_String(".");
+[e ( _LCD_Write_String (1 :s 11C ]
+"136
+[; ;main.c: 136:                 LCD_Set_Cursor(2, 7);
+[e ( _LCD_Set_Cursor (2 , -> -> 2 `i `uc -> -> 7 `i `uc ]
+"140
+[; ;main.c: 140:                 if((diffBettery[j-1]/10!=0)&&(diffBettery[j-1]/100==0)&&(diffBettery[j-1]/1000==0))
+[e $ ! && && != / *U + &U _diffBettery * -> -> - _j -> 1 `i `ui `ux -> -> # *U &U _diffBettery `ui `ux -> -> 10 `i `ui -> -> 0 `i `ui == / *U + &U _diffBettery * -> -> - _j -> 1 `i `ui `ux -> -> # *U &U _diffBettery `ui `ux -> -> 100 `i `ui -> -> 0 `i `ui == / *U + &U _diffBettery * -> -> - _j -> 1 `i `ui `ux -> -> # *U &U _diffBettery `ui `ux -> -> 1000 `i `ui -> -> 0 `i `ui 1602  ]
+"141
+[; ;main.c: 141:                     LCD_Write_String("0");
+[e ( _LCD_Write_String (1 :s 12C ]
+[e $U 1603  ]
+"143
+[; ;main.c: 143:                 else if((diffBettery[j-1]/10==0)&&(diffBettery[j-1]/100==0)&&(diffBettery[j-1]/1000==0))
+[e :U 1602 ]
+[e $ ! && && == / *U + &U _diffBettery * -> -> - _j -> 1 `i `ui `ux -> -> # *U &U _diffBettery `ui `ux -> -> 10 `i `ui -> -> 0 `i `ui == / *U + &U _diffBettery * -> -> - _j -> 1 `i `ui `ux -> -> # *U &U _diffBettery `ui `ux -> -> 100 `i `ui -> -> 0 `i `ui == / *U + &U _diffBettery * -> -> - _j -> 1 `i `ui `ux -> -> # *U &U _diffBettery `ui `ux -> -> 1000 `i `ui -> -> 0 `i `ui 1604  ]
+"144
+[; ;main.c: 144:                     LCD_Write_String("00");
+[e ( _LCD_Write_String (1 :s 13C ]
+[e :U 1604 ]
+[e :U 1603 ]
+"146
+[; ;main.c: 146:                 sprintf(ShowbadBettery, "%d", (diffBettery[j-1]%1000));
+[e ( _sprintf (1 , (. , &U _ShowbadBettery :s 14C % *U + &U _diffBettery * -> -> - _j -> 1 `i `ui `ux -> -> # *U &U _diffBettery `ui `ux -> -> 1000 `i `ui ]
+"147
+[; ;main.c: 147:                 LCD_Write_String(ShowbadBettery);
+[e ( _LCD_Write_String (1 &U _ShowbadBettery ]
+"149
+[; ;main.c: 149:                 LCD_Set_Cursor(2, 10);
+[e ( _LCD_Set_Cursor (2 , -> -> 2 `i `uc -> -> 10 `i `uc ]
+"150
+[; ;main.c: 150:                 LCD_Write_String("v");
+[e ( _LCD_Write_String (1 :s 15C ]
+"151
+[; ;main.c: 151:                 Delay(25000);
 [e ( _Delay (1 -> -> 25000 `i `ui ]
-"97
-[; ;main.c: 97:             }
+"152
+[; ;main.c: 152:             }
 }
 [e ++ _j -> 1 `i ]
-[e $ <= _j -> 17 `i 1595  ]
-[e :U 1596 ]
+[e $ <= _j -> 17 `i 1599  ]
+[e :U 1600 ]
 }
-"98
-[; ;main.c: 98:         }
+"153
+[; ;main.c: 153:         }
 }
 [e :U 1579 ]
-"99
-[; ;main.c: 99:     }
+"154
+[; ;main.c: 154:     }
 }
 [e :U 1572 ]
 [e $U 1573  ]
 [e :U 1574 ]
-"101
-[; ;main.c: 101: }
+"156
+[; ;main.c: 156: }
 [e :UE 1571 ]
 }
-"102
-[; ;main.c: 102: void Get_Voltage(int k) {
+"157
+[; ;main.c: 157: void Get_Voltage(int k) {
 [v _Get_Voltage `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _Get_Voltage ]
 [v _k `i ~T0 @X0 1 r1 ]
 [f ]
-"103
-[; ;main.c: 103:     Coulomb_Data.Voltage[k] = (Coulomb_Data.Voltage_H[k] << 8) + Coulomb_Data.Voltage_L[k];
+"158
+[; ;main.c: 158:     Coulomb_Data.Voltage[k] = (Coulomb_Data.Voltage_H[k] << 8) + Coulomb_Data.Voltage_L[k];
 [e = *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux + << *U + &U . _Coulomb_Data 3 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 3 `ui `ux -> 8 `i *U + &U . _Coulomb_Data 4 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 4 `ui `ux ]
-"104
-[; ;main.c: 104:     if(Coulomb_Data.Voltage_Point==4) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/10000;
-[e $ ! == -> . . . _Coulomb_Data 7 1 0 `i -> 4 `i 1599  ]
+"159
+[; ;main.c: 159:     if(Coulomb_Data.Voltage_Point==4) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/10000;
+[e $ ! == -> . . . _Coulomb_Data 7 1 0 `i -> 4 `i 1606  ]
 [e = *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux / *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 10000 `i `ui ]
-[e $U 1600  ]
-"105
-[; ;main.c: 105:  else if(Coulomb_Data.Voltage_Point==3) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/1000;
-[e :U 1599 ]
-[e $ ! == -> . . . _Coulomb_Data 7 1 0 `i -> 3 `i 1601  ]
-[e = *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux / *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 1000 `i `ui ]
-[e $U 1602  ]
-"106
-[; ;main.c: 106:  else if(Coulomb_Data.Voltage_Point==2) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/100;
-[e :U 1601 ]
-[e $ ! == -> . . . _Coulomb_Data 7 1 0 `i -> 2 `i 1603  ]
-[e = *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux / *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 100 `i `ui ]
-[e $U 1604  ]
-"107
-[; ;main.c: 107:     else if(Coulomb_Data.Voltage_Point==1) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/10;
-[e :U 1603 ]
-[e $ ! == -> . . . _Coulomb_Data 7 1 0 `i -> 1 `i 1605  ]
-[e = *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux / *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 10 `i `ui ]
-[e $U 1606  ]
-"108
-[; ;main.c: 108:  else if(Coulomb_Data.Voltage_Point==0) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/1 ;
-[e :U 1605 ]
-[e $ ! == -> . . . _Coulomb_Data 7 1 0 `i -> 0 `i 1607  ]
-[e = *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux / *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 1 `i `ui ]
-[e :U 1607 ]
+[e $U 1607  ]
+"160
+[; ;main.c: 160:  else if(Coulomb_Data.Voltage_Point==3) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/1000;
 [e :U 1606 ]
-[e :U 1604 ]
-[e :U 1602 ]
-[e :U 1600 ]
-"109
-[; ;main.c: 109: }
-[e :UE 1598 ]
+[e $ ! == -> . . . _Coulomb_Data 7 1 0 `i -> 3 `i 1608  ]
+[e = *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux / *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 1000 `i `ui ]
+[e $U 1609  ]
+"161
+[; ;main.c: 161:  else if(Coulomb_Data.Voltage_Point==2) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/100;
+[e :U 1608 ]
+[e $ ! == -> . . . _Coulomb_Data 7 1 0 `i -> 2 `i 1610  ]
+[e = *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux / *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 100 `i `ui ]
+[e $U 1611  ]
+"162
+[; ;main.c: 162:     else if(Coulomb_Data.Voltage_Point==1) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/10;
+[e :U 1610 ]
+[e $ ! == -> . . . _Coulomb_Data 7 1 0 `i -> 1 `i 1612  ]
+[e = *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux / *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 10 `i `ui ]
+[e $U 1613  ]
+"163
+[; ;main.c: 163:  else if(Coulomb_Data.Voltage_Point==0) Coulomb_Data.Voltage[k] = Coulomb_Data.Voltage[k]/1 ;
+[e :U 1612 ]
+[e $ ! == -> . . . _Coulomb_Data 7 1 0 `i -> 0 `i 1614  ]
+[e = *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux / *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 1 `i `ui ]
+[e :U 1614 ]
+[e :U 1613 ]
+[e :U 1611 ]
+[e :U 1609 ]
+[e :U 1607 ]
+"164
+[; ;main.c: 164: }
+[e :UE 1605 ]
 }
-"110
-[; ;main.c: 110: void Sort(){
+"165
+[; ;main.c: 165: void Sort(){
 [v _Sort `(v ~T0 @X0 1 ef ]
 {
 [e :U _Sort ]
 [f ]
-"111
-[; ;main.c: 111:     int i, j, tmp;
+"166
+[; ;main.c: 166:     int i, j, tmp;
 [v _i `i ~T0 @X0 1 a ]
 [v _j `i ~T0 @X0 1 a ]
 [v _tmp `i ~T0 @X0 1 a ]
-"112
-[; ;main.c: 112:     int n = 17;
+"167
+[; ;main.c: 167:     int n = 17;
 [v _n `i ~T0 @X0 1 a ]
 [e = _n -> 17 `i ]
-"113
-[; ;main.c: 113:     for(i = n-1; i > 0; i--){
+"168
+[; ;main.c: 168:     for(i = n-1; i > 0; i--){
 {
 [e = _i - _n -> 1 `i ]
-[e $ > _i -> 0 `i 1609  ]
-[e $U 1610  ]
-[e :U 1609 ]
+[e $ > _i -> 0 `i 1616  ]
+[e $U 1617  ]
+[e :U 1616 ]
 {
-"114
-[; ;main.c: 114:         for(j = 0; j <= i-1; j++){
+"169
+[; ;main.c: 169:         for(j = 0; j <= i-1; j++){
 {
 [e = _j -> 0 `i ]
-[e $U 1615  ]
-[e :U 1612 ]
+[e $U 1622  ]
+[e :U 1619 ]
 {
-"115
-[; ;main.c: 115:             if( Voltage_sort[j] > Voltage_sort[j+1]){
-[e $ ! > *U + &U _Voltage_sort * -> -> _j `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U _Voltage_sort * -> -> + _j -> 1 `i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux 1616  ]
+"170
+[; ;main.c: 170:             if( Voltage_sort[j] > Voltage_sort[j+1]){
+[e $ ! > *U + &U _Voltage_sort * -> -> _j `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U _Voltage_sort * -> -> + _j -> 1 `i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux 1623  ]
 {
-"116
-[; ;main.c: 116:                 tmp = Voltage_sort [j];
+"171
+[; ;main.c: 171:                 tmp = Voltage_sort [j];
 [e = _tmp -> *U + &U _Voltage_sort * -> -> _j `ui `ux -> -> # *U &U _Voltage_sort `ui `ux `i ]
-"117
-[; ;main.c: 117:                 Voltage_sort[j] = Voltage_sort[j+1];
+"172
+[; ;main.c: 172:                 Voltage_sort[j] = Voltage_sort[j+1];
 [e = *U + &U _Voltage_sort * -> -> _j `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U _Voltage_sort * -> -> + _j -> 1 `i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux ]
-"118
-[; ;main.c: 118:                 Voltage_sort[j+1] = tmp;
+"173
+[; ;main.c: 173:                 Voltage_sort[j+1] = tmp;
 [e = *U + &U _Voltage_sort * -> -> + _j -> 1 `i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux -> _tmp `ui ]
-"119
-[; ;main.c: 119:             }
+"174
+[; ;main.c: 174:             }
 }
-[e :U 1616 ]
-"120
-[; ;main.c: 120:         }
+[e :U 1623 ]
+"175
+[; ;main.c: 175:         }
 }
 [e ++ _j -> 1 `i ]
-[e :U 1615 ]
-[e $ <= _j - _i -> 1 `i 1612  ]
-[e :U 1613 ]
+[e :U 1622 ]
+[e $ <= _j - _i -> 1 `i 1619  ]
+[e :U 1620 ]
 }
-"121
-[; ;main.c: 121:     }
+"176
+[; ;main.c: 176:     }
 }
 [e -- _i -> 1 `i ]
-[e $ > _i -> 0 `i 1609  ]
-[e :U 1610 ]
+[e $ > _i -> 0 `i 1616  ]
+[e :U 1617 ]
 }
-"122
-[; ;main.c: 122: }
-[e :UE 1608 ]
+"177
+[; ;main.c: 177: }
+[e :UE 1615 ]
 }
-"123
-[; ;main.c: 123: void BadBetteryFilter(){
+"178
+[; ;main.c: 178: void BadBetteryFilter(){
 [v _BadBetteryFilter `(v ~T0 @X0 1 ef ]
 {
 [e :U _BadBetteryFilter ]
 [f ]
-"124
-[; ;main.c: 124:     Sort();
+"179
+[; ;main.c: 179:     Sort();
 [e ( _Sort ..  ]
-"125
-[; ;main.c: 125:     for(int k=0;k<=16;k++){
+"180
+[; ;main.c: 180:     for(int k=0;k<=16;k++){
 {
 [v _k `i ~T0 @X0 1 a ]
 [e = _k -> 0 `i ]
-[e $ <= _k -> 16 `i 1618  ]
-[e $U 1619  ]
-[e :U 1618 ]
+[e $ <= _k -> 16 `i 1625  ]
+[e $U 1626  ]
+[e :U 1625 ]
 {
-"126
-[; ;main.c: 126:         if((Voltage_sort[16]-Coulomb_Data.Voltage[k])>=150) badBettery[k]=1;
-[e $ ! >= - *U + &U _Voltage_sort * -> -> -> 16 `i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 150 `i `ui 1621  ]
+"181
+[; ;main.c: 181:         if((Voltage_sort[16]-Coulomb_Data.Voltage[k])>=150) badBettery[k]=1;
+[e $ ! >= - *U + &U _Voltage_sort * -> -> -> 16 `i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux -> -> 150 `i `ui 1628  ]
 [e = *U + &U _badBettery * -> -> _k `ui `ux -> -> # *U &U _badBettery `ui `ux -> -> 1 `i `ui ]
-[e :U 1621 ]
-"127
-[; ;main.c: 127:         diffBettery[k]=Voltage_sort[16]-Coulomb_Data.Voltage[k];
+[e :U 1628 ]
+"182
+[; ;main.c: 182:         diffBettery[k]=Voltage_sort[16]-Coulomb_Data.Voltage[k];
 [e = *U + &U _diffBettery * -> -> _k `ui `ux -> -> # *U &U _diffBettery `ui `ux - *U + &U _Voltage_sort * -> -> -> 16 `i `ui `ux -> -> # *U &U _Voltage_sort `ui `ux *U + &U . _Coulomb_Data 9 * -> -> _k `ui `ux -> -> # *U &U . _Coulomb_Data 9 `ui `ux ]
-"128
-[; ;main.c: 128:     }
+"183
+[; ;main.c: 183:     }
 }
 [e ++ _k -> 1 `i ]
-[e $ <= _k -> 16 `i 1618  ]
-[e :U 1619 ]
+[e $ <= _k -> 16 `i 1625  ]
+[e :U 1626 ]
 }
-"129
-[; ;main.c: 129: }
-[e :UE 1617 ]
+"184
+[; ;main.c: 184: }
+[e :UE 1624 ]
 }
 [p f _sprintf 8388736 ]
-[a 1C 37 100 0 ]
+[a 7C 118 0 ]
+[a 15C 118 0 ]
+[a 1C 78 111 0 ]
 [a 2C 37 100 0 ]
+[a 4C 37 100 0 ]
+[a 6C 37 100 0 ]
+[a 10C 37 100 0 ]
+[a 14C 37 100 0 ]
+[a 8C 94 0 ]
+[a 3C 58 0 ]
+[a 9C 58 0 ]
+[a 13C 48 48 0 ]
+[a 12C 48 0 ]
+[a 5C 46 0 ]
+[a 11C 46 0 ]

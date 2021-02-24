@@ -20029,6 +20029,7 @@ void PMD_Initialize(void);
 void master_init(void);
 # 9 "main.c" 2
 
+
 # 1 "./I2C_LCD.h" 1
 # 25 "./I2C_LCD.h"
 void I2C_Master_Wait();
@@ -20053,7 +20054,7 @@ void LCD_SR();
 void LCD_SL();
 void LCD_Clear();
 void Delay(unsigned int counter);
-# 10 "main.c" 2
+# 11 "main.c" 2
 
 
 
@@ -20093,7 +20094,7 @@ void Sort();
 unsigned int Voltage_sort[17]={0};
 unsigned int badBettery[17]={0};
 unsigned int diffBettery[17]={0};
-char ShowbadBettery;
+char ShowbadBettery[4]={0};
 char no;
 void main(void)
 {
@@ -20105,6 +20106,7 @@ void main(void)
     int i,j,H_L_counter=0;
 
     while (1){
+        H_L_counter=0;
         if(TMR0_ReadTimer()==0){
             for(i=0;i<8;i++){
                 EUSART_Write(out[i]);
@@ -20113,14 +20115,26 @@ void main(void)
         }
         if(eusartRxCount == 39){
             unsigned int *index;
+            unsigned int *index_V_H;
+            unsigned int *index_V_L;
             index=&Coulomb_Data.ID;
+            index_V_H=&Coulomb_Data.Voltage_H[0];
+            index_V_L=&Coulomb_Data.Voltage_L[0];
             while(eusartRxCount != 0){
                 *index = EUSART_Read();
                 H_L_counter++;
                 if((H_L_counter<=3)||(H_L_counter>=0x27)) index++;
                 else{
-                    if((H_L_counter%2)==0) index+=0x11;
-                    else index-=0x10;
+                    if(H_L_counter==4) index=index_V_H;
+                    else if(H_L_counter==5) index=index_V_L;
+                    else if((H_L_counter%2)==0){
+                        index_V_H++;
+                        index=index_V_H;
+                    }
+                    else{
+                        index_V_L++;
+                        index=index_V_L;
+                    }
                 }
             }
             for(j=0;j<=16;j++) {
@@ -20132,14 +20146,55 @@ void main(void)
                 if(Coulomb_Data.Voltage[j]<=2500) PORTAbits.RA3=1;
             }
             BadBetteryFilter();
+            LCD_Init(0x4E);
+
+
             for(j=1; j<=17 ;j++){
-                LCD_Init(0x4E);
+                LCD_Clear();
                 LCD_Set_Cursor(1, 1);
+                LCD_Write_String("No");
+                LCD_Set_Cursor(1, 3);
                 sprintf(&no, "%d", j);
                 LCD_Write_String(&no);
+                LCD_Set_Cursor(1, 5);
+                LCD_Write_String(":");
+                LCD_Set_Cursor(1, 6);
+                sprintf(ShowbadBettery, "%d", (Coulomb_Data.Voltage[j-1]/1000));
+                LCD_Write_String(ShowbadBettery);
+                LCD_Set_Cursor(1, 7);
+                LCD_Write_String(".");
+                LCD_Set_Cursor(1, 8);
+                sprintf(ShowbadBettery, "%d", (Coulomb_Data.Voltage[j-1]%1000));
+                LCD_Write_String(ShowbadBettery);
+                LCD_Set_Cursor(1, 11);
+                LCD_Write_String("v");
+
                 LCD_Set_Cursor(2, 1);
-                sprintf(&ShowbadBettery, "%d", diffBettery[j-1]);
-                LCD_Write_String(&ShowbadBettery);
+                LCD_Write_String("^");
+                LCD_Set_Cursor(2, 2);
+                LCD_Write_String(&no);
+                LCD_Set_Cursor(2, 4);
+                LCD_Write_String(":");
+                LCD_Set_Cursor(2, 5);
+                sprintf(ShowbadBettery, "%d", (diffBettery[j-1]/1000));
+                LCD_Write_String(ShowbadBettery);
+                LCD_Set_Cursor(2, 6);
+                LCD_Write_String(".");
+                LCD_Set_Cursor(2, 7);
+
+
+
+                if((diffBettery[j-1]/10!=0)&&(diffBettery[j-1]/100==0)&&(diffBettery[j-1]/1000==0))
+                    LCD_Write_String("0");
+
+                else if((diffBettery[j-1]/10==0)&&(diffBettery[j-1]/100==0)&&(diffBettery[j-1]/1000==0))
+                    LCD_Write_String("00");
+
+                sprintf(ShowbadBettery, "%d", (diffBettery[j-1]%1000));
+                LCD_Write_String(ShowbadBettery);
+
+                LCD_Set_Cursor(2, 10);
+                LCD_Write_String("v");
                 Delay(25000);
             }
         }

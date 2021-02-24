@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/Users/linda/MPLABXProjects/modbus_18854_read_voltage.X/main.c</file>
             <file>file:/C:/Users/linda/MPLABXProjects/modbus_18854_read_voltage.X/I2C_LCD.c</file>
+            <file>file:/C:/Users/linda/MPLABXProjects/modbus_18854_read_voltage.X/mcc_generated_files/eusart.c</file>
         </group>
     </open-files>
 </project-private>
