@@ -65,6 +65,8 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+int sec=0;
+
 // get/set led aliases
 #define led_TRIS                 TRISAbits.TRISA1
 #define led_LAT                  LATAbits.LATA1
@@ -74,7 +76,7 @@
 #define led_ANS                  ANSELAbits.ANSA1
 #define led_SetHigh()            do { LATAbits.LATA1 = 1; } while(0)
 #define led_SetLow()             do { LATAbits.LATA1 = 0; } while(0)
-#define led_Toggle()             do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0)
+#define led_Toggle()             do { LATAbits.LATA1 = ~LATAbits.LATA1; sec++;} while(0)
 #define led_GetValue()           PORTAbits.RA1
 #define led_SetDigitalInput()    do { TRISAbits.TRISA1 = 1; } while(0)
 #define led_SetDigitalOutput()   do { TRISAbits.TRISA1 = 0; } while(0)

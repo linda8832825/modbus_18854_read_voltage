@@ -34,10 +34,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21165
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 21165: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x70F)));
 [v _PIR3bits `VS966 ~T0 @X0 0 e@1807 ]
-[v F12007 `(v ~T0 @X0 0 tf ]
+[v F12008 `(v ~T0 @X0 0 tf ]
 "95 mcc_generated_files/eusart.h
 [; ;mcc_generated_files/eusart.h: 95: extern void (*EUSART_RxDefaultInterruptHandler)(void);
-[v _EUSART_RxDefaultInterruptHandler `*F12007 ~T0 @X0 0 e ]
+[v _EUSART_RxDefaultInterruptHandler `*F12008 ~T0 @X0 0 e ]
 "783 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 783:     struct {
 [s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -1600,6 +1600,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "34906
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f18854.h: 34906: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
+"68 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 68: int sec=0;
+[v _sec `i ~T0 @X0 1 e ]
+[i _sec
+-> 0 `i
+]
 "52 mcc_generated_files/interrupt_manager.c
 [; ;mcc_generated_files/interrupt_manager.c: 52: volatile int i=0;
 [v _i `Vi ~T0 @X0 1 e ]
@@ -1634,10 +1640,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/interrupt_manager.c: 63:             EUSART_RxDefaultInterruptHandler();
 [e ( *U _EUSART_RxDefaultInterruptHandler ..  ]
 "64
-[; ;mcc_generated_files/interrupt_manager.c: 64:             do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
+[; ;mcc_generated_files/interrupt_manager.c: 64:             do { LATAbits.LATA1 = ~LATAbits.LATA1; sec++;} while(0);
 [e :U 1571 ]
 {
 [e = . . _LATAbits 0 1 -> ~ -> . . _LATAbits 0 1 `i `uc ]
+[e ++ _sec -> 1 `i ]
 }
 [e :U 1570 ]
 "77

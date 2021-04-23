@@ -1,7 +1,6 @@
 #include "pin_manager.h"
 void PIN_MANAGER_Initialize(void)
 {
-    PORTA = 0x00;
     /**
     LATx registers
     */
@@ -12,7 +11,7 @@ void PIN_MANAGER_Initialize(void)
     /**
     TRISx registers
     */
-    TRISA = 0xF1;
+    TRISA = 0xC0; //RA3=放電，RA2=充電，RA1=LED，RA0=啟動鈕，RA4=下一頁紐，RA5=蜂鳴器
     TRISB = 0xFF;
     TRISC = 0xBF;
 

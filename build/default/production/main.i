@@ -19681,9 +19681,11 @@ extern __bank0 __bit __timeout;
 # 4 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 122 "./mcc_generated_files/pin_manager.h"
+# 68 "./mcc_generated_files/pin_manager.h"
+int sec=0;
+# 124 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 134 "./mcc_generated_files/pin_manager.h"
+# 136 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 
 void master_init(void);
@@ -20089,13 +20091,19 @@ typedef struct tagCoulomb_Data_struct {
 
 Coulomb_Data_struct_define Coulomb_Data ;
 void Get_Voltage(int);
-void BadBetteryFilter();
 void Sort();
+void BadBetteryFilter();
+void ShowBetteryDiff();
+void ShowAllBadBettery();
 unsigned int Voltage_sort[17]={0};
 unsigned int badBettery[17]={0};
 unsigned int diffBettery[17]={0};
+unsigned int diffBadBettery[17]={0};
+unsigned int diffHighBettery[17]={0};
 char ShowbadBettery[4]={0};
 char no;
+double hour=0.00;
+double Ah=0.00;
 void main(void)
 {
     SYSTEM_Initialize();
@@ -20105,101 +20113,60 @@ void main(void)
     unsigned char out[8]={0x01,0x03,0x00,0x03,0x00,0x11,0x75,0xC6};
     int i,j,H_L_counter=0;
 
-    while (1){
-        H_L_counter=0;
-        if(TMR0_ReadTimer()==0){
-            for(i=0;i<8;i++){
-                EUSART_Write(out[i]);
-                __nop();
-            }
-        }
-        if(eusartRxCount == 39){
-            unsigned int *index;
-            unsigned int *index_V_H;
-            unsigned int *index_V_L;
-            index=&Coulomb_Data.ID;
-            index_V_H=&Coulomb_Data.Voltage_H[0];
-            index_V_L=&Coulomb_Data.Voltage_L[0];
-            while(eusartRxCount != 0){
-                *index = EUSART_Read();
-                H_L_counter++;
-                if((H_L_counter<=3)||(H_L_counter>=0x27)) index++;
-                else{
-                    if(H_L_counter==4) index=index_V_H;
-                    else if(H_L_counter==5) index=index_V_L;
-                    else if((H_L_counter%2)==0){
-                        index_V_H++;
-                        index=index_V_H;
-                    }
-                    else{
-                        index_V_L++;
-                        index=index_V_L;
-                    }
+    if(RA0==0){
+        while (1){
+            H_L_counter=0;
+            if(TMR0_ReadTimer()==0){
+                for(i=0;i<8;i++){
+                    EUSART_Write(out[i]);
+                    __nop();
                 }
             }
-            for(j=0;j<=16;j++) {
-                Get_Voltage(j);
-                Voltage_sort[j] = Coulomb_Data.Voltage[j];
-            }
-            for(j=0;j<=16;j++){
-                if(Coulomb_Data.Voltage[j]>=3500) PORTAbits.RA2=1;
-                if(Coulomb_Data.Voltage[j]<=2500) PORTAbits.RA3=1;
-            }
-            BadBetteryFilter();
-            LCD_Init(0x4E);
-
-
-            for(j=1; j<=17 ;j++){
-                LCD_Clear();
-                LCD_Set_Cursor(1, 1);
-                LCD_Write_String("No");
-                LCD_Set_Cursor(1, 3);
-                sprintf(&no, "%d", j);
-                LCD_Write_String(&no);
-                LCD_Set_Cursor(1, 5);
-                LCD_Write_String(":");
-                LCD_Set_Cursor(1, 6);
-                sprintf(ShowbadBettery, "%d", (Coulomb_Data.Voltage[j-1]/1000));
-                LCD_Write_String(ShowbadBettery);
-                LCD_Set_Cursor(1, 7);
-                LCD_Write_String(".");
-                LCD_Set_Cursor(1, 8);
-                sprintf(ShowbadBettery, "%d", (Coulomb_Data.Voltage[j-1]%1000));
-                LCD_Write_String(ShowbadBettery);
-                LCD_Set_Cursor(1, 11);
-                LCD_Write_String("v");
-
-                LCD_Set_Cursor(2, 1);
-                LCD_Write_String("^");
-                LCD_Set_Cursor(2, 2);
-                LCD_Write_String(&no);
-                LCD_Set_Cursor(2, 4);
-                LCD_Write_String(":");
-                LCD_Set_Cursor(2, 5);
-                sprintf(ShowbadBettery, "%d", (diffBettery[j-1]/1000));
-                LCD_Write_String(ShowbadBettery);
-                LCD_Set_Cursor(2, 6);
-                LCD_Write_String(".");
-                LCD_Set_Cursor(2, 7);
-
-
-
-                if((diffBettery[j-1]/10!=0)&&(diffBettery[j-1]/100==0)&&(diffBettery[j-1]/1000==0))
-                    LCD_Write_String("0");
-
-                else if((diffBettery[j-1]/10==0)&&(diffBettery[j-1]/100==0)&&(diffBettery[j-1]/1000==0))
-                    LCD_Write_String("00");
-
-                sprintf(ShowbadBettery, "%d", (diffBettery[j-1]%1000));
-                LCD_Write_String(ShowbadBettery);
-
-                LCD_Set_Cursor(2, 10);
-                LCD_Write_String("v");
-                Delay(25000);
+            if(eusartRxCount == 39){
+                unsigned int *index;
+                unsigned int *index_V_H;
+                unsigned int *index_V_L;
+                index=&Coulomb_Data.ID;
+                index_V_H=&Coulomb_Data.Voltage_H[0];
+                index_V_L=&Coulomb_Data.Voltage_L[0];
+                while(eusartRxCount != 0){
+                    *index = EUSART_Read();
+                    H_L_counter++;
+                    if((H_L_counter<=3)||(H_L_counter>=0x27)) index++;
+                    else{
+                        if(H_L_counter==4) index=index_V_L;
+                        else if((H_L_counter%2)==0){
+                            index_V_L++;
+                            index=index_V_L;
+                        }
+                        else{
+                            index_V_H++;
+                            index=index_V_H;
+                        }
+                    }
+                }
+                for(j=0;j<=16;j++) {
+                    Get_Voltage(j);
+                    Voltage_sort[j] = Coulomb_Data.Voltage[j];
+                }
+                for(j=0;j<=16;j++){
+                    if(Coulomb_Data.Voltage[j]>=3500) {
+                        LATA2=0;
+                        Delay(25000);
+                        LATA3=1;
+                    }
+                    if(Coulomb_Data.Voltage[j]<=2500) {
+                        LATA3=0;
+                        hour=sec/3600;
+                        Ah=hour*2.5;
+                        LATA5 = 1;
+                        ShowAllBadBettery();
+                    }
+                }
+                BadBetteryFilter();
             }
         }
     }
-
 }
 void Get_Voltage(int k) {
     Coulomb_Data.Voltage[k] = (Coulomb_Data.Voltage_H[k] << 8) + Coulomb_Data.Voltage_L[k];
@@ -20225,7 +20192,145 @@ void Sort(){
 void BadBetteryFilter(){
     Sort();
     for(int k=0;k<=16;k++){
-        if((Voltage_sort[16]-Coulomb_Data.Voltage[k])>=150) badBettery[k]=1;
-        diffBettery[k]=Voltage_sort[16]-Coulomb_Data.Voltage[k];
+        if((Voltage_sort[16]-Coulomb_Data.Voltage[k])>=200) badBettery[k]=1;
+        diffBettery[k] = Voltage_sort[16]-Coulomb_Data.Voltage[k];
+        if((LATA3==1)&&(diffBettery[k] >= 200) && (diffBettery[k] > diffBadBettery[k])){
+            diffBadBettery[k] = diffBettery[k];
+            diffHighBettery[k] = Voltage_sort[16];
+        }
+    }
+    ShowBetteryDiff();
+}
+void ShowBetteryDiff(){
+    int lineCount=1;
+    LCD_Init(0x4E);
+
+    for(int j=1; j<=17 ;j++){
+        LCD_Clear();
+        LCD_Set_Cursor(lineCount, 1);
+        LCD_Write_String("No");
+        LCD_Set_Cursor(lineCount, 3);
+        sprintf(&no, "%d", j);
+        LCD_Write_String(&no);
+        LCD_Set_Cursor(lineCount, 5);
+        LCD_Write_String(":");
+
+        LCD_Set_Cursor(lineCount, 6);
+        sprintf(ShowbadBettery, "%d", (Coulomb_Data.Voltage[j-1]/1000));
+        LCD_Write_String(ShowbadBettery);
+        LCD_Set_Cursor(lineCount, 7);
+        LCD_Write_String(".");
+        LCD_Set_Cursor(lineCount, 8);
+        sprintf(ShowbadBettery, "%d", (Coulomb_Data.Voltage[j-1]%1000));
+        LCD_Write_String(ShowbadBettery);
+        LCD_Set_Cursor(lineCount, 11);
+        LCD_Write_String("v");
+
+        LCD_Set_Cursor(lineCount+1, 1);
+        LCD_Write_String("^");
+        LCD_Set_Cursor(lineCount+1, 2);
+        LCD_Write_String(&no);
+        LCD_Set_Cursor(lineCount+1, 4);
+        LCD_Write_String(":");
+
+        LCD_Set_Cursor(lineCount+1, 5);
+        sprintf(ShowbadBettery, "%d", (diffBettery[j-1]/1000));
+        LCD_Write_String(ShowbadBettery);
+
+        LCD_Set_Cursor(lineCount+1, 6);
+        LCD_Write_String(".");
+        LCD_Set_Cursor(lineCount+1, 7);
+        if((diffBettery[j-1]/10!=0)&&(diffBettery[j-1]/100==0)&&(diffBettery[j-1]/1000==0))
+            LCD_Write_String("0");
+
+        else if((diffBettery[j-1]/10==0)&&(diffBettery[j-1]/100==0)&&(diffBettery[j-1]/1000==0))
+            LCD_Write_String("00");
+
+        sprintf(ShowbadBettery, "%d", (diffBettery[j-1]%1000));
+        LCD_Write_String(ShowbadBettery);
+
+        LCD_Set_Cursor(lineCount+1, 10);
+        LCD_Write_String("v");
+        lineCount++;
+        if(lineCount==4){
+            lineCount=1;
+            Delay(25000);
+            LCD_Clear();
+        }
+
+    }
+}
+void ShowAllBadBettery(){
+    int line_Count=1;
+    int betteryCount=1;
+    LCD_Init(0x4E);
+    while(1){
+        LCD_Set_Cursor(1, 1);
+        LCD_Write_String("DONE!!");
+        while(1){
+            while(LATA4==0){
+                LATA5 = 0;
+                LCD_Clear();
+                if(badBettery[betteryCount]){
+                    LCD_Set_Cursor(line_Count, 1);
+                    LCD_Write_String("^");
+                    LCD_Set_Cursor(line_Count, 2);
+                    sprintf(&no, "%d", betteryCount);
+                    LCD_Write_String(&no);
+                    LCD_Set_Cursor(line_Count, 4);
+                    LCD_Write_String(":");
+
+                    LCD_Set_Cursor(line_Count, 5);
+                    sprintf(ShowbadBettery, "%d", (diffBadBettery[betteryCount-1]/1000));
+                    LCD_Write_String(ShowbadBettery);
+
+                    LCD_Set_Cursor(line_Count, 6);
+                    LCD_Write_String(".");
+
+                    LCD_Set_Cursor(line_Count, 7);
+                    sprintf(ShowbadBettery, "%d", (diffBadBettery[betteryCount-1]%1000));
+                    LCD_Write_String(ShowbadBettery);
+
+                    LCD_Set_Cursor(line_Count, 11);
+                    LCD_Write_String("(MaxV:");
+
+                    LCD_Set_Cursor(line_Count, 17);
+                    sprintf(ShowbadBettery, "%d", (diffBadBettery[betteryCount-1]/1000));
+                    LCD_Write_String(ShowbadBettery);
+
+                    LCD_Set_Cursor(line_Count, 18);
+                    LCD_Write_String("(.");
+
+                    LCD_Set_Cursor(line_Count, 19);
+                    sprintf(ShowbadBettery, "%d", ((diffBadBettery[betteryCount-1]%1000)/10));
+                    LCD_Write_String(ShowbadBettery);
+
+                    line_Count++;
+                    betteryCount++;
+                }
+                if(line_Count==4) {
+                    line_Count=1;
+                    if(LATA4==0) continue;
+                }
+                if(betteryCount==17) {
+                    while(1){
+                        while(LATA4==0){
+                            LCD_Clear();
+                            LCD_Set_Cursor(1, 1);
+                            sprintf(ShowbadBettery, "%1.2f", Ah);
+                            LCD_Write_String(ShowbadBettery);
+                            while(1){
+                                while(LATA4==0) break;
+                                break;
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                }
+            }
+            break;
+        }
+        continue;
     }
 }

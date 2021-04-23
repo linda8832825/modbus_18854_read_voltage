@@ -19677,9 +19677,11 @@ extern __bank0 __bit __timeout;
 # 4 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 122 "mcc_generated_files/pin_manager.h"
+# 68 "mcc_generated_files/pin_manager.h"
+int sec=0;
+# 124 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 134 "mcc_generated_files/pin_manager.h"
+# 136 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 
 void master_init(void);
@@ -20036,7 +20038,7 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
         if(PIE3bits.RCIE == 1 && PIR3bits.RCIF == 1)
         {
             EUSART_RxDefaultInterruptHandler();
-            do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
+            do { LATAbits.LATA1 = ~LATAbits.LATA1; sec++;} while(0);
 # 77 "mcc_generated_files/interrupt_manager.c"
         }
         else
